@@ -1,0 +1,390 @@
+Test 1 - POSIX Streaming, 10 GB single-segment, file-per-process
+IOR-3.2.1: MPI Coordinated Test of Parallel I/O
+Began               : Wed Oct 21 12:21:11 2020
+Command line        : /scratch/cchang/IOR/bin/ior -v -a POSIX -i5 -g -w -r -e -C -F -b 100m -t 1m -s 1
+Machine             : Linux r1i5n21
+Start time skew across all tasks: 0.00 sec
+TestID              : 0
+StartTime           : Wed Oct 21 12:21:11 2020
+Path                : /lustre/eaglefs/scratch/cchang/IORtest
+FS                  : 17717.1 TiB   Used FS: 63.7%   Inodes: 6736.6 Mi   Used Inodes: 24.0%
+Participating tasks: 100
+Using reorderTasks '-C' (expecting block, not cyclic, task assignment)
+
+Options: 
+api                 : POSIX
+apiVersion          : 
+test filename       : testFile
+access              : file-per-process
+type                : independent
+segments            : 1
+ordering in a file  : sequential
+ordering inter file : constant task offset
+task offset         : 1
+tasks               : 100
+clients per node    : 34
+repetitions         : 5
+xfersize            : 1 MiB
+blocksize           : 100 MiB
+aggregate filesize  : 9.77 GiB
+
+Results: 
+
+access    bw(MiB/s)  block(KiB) xfer(KiB)  open(s)    wr/rd(s)   close(s)   total(s)   iter
+------    ---------  ---------- ---------  --------   --------   --------   --------   ----
+Commencing write performance test: Wed Oct 21 12:21:11 2020
+write     11452      102400     1024.00    0.018042   0.856821   0.011404   0.873229   0   
+Commencing read performance test: Wed Oct 21 12:21:12 2020
+read      13894      102400     1024.00    0.012572   0.705758   0.011980   0.719738   0   
+ior WARNING: [RANK 034]: unlink() of file "testFile.00000067" failed
+, errno 2, No such file or directory 
+remove    -          -          -          -          -          -          0.317995   0   
+Commencing write performance test: Wed Oct 21 12:21:13 2020
+write     9148       102400     1024.00    0.017481   1.08       0.010797   1.09       1   
+Commencing read performance test: Wed Oct 21 12:21:14 2020
+read      13090      102400     1024.00    0.011293   0.752065   0.010597   0.763924   1   
+ior WARNING: [RANK 034]: unlink() of file "testFile.00000067" failed
+, errno 2, No such file or directory 
+remove    -          -          -          -          -          -          0.320628   1   
+Commencing write performance test: Wed Oct 21 12:21:15 2020
+write     12482      102400     1024.00    0.017384   0.789438   0.010882   0.801172   2   
+Commencing read performance test: Wed Oct 21 12:21:16 2020
+read      13522      102400     1024.00    0.012971   0.729061   0.011495   0.739529   2   
+ior WARNING: [RANK 034]: unlink() of file "testFile.00000067" failed
+, errno 2, No such file or directory 
+remove    -          -          -          -          -          -          0.320024   2   
+Commencing write performance test: Wed Oct 21 12:21:17 2020
+write     15154      102400     1024.00    0.017897   0.641459   0.010733   0.659913   3   
+Commencing read performance test: Wed Oct 21 12:21:18 2020
+read      13394      102400     1024.00    0.012055   0.733091   0.011855   0.746627   3   
+ior WARNING: [RANK 034]: unlink() of file "testFile.00000067" failed
+, errno 2, No such file or directory 
+remove    -          -          -          -          -          -          0.320244   3   
+Commencing write performance test: Wed Oct 21 12:21:19 2020
+write     11867      102400     1024.00    0.018738   0.828478   0.011164   0.842686   4   
+Commencing read performance test: Wed Oct 21 12:21:20 2020
+read      13710      102400     1024.00    0.012642   0.714257   0.012051   0.729380   4   
+ior WARNING: [RANK 034]: unlink() of file "testFile.00000067" failed
+, errno 2, No such file or directory 
+remove    -          -          -          -          -          -          0.321887   4   
+Max Write: 15153.50 MiB/sec (15889.60 MB/sec)
+Max Read:  13893.94 MiB/sec (14568.86 MB/sec)
+
+Summary of all tests:
+Operation   Max(MiB)   Min(MiB)  Mean(MiB)     StdDev   Max(OPs)   Min(OPs)  Mean(OPs)     StdDev    Mean(s) Test# #Tasks tPN reps fPP reord reordoff reordrand seed segcnt   blksiz    xsize aggs(MiB)   API RefNum
+write       15153.50    9147.88   12020.33    1930.15   15153.50    9147.88   12020.33    1930.15    0.85403     0    100  34    5   1     1        1         0    0      1 104857600  1048576   10000.0 POSIX      0
+read        13893.94   13090.30   13522.04     274.46   13893.94   13090.30   13522.04     274.46    0.73984     0    100  34    5   1     1        1         0    0      1 104857600  1048576   10000.0 POSIX      0
+Finished            : Wed Oct 21 12:21:21 2020
+Test 2 - MPI Streaming, 100 GB single-segment, single file
+IOR-3.2.1: MPI Coordinated Test of Parallel I/O
+Began               : Wed Oct 21 12:21:26 2020
+Command line        : /scratch/cchang/IOR/bin/ior -v -a MPIIO -i5 -g -w -r -e -C -b 1g -t 1m -s 1
+Machine             : Linux r1i5n21
+Start time skew across all tasks: 0.00 sec
+TestID              : 0
+StartTime           : Wed Oct 21 12:21:26 2020
+Path                : /lustre/eaglefs/scratch/cchang/IORtest
+FS                  : 17717.1 TiB   Used FS: 63.7%   Inodes: 6736.6 Mi   Used Inodes: 24.0%
+Participating tasks: 100
+Using reorderTasks '-C' (expecting block, not cyclic, task assignment)
+
+Options: 
+api                 : MPIIO
+apiVersion          : (3.1)
+test filename       : testFile
+access              : single-shared-file
+type                : independent
+segments            : 1
+ordering in a file  : sequential
+ordering inter file : constant task offset
+task offset         : 1
+tasks               : 100
+clients per node    : 34
+repetitions         : 5
+xfersize            : 1 MiB
+blocksize           : 1 GiB
+aggregate filesize  : 100 GiB
+
+Results: 
+
+access    bw(MiB/s)  block(KiB) xfer(KiB)  open(s)    wr/rd(s)   close(s)   total(s)   iter
+------    ---------  ---------- ---------  --------   --------   --------   --------   ----
+Commencing write performance test: Wed Oct 21 12:21:26 2020
+write     3500.06    1048576    1024.00    0.019128   29.24      0.008137   29.26      0   
+Commencing read performance test: Wed Oct 21 12:21:56 2020
+read      7105       1048576    1024.00    0.017276   14.40      0.007959   14.41      0   
+remove    -          -          -          -          -          -          6.14       0   
+Commencing write performance test: Wed Oct 21 12:22:18 2020
+write     3658       1048576    1024.00    0.613705   27.38      0.008062   28.00      1   
+Commencing read performance test: Wed Oct 21 12:22:47 2020
+read      6919       1048576    1024.00    0.021524   14.78      0.008405   14.80      1   
+remove    -          -          -          -          -          -          6.21       1   
+Commencing write performance test: Wed Oct 21 12:23:09 2020
+write     3243.03    1048576    1024.00    0.960993   30.62      0.007984   31.58      2   
+Commencing read performance test: Wed Oct 21 12:23:42 2020
+read      6927       1048576    1024.00    0.019308   14.77      0.008417   14.78      2   
+remove    -          -          -          -          -          -          5.94       2   
+Commencing write performance test: Wed Oct 21 12:24:04 2020
+write     3442.02    1048576    1024.00    0.986400   28.77      0.008047   29.75      3   
+Commencing read performance test: Wed Oct 21 12:24:33 2020
+read      6467       1048576    1024.00    0.021501   15.82      0.008415   15.83      3   
+remove    -          -          -          -          -          -          6.58       3   
+Commencing write performance test: Wed Oct 21 12:24:58 2020
+write     3381.27    1048576    1024.00    2.49       27.80      0.007950   30.28      4   
+Commencing read performance test: Wed Oct 21 12:25:26 2020
+read      6611       1048576    1024.00    0.018139   15.47      0.007974   15.49      4   
+remove    -          -          -          -          -          -          6.20       4   
+Max Write: 3657.54 MiB/sec (3835.20 MB/sec)
+Max Read:  7105.00 MiB/sec (7450.13 MB/sec)
+
+Summary of all tests:
+Operation   Max(MiB)   Min(MiB)  Mean(MiB)     StdDev   Max(OPs)   Min(OPs)  Mean(OPs)     StdDev    Mean(s) Test# #Tasks tPN reps fPP reord reordoff reordrand seed segcnt   blksiz    xsize aggs(MiB)   API RefNum
+write        3657.54    3243.03    3444.79     136.43    3657.54    3243.03    3444.79     136.43   29.77268     0    100  34    5   0     1        1         0    0      1 1073741824  1048576  102400.0 MPIIO      0
+read         7105.00    6466.69    6805.93     232.35    7105.00    6466.69    6805.93     232.35   15.06343     0    100  34    5   0     1        1         0    0      1 1073741824  1048576  102400.0 MPIIO      0
+Finished            : Wed Oct 21 12:25:48 2020
+Test 3 - HDF5 Streaming, 100 GB single-segment, single file
+IOR-3.2.1: MPI Coordinated Test of Parallel I/O
+Began               : Wed Oct 21 12:25:53 2020
+Command line        : /scratch/cchang/IOR/bin/ior -v -a HDF5 -i5 -g -w -r -C -b 1g -t 1m -s 1
+Machine             : Linux r1i5n21
+Start time skew across all tasks: 0.00 sec
+TestID              : 0
+StartTime           : Wed Oct 21 12:25:53 2020
+Path                : /lustre/eaglefs/scratch/cchang/IORtest
+FS                  : 17717.1 TiB   Used FS: 63.7%   Inodes: 6736.6 Mi   Used Inodes: 24.0%
+Participating tasks: 100
+Using reorderTasks '-C' (expecting block, not cyclic, task assignment)
+
+Options: 
+api                 : HDF5
+apiVersion          : 1.10.6 (Parallel)
+test filename       : testFile
+access              : single-shared-file
+type                : independent
+segments            : 1
+ordering in a file  : sequential
+ordering inter file : constant task offset
+task offset         : 1
+tasks               : 100
+clients per node    : 34
+repetitions         : 5
+xfersize            : 1 MiB
+blocksize           : 1 GiB
+aggregate filesize  : 100 GiB
+
+Results: 
+
+access    bw(MiB/s)  block(KiB) xfer(KiB)  open(s)    wr/rd(s)   close(s)   total(s)   iter
+------    ---------  ---------- ---------  --------   --------   --------   --------   ----
+Commencing write performance test: Wed Oct 21 12:25:53 2020
+write     3668       1048576    1024.00    0.023328   27.89      0.016663   27.91      0   
+Commencing read performance test: Wed Oct 21 12:26:23 2020
+read      6664       1048576    1024.00    0.034298   15.34      0.011628   15.37      0   
+remove    -          -          -          -          -          -          6.45       0   
+Commencing write performance test: Wed Oct 21 12:26:46 2020
+write     3573.37    1048576    1024.00    0.942026   27.70      0.019889   28.66      1   
+Commencing read performance test: Wed Oct 21 12:27:14 2020
+read      6119       1048576    1024.00    0.020206   16.72      0.011655   16.74      1   
+remove    -          -          -          -          -          -          6.33       1   
+Commencing write performance test: Wed Oct 21 12:27:41 2020
+write     3228.08    1048576    1024.00    3.14       28.56      0.022291   31.72      2   
+Commencing read performance test: Wed Oct 21 12:28:10 2020
+read      6552       1048576    1024.00    0.032989   15.60      0.011673   15.63      2   
+remove    -          -          -          -          -          -          6.76       2   
+Commencing write performance test: Wed Oct 21 12:28:36 2020
+write     3331.73    1048576    1024.00    3.78       26.95      0.021097   30.73      3   
+Commencing read performance test: Wed Oct 21 12:29:04 2020
+read      6226       1048576    1024.00    0.020302   16.43      0.012068   16.45      3   
+remove    -          -          -          -          -          -          5.90       3   
+Commencing write performance test: Wed Oct 21 12:29:26 2020
+write     3633       1048576    1024.00    0.300012   27.86      0.023315   28.18      4   
+Commencing read performance test: Wed Oct 21 12:29:54 2020
+read      6711       1048576    1024.00    0.025442   15.24      0.011574   15.26      4   
+remove    -          -          -          -          -          -          5.93       4   
+Max Write: 3668.30 MiB/sec (3846.49 MB/sec)
+Max Read:  6710.97 MiB/sec (7036.96 MB/sec)
+
+Summary of all tests:
+Operation   Max(MiB)   Min(MiB)  Mean(MiB)     StdDev   Max(OPs)   Min(OPs)  Mean(OPs)     StdDev    Mean(s) Test# #Tasks tPN reps fPP reord reordoff reordrand seed segcnt   blksiz    xsize aggs(MiB)   API RefNum
+write        3668.30    3228.08    3486.96     174.86    3668.30    3228.08    3486.96     174.86   29.44226     0    100  34    5   0     1        1         0    0      1 1073741824  1048576  102400.0 HDF5      0
+read         6710.97    6118.59    6454.23     238.50    6710.97    6118.59    6454.23     238.50   15.88754     0    100  34    5   0     1        1         0    0      1 1073741824  1048576  102400.0 HDF5      0
+Finished            : Wed Oct 21 12:30:16 2020
+Test 4 - HDF5 Streaming, 100 GB ten-segment, single file
+IOR-3.2.1: MPI Coordinated Test of Parallel I/O
+ior WARNING: fsync() not supported in selected backend.  Using value of 0.
+Began               : Wed Oct 21 12:30:22 2020
+Command line        : /scratch/cchang/IOR/bin/ior -v -a HDF5 -i5 -g -w -r -e -C -b 10m -t 10m -s 10
+Machine             : Linux r1i5n21
+Start time skew across all tasks: 0.00 sec
+TestID              : 0
+StartTime           : Wed Oct 21 12:30:22 2020
+Path                : /lustre/eaglefs/scratch/cchang/IORtest
+FS                  : 17717.1 TiB   Used FS: 63.7%   Inodes: 6736.6 Mi   Used Inodes: 24.0%
+Participating tasks: 100
+Using reorderTasks '-C' (expecting block, not cyclic, task assignment)
+
+Options: 
+api                 : HDF5
+apiVersion          : 1.10.6 (Parallel)
+test filename       : testFile
+access              : single-shared-file
+type                : independent
+segments            : 10
+ordering in a file  : sequential
+ordering inter file : constant task offset
+task offset         : 1
+tasks               : 100
+clients per node    : 34
+repetitions         : 5
+xfersize            : 10 MiB
+blocksize           : 10 MiB
+aggregate filesize  : 9.77 GiB
+
+Results: 
+
+access    bw(MiB/s)  block(KiB) xfer(KiB)  open(s)    wr/rd(s)   close(s)   total(s)   iter
+------    ---------  ---------- ---------  --------   --------   --------   --------   ----
+Commencing write performance test: Wed Oct 21 12:30:22 2020
+write     1923.57    10240      10240      0.020851   5.17       0.018300   5.20       0   
+Commencing read performance test: Wed Oct 21 12:30:27 2020
+read      5324       10240      10240      0.015767   1.86       0.007723   1.88       0   
+remove    -          -          -          -          -          -          0.725265   0   
+Commencing write performance test: Wed Oct 21 12:30:29 2020
+write     2210.74    10240      10240      0.015448   4.50       0.019181   4.52       1   
+Commencing read performance test: Wed Oct 21 12:30:34 2020
+read      5852       10240      10240      0.014009   1.69       0.007707   1.71       1   
+remove    -          -          -          -          -          -          0.708915   1   
+Commencing write performance test: Wed Oct 21 12:30:36 2020
+write     2186.29    10240      10240      0.015481   4.55       0.019547   4.57       2   
+Commencing read performance test: Wed Oct 21 12:30:41 2020
+read      5241       10240      10240      0.013435   1.89       0.007719   1.91       2   
+remove    -          -          -          -          -          -          0.716332   2   
+Commencing write performance test: Wed Oct 21 12:30:44 2020
+write     2218.95    10240      10240      0.043338   4.46       0.020769   4.51       3   
+Commencing read performance test: Wed Oct 21 12:30:48 2020
+read      6510       10240      10240      0.013890   1.52       0.007744   1.54       3   
+remove    -          -          -          -          -          -          0.727668   3   
+Commencing write performance test: Wed Oct 21 12:30:51 2020
+write     1867.98    10240      10240      0.015630   5.34       0.008518   5.35       4   
+Commencing read performance test: Wed Oct 21 12:30:56 2020
+read      5845       10240      10240      0.013538   1.70       0.007719   1.71       4   
+remove    -          -          -          -          -          -          0.744414   4   
+Max Write: 2218.95 MiB/sec (2326.73 MB/sec)
+Max Read:  6509.94 MiB/sec (6826.16 MB/sec)
+
+Summary of all tests:
+Operation   Max(MiB)   Min(MiB)  Mean(MiB)     StdDev   Max(OPs)   Min(OPs)  Mean(OPs)     StdDev    Mean(s) Test# #Tasks tPN reps fPP reord reordoff reordrand seed segcnt   blksiz    xsize aggs(MiB)   API RefNum
+write        2218.95    1867.98    2081.51     153.04     221.89     186.80     208.15      15.30    4.83120     0    100  34    5   0     1        1         0    0     10 10485760 10485760   10000.0 HDF5      0
+read         6509.94    5241.42    5754.37     455.32     650.99     524.14     575.44      45.53    1.74842     0    100  34    5   0     1        1         0    0     10 10485760 10485760   10000.0 HDF5      0
+Finished            : Wed Oct 21 12:30:58 2020
+Test 5 - POSIX Random, 1 GB single-segment, single file
+IOR-3.2.1: MPI Coordinated Test of Parallel I/O
+Began               : Wed Oct 21 12:31:03 2020
+Command line        : /scratch/cchang/IOR/bin/ior -v -a POSIX -i5 -g -w -r -e -z -b 10m -t 2k -s 1
+Machine             : Linux r1i5n21
+Start time skew across all tasks: 0.00 sec
+TestID              : 0
+StartTime           : Wed Oct 21 12:31:03 2020
+Path                : /lustre/eaglefs/scratch/cchang/IORtest
+FS                  : 17717.1 TiB   Used FS: 63.7%   Inodes: 6736.6 Mi   Used Inodes: 24.0%
+Participating tasks: 100
+
+Options: 
+api                 : POSIX
+apiVersion          : 
+test filename       : testFile
+access              : single-shared-file
+type                : independent
+segments            : 1
+ordering in a file  : random
+ordering inter file : no tasks offsets
+tasks               : 100
+clients per node    : 34
+repetitions         : 5
+xfersize            : 2048 bytes
+blocksize           : 10 MiB
+aggregate filesize  : 1000 MiB
+
+Results: 
+
+access    bw(MiB/s)  block(KiB) xfer(KiB)  open(s)    wr/rd(s)   close(s)   total(s)   iter
+------    ---------  ---------- ---------  --------   --------   --------   --------   ----
+Commencing write performance test: Wed Oct 21 12:31:03 2020
+write     25.45      10240      2.00       0.008023   39.29      0.007522   39.29      0   
+Commencing read performance test: Wed Oct 21 12:31:43 2020
+read      24.10      10240      2.00       0.010851   41.48      0.007539   41.49      0   
+remove    -          -          -          -          -          -          0.218483   0   
+Commencing write performance test: Wed Oct 21 12:32:25 2020
+write     31.93      10240      2.00       0.008085   31.31      0.007541   31.31      1   
+Commencing read performance test: Wed Oct 21 12:32:56 2020
+read      24.39      10240      2.00       0.011526   40.99      0.007547   41.00      1   
+remove    -          -          -          -          -          -          0.217486   1   
+Commencing write performance test: Wed Oct 21 12:33:38 2020
+write     33.41      10240      2.00       0.007893   29.93      0.007529   29.93      2   
+Commencing read performance test: Wed Oct 21 12:34:08 2020
+read      26.01      10240      2.00       0.010303   38.43      0.007553   38.44      2   
+remove    -          -          -          -          -          -          0.215731   2   
+Commencing write performance test: Wed Oct 21 12:34:46 2020
+write     25.66      10240      2.00       0.007741   38.97      0.007764   38.97      3   
+Commencing read performance test: Wed Oct 21 12:35:26 2020
+read      24.04      10240      2.00       0.011197   41.59      0.007519   41.60      3   
+remove    -          -          -          -          -          -          0.217217   3   
+Commencing write performance test: Wed Oct 21 12:36:08 2020
+write     30.52      10240      2.00       0.008412   32.75      0.007539   32.76      4   
+Commencing read performance test: Wed Oct 21 12:36:40 2020
+read      24.84      10240      2.00       0.011173   40.25      0.007540   40.26      4   
+remove    -          -          -          -          -          -          0.216528   4   
+Max Write: 33.41 MiB/sec (35.03 MB/sec)
+Max Read:  26.01 MiB/sec (27.28 MB/sec)
+
+Summary of all tests:
+Operation   Max(MiB)   Min(MiB)  Mean(MiB)     StdDev   Max(OPs)   Min(OPs)  Mean(OPs)     StdDev    Mean(s) Test# #Tasks tPN reps fPP reord reordoff reordrand seed segcnt   blksiz    xsize aggs(MiB)   API RefNum
+write          33.41      25.45      29.40       3.27   17106.00   13030.63   15050.59    1672.58   34.45409     0    100  34    5   0     0        1         0    0      1 10485760     2048    1000.0 POSIX      0
+read           26.01      24.04      24.68       0.72   13317.87   12307.75   12633.83     371.20   40.56013     0    100  34    5   0     0        1         0    0      1 10485760     2048    1000.0 POSIX      0
+Finished            : Wed Oct 21 12:37:21 2020
+Test 6 - HDF5 Small Transfer, 1 GB ten-segment, single file
+IOR-3.2.1: MPI Coordinated Test of Parallel I/O
+ior WARNING: fsync() not supported in selected backend.  Using value of 0.
+Began               : Wed Oct 21 12:37:27 2020
+Command line        : /scratch/cchang/IOR/bin/ior -v -a HDF5 -i1 -g -w -r -e -b 10m -t 2k -s 1
+Machine             : Linux r1i5n21
+Start time skew across all tasks: 0.00 sec
+TestID              : 0
+StartTime           : Wed Oct 21 12:37:27 2020
+Path                : /lustre/eaglefs/scratch/cchang/IORtest
+FS                  : 17717.1 TiB   Used FS: 63.7%   Inodes: 6736.6 Mi   Used Inodes: 24.0%
+Participating tasks: 100
+
+Options: 
+api                 : HDF5
+apiVersion          : 1.10.6 (Parallel)
+test filename       : testFile
+access              : single-shared-file
+type                : independent
+segments            : 1
+ordering in a file  : sequential
+ordering inter file : no tasks offsets
+tasks               : 100
+clients per node    : 34
+repetitions         : 1
+xfersize            : 2048 bytes
+blocksize           : 10 MiB
+aggregate filesize  : 1000 MiB
+
+Results: 
+
+access    bw(MiB/s)  block(KiB) xfer(KiB)  open(s)    wr/rd(s)   close(s)   total(s)   iter
+------    ---------  ---------- ---------  --------   --------   --------   --------   ----
+Commencing write performance test: Wed Oct 21 12:37:27 2020
+write     1814.87    10240      2.00       0.022776   0.536280   0.012001   0.551004   0   
+Commencing read performance test: Wed Oct 21 12:37:28 2020
+read      8601       10240      2.00       0.019446   0.106075   0.010565   0.116263   0   
+remove    -          -          -          -          -          -          0.093926   0   
+Max Write: 1814.87 MiB/sec (1903.03 MB/sec)
+Max Read:  8601.17 MiB/sec (9018.98 MB/sec)
+
+Summary of all tests:
+Operation   Max(MiB)   Min(MiB)  Mean(MiB)     StdDev   Max(OPs)   Min(OPs)  Mean(OPs)     StdDev    Mean(s) Test# #Tasks tPN reps fPP reord reordoff reordrand seed segcnt   blksiz    xsize aggs(MiB)   API RefNum
+write        1814.87    1814.87    1814.87       0.00  929213.01  929213.01  929213.01       0.00    0.55100     0    100  34    1   0     0        1         0    0      1 10485760     2048    1000.0 HDF5      0
+read         8601.17    8601.17    8601.17       0.00 4403796.86 4403796.86 4403796.86       0.00    0.11626     0    100  34    1   0     0        1         0    0      1 10485760     2048    1000.0 HDF5      0
+Finished            : Wed Oct 21 12:37:28 2020
