@@ -1,0 +1,13 @@
+; -- start job file --
+
+[sequential-writers]
+rw=write
+directory=${SCRATCH}
+unit_base=8
+ramp_time=20s
+gtod_cpu=0
+ioengine=posixaio
+direct=0
+iodepth=4
+
+; -- end job file --

@@ -1,0 +1,13 @@
+; -- start job file --
+
+[random-mixed]
+rw=randrw
+rwmixread=75
+directory=${SCRATCH}
+unit_base=8
+ramp_time=20s
+gtod_cpu=0
+ioengine=sync
+direct=1
+
+; -- end job file --
