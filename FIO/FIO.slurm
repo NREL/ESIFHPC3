@@ -5,8 +5,6 @@
 #SBATCH --time=04:00:00
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=36
-#SBATCH --mail-user christopher.chang@nrel.gov
-#SBATCH --mail-type BEGIN,END,FAIL
 #SBATCH --output=%x-%j.out
 #SBATCH --error=%x-%j.err
 
