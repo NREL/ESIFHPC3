@@ -1,10 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=IORtest
-#SBATCH --account=hpcapps
 #SBATCH --time=01:00:00
 #SBATCH --ntasks=100
-#SBATCH --mail-user christopher.chang@nrel.gov
-#SBATCH --mail-type BEGIN,END,FAIL
 #SBATCH --output=%x-%j.out
 #SBATCH --error=%x-%j.err
 

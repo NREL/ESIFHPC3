@@ -1,7 +1,5 @@
 #!/bin/bash
 #SBATCH --job-name=FIOtest
-#SBATCH --account=hpcapps
-#SBATCH --reservation=Oct_2020_system_time
 #SBATCH --time=04:00:00
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=36
