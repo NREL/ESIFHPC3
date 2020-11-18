@@ -1,0 +1,4 @@
+export PATH="$PWD/apache-maven-3.6.3/bin:$PATH"
+export PATH="$PWD/scala-2.12.12/bin:$PATH"
+export PATH="$PWD/jdk8u272-b10/bin:$PATH"
+export JAVA_HOME="$PWD/jdk8u272-b10"
