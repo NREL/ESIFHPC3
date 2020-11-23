@@ -1,0 +1,3451 @@
+node_counts array: 2 64 128 256 512
+packed array: 72 2304 4608 9216 18432
+Running Pingpong on 2 cores, 2 nodes with tasks-per-node 1
+#------------------------------------------------------------
+#    Intel(R) MPI Benchmarks 2018, MPI-1 part    
+#------------------------------------------------------------
+# Date                  : Wed Oct  7 22:18:57 2020
+# Machine               : x86_64
+# System                : Linux
+# Release               : 3.10.0-1062.9.1.el7.x86_64
+# Version               : #1 SMP Fri Dec 6 15:49:49 UTC 2019
+# MPI Version           : 3.1
+# MPI Thread Environment: 
+
+
+# Calling sequence was: 
+
+# src_c/IMB-MPI1 -mem 2 -input IMB_SELECT_MPI1 -msglen ./msglens
+#               
+
+# Message lengths were user defined
+#
+# MPI_Datatype                   :   MPI_BYTE 
+# MPI_Datatype for reductions    :   MPI_FLOAT
+# MPI_Op                         :   MPI_SUM  
+#
+#
+
+# List of Benchmarks to run:
+
+# PingPong
+
+#---------------------------------------------------
+# Benchmarking PingPong 
+# #processes = 2 
+#---------------------------------------------------
+       #bytes #repetitions      t[usec]   Mbytes/sec
+            0         1000         1.19         0.00
+       524288           80       145.02      3615.31
+
+
+# All processes entering MPI_Finalize
+
+Running Barrier on 2 cores, 2 nodes with tasks-per-node 1
+#------------------------------------------------------------
+#    Intel(R) MPI Benchmarks 2018, MPI-1 part    
+#------------------------------------------------------------
+# Date                  : Wed Oct  7 22:18:58 2020
+# Machine               : x86_64
+# System                : Linux
+# Release               : 3.10.0-1062.9.1.el7.x86_64
+# Version               : #1 SMP Fri Dec 6 15:49:49 UTC 2019
+# MPI Version           : 3.1
+# MPI Thread Environment: 
+
+
+# Calling sequence was: 
+
+# src_c/IMB-MPI1 -mem 2 -npmin 524288 -input IMB_SELECT_MPI1
+#                -msglen ./msglens
+
+# Message lengths were user defined
+#
+# MPI_Datatype                   :   MPI_BYTE 
+# MPI_Datatype for reductions    :   MPI_FLOAT
+# MPI_Op                         :   MPI_SUM  
+#
+#
+
+# List of Benchmarks to run:
+
+# Barrier
+
+#---------------------------------------------------
+# Benchmarking Barrier 
+# #processes = 2 
+#---------------------------------------------------
+ #repetitions  t_min[usec]  t_max[usec]  t_avg[usec]
+         1000         1.22         1.22         1.22
+
+
+# All processes entering MPI_Finalize
+
+Running Barrier on 64 cores, 64 nodes with tasks-per-node 1
+#------------------------------------------------------------
+#    Intel(R) MPI Benchmarks 2018, MPI-1 part    
+#------------------------------------------------------------
+# Date                  : Wed Oct  7 22:18:58 2020
+# Machine               : x86_64
+# System                : Linux
+# Release               : 3.10.0-1062.9.1.el7.x86_64
+# Version               : #1 SMP Fri Dec 6 15:49:49 UTC 2019
+# MPI Version           : 3.1
+# MPI Thread Environment: 
+
+
+# Calling sequence was: 
+
+# src_c/IMB-MPI1 -mem 2 -npmin 524288 -input IMB_SELECT_MPI1
+#                -msglen ./msglens
+
+# Message lengths were user defined
+#
+# MPI_Datatype                   :   MPI_BYTE 
+# MPI_Datatype for reductions    :   MPI_FLOAT
+# MPI_Op                         :   MPI_SUM  
+#
+#
+
+# List of Benchmarks to run:
+
+# Barrier
+
+#---------------------------------------------------
+# Benchmarking Barrier 
+# #processes = 64 
+#---------------------------------------------------
+ #repetitions  t_min[usec]  t_max[usec]  t_avg[usec]
+         1000        16.81        16.82        16.82
+
+
+# All processes entering MPI_Finalize
+
+Running Barrier on 128 cores, 128 nodes with tasks-per-node 1
+#------------------------------------------------------------
+#    Intel(R) MPI Benchmarks 2018, MPI-1 part    
+#------------------------------------------------------------
+# Date                  : Wed Oct  7 22:18:58 2020
+# Machine               : x86_64
+# System                : Linux
+# Release               : 3.10.0-1062.9.1.el7.x86_64
+# Version               : #1 SMP Fri Dec 6 15:49:49 UTC 2019
+# MPI Version           : 3.1
+# MPI Thread Environment: 
+
+
+# Calling sequence was: 
+
+# src_c/IMB-MPI1 -mem 2 -npmin 524288 -input IMB_SELECT_MPI1
+#                -msglen ./msglens
+
+# Message lengths were user defined
+#
+# MPI_Datatype                   :   MPI_BYTE 
+# MPI_Datatype for reductions    :   MPI_FLOAT
+# MPI_Op                         :   MPI_SUM  
+#
+#
+
+# List of Benchmarks to run:
+
+# Barrier
+
+#---------------------------------------------------
+# Benchmarking Barrier 
+# #processes = 128 
+#---------------------------------------------------
+ #repetitions  t_min[usec]  t_max[usec]  t_avg[usec]
+         1000        19.65        19.66        19.66
+
+
+# All processes entering MPI_Finalize
+
+Running Barrier on 256 cores, 256 nodes with tasks-per-node 1
+#------------------------------------------------------------
+#    Intel(R) MPI Benchmarks 2018, MPI-1 part    
+#------------------------------------------------------------
+# Date                  : Wed Oct  7 22:18:59 2020
+# Machine               : x86_64
+# System                : Linux
+# Release               : 3.10.0-1062.9.1.el7.x86_64
+# Version               : #1 SMP Fri Dec 6 15:49:49 UTC 2019
+# MPI Version           : 3.1
+# MPI Thread Environment: 
+
+
+# Calling sequence was: 
+
+# src_c/IMB-MPI1 -mem 2 -npmin 524288 -input IMB_SELECT_MPI1
+#                -msglen ./msglens
+
+# Message lengths were user defined
+#
+# MPI_Datatype                   :   MPI_BYTE 
+# MPI_Datatype for reductions    :   MPI_FLOAT
+# MPI_Op                         :   MPI_SUM  
+#
+#
+
+# List of Benchmarks to run:
+
+# Barrier
+
+#---------------------------------------------------
+# Benchmarking Barrier 
+# #processes = 256 
+#---------------------------------------------------
+ #repetitions  t_min[usec]  t_max[usec]  t_avg[usec]
+         1000        18.22        18.23        18.22
+
+
+# All processes entering MPI_Finalize
+
+Running Barrier on 512 cores, 512 nodes with tasks-per-node 1
+#------------------------------------------------------------
+#    Intel(R) MPI Benchmarks 2018, MPI-1 part    
+#------------------------------------------------------------
+# Date                  : Wed Oct  7 22:19:00 2020
+# Machine               : x86_64
+# System                : Linux
+# Release               : 3.10.0-1062.9.1.el7.x86_64
+# Version               : #1 SMP Fri Dec 6 15:49:49 UTC 2019
+# MPI Version           : 3.1
+# MPI Thread Environment: 
+
+
+# Calling sequence was: 
+
+# src_c/IMB-MPI1 -mem 2 -npmin 524288 -input IMB_SELECT_MPI1
+#                -msglen ./msglens
+
+# Message lengths were user defined
+#
+# MPI_Datatype                   :   MPI_BYTE 
+# MPI_Datatype for reductions    :   MPI_FLOAT
+# MPI_Op                         :   MPI_SUM  
+#
+#
+
+# List of Benchmarks to run:
+
+# Barrier
+
+#---------------------------------------------------
+# Benchmarking Barrier 
+# #processes = 512 
+#---------------------------------------------------
+ #repetitions  t_min[usec]  t_max[usec]  t_avg[usec]
+         1000        36.67        36.80        36.72
+
+
+# All processes entering MPI_Finalize
+
+Running Barrier on 72 cores, 2 nodes with tasks-per-node 36
+#------------------------------------------------------------
+#    Intel(R) MPI Benchmarks 2018, MPI-1 part    
+#------------------------------------------------------------
+# Date                  : Wed Oct  7 22:19:07 2020
+# Machine               : x86_64
+# System                : Linux
+# Release               : 3.10.0-1062.9.1.el7.x86_64
+# Version               : #1 SMP Fri Dec 6 15:49:49 UTC 2019
+# MPI Version           : 3.1
+# MPI Thread Environment: 
+
+
+# Calling sequence was: 
+
+# src_c/IMB-MPI1 -mem 2 -npmin 524288 -input IMB_SELECT_MPI1
+#                -msglen ./msglens
+
+# Message lengths were user defined
+#
+# MPI_Datatype                   :   MPI_BYTE 
+# MPI_Datatype for reductions    :   MPI_FLOAT
+# MPI_Op                         :   MPI_SUM  
+#
+#
+
+# List of Benchmarks to run:
+
+# Barrier
+
+#---------------------------------------------------
+# Benchmarking Barrier 
+# #processes = 72 
+#---------------------------------------------------
+ #repetitions  t_min[usec]  t_max[usec]  t_avg[usec]
+         1000         5.59         5.59         5.59
+
+
+# All processes entering MPI_Finalize
+
+Running Barrier on 2304 cores, 64 nodes with tasks-per-node 36
+#------------------------------------------------------------
+#    Intel(R) MPI Benchmarks 2018, MPI-1 part    
+#------------------------------------------------------------
+# Date                  : Wed Oct  7 22:19:08 2020
+# Machine               : x86_64
+# System                : Linux
+# Release               : 3.10.0-1062.9.1.el7.x86_64
+# Version               : #1 SMP Fri Dec 6 15:49:49 UTC 2019
+# MPI Version           : 3.1
+# MPI Thread Environment: 
+
+
+# Calling sequence was: 
+
+# src_c/IMB-MPI1 -mem 2 -npmin 524288 -input IMB_SELECT_MPI1
+#                -msglen ./msglens
+
+# Message lengths were user defined
+#
+# MPI_Datatype                   :   MPI_BYTE 
+# MPI_Datatype for reductions    :   MPI_FLOAT
+# MPI_Op                         :   MPI_SUM  
+#
+#
+
+# List of Benchmarks to run:
+
+# Barrier
+
+#---------------------------------------------------
+# Benchmarking Barrier 
+# #processes = 2304 
+#---------------------------------------------------
+ #repetitions  t_min[usec]  t_max[usec]  t_avg[usec]
+         1000        20.99        21.02        21.00
+
+
+# All processes entering MPI_Finalize
+
+Running Barrier on 4608 cores, 128 nodes with tasks-per-node 36
+#------------------------------------------------------------
+#    Intel(R) MPI Benchmarks 2018, MPI-1 part    
+#------------------------------------------------------------
+# Date                  : Wed Oct  7 22:19:10 2020
+# Machine               : x86_64
+# System                : Linux
+# Release               : 3.10.0-1062.9.1.el7.x86_64
+# Version               : #1 SMP Fri Dec 6 15:49:49 UTC 2019
+# MPI Version           : 3.1
+# MPI Thread Environment: 
+
+
+# Calling sequence was: 
+
+# src_c/IMB-MPI1 -mem 2 -npmin 524288 -input IMB_SELECT_MPI1
+#                -msglen ./msglens
+
+# Message lengths were user defined
+#
+# MPI_Datatype                   :   MPI_BYTE 
+# MPI_Datatype for reductions    :   MPI_FLOAT
+# MPI_Op                         :   MPI_SUM  
+#
+#
+
+# List of Benchmarks to run:
+
+# Barrier
+
+#---------------------------------------------------
+# Benchmarking Barrier 
+# #processes = 4608 
+#---------------------------------------------------
+ #repetitions  t_min[usec]  t_max[usec]  t_avg[usec]
+         1000        27.27        27.29        27.28
+
+
+# All processes entering MPI_Finalize
+
+Running Barrier on 9216 cores, 256 nodes with tasks-per-node 36
+#------------------------------------------------------------
+#    Intel(R) MPI Benchmarks 2018, MPI-1 part    
+#------------------------------------------------------------
+# Date                  : Wed Oct  7 22:19:12 2020
+# Machine               : x86_64
+# System                : Linux
+# Release               : 3.10.0-1062.9.1.el7.x86_64
+# Version               : #1 SMP Fri Dec 6 15:49:49 UTC 2019
+# MPI Version           : 3.1
+# MPI Thread Environment: 
+
+
+# Calling sequence was: 
+
+# src_c/IMB-MPI1 -mem 2 -npmin 524288 -input IMB_SELECT_MPI1
+#                -msglen ./msglens
+
+# Message lengths were user defined
+#
+# MPI_Datatype                   :   MPI_BYTE 
+# MPI_Datatype for reductions    :   MPI_FLOAT
+# MPI_Op                         :   MPI_SUM  
+#
+#
+
+# List of Benchmarks to run:
+
+# Barrier
+
+#---------------------------------------------------
+# Benchmarking Barrier 
+# #processes = 9216 
+#---------------------------------------------------
+ #repetitions  t_min[usec]  t_max[usec]  t_avg[usec]
+         1000        38.71        38.73        38.72
+
+
+# All processes entering MPI_Finalize
+
+Running Barrier on 18432 cores, 512 nodes with tasks-per-node 36
+#------------------------------------------------------------
+#    Intel(R) MPI Benchmarks 2018, MPI-1 part    
+#------------------------------------------------------------
+# Date                  : Wed Oct  7 22:19:17 2020
+# Machine               : x86_64
+# System                : Linux
+# Release               : 3.10.0-1062.9.1.el7.x86_64
+# Version               : #1 SMP Fri Dec 6 15:49:49 UTC 2019
+# MPI Version           : 3.1
+# MPI Thread Environment: 
+
+
+# Calling sequence was: 
+
+# src_c/IMB-MPI1 -mem 2 -npmin 524288 -input IMB_SELECT_MPI1
+#                -msglen ./msglens
+
+# Message lengths were user defined
+#
+# MPI_Datatype                   :   MPI_BYTE 
+# MPI_Datatype for reductions    :   MPI_FLOAT
+# MPI_Op                         :   MPI_SUM  
+#
+#
+
+# List of Benchmarks to run:
+
+# Barrier
+
+#---------------------------------------------------
+# Benchmarking Barrier 
+# #processes = 18432 
+#---------------------------------------------------
+ #repetitions  t_min[usec]  t_max[usec]  t_avg[usec]
+          285     33059.67     33207.03     33146.28
+
+
+# All processes entering MPI_Finalize
+
+Running Alltoall on 2 cores, 2 nodes with tasks-per-node 1
+#------------------------------------------------------------
+#    Intel(R) MPI Benchmarks 2018, MPI-1 part    
+#------------------------------------------------------------
+# Date                  : Wed Oct  7 22:19:37 2020
+# Machine               : x86_64
+# System                : Linux
+# Release               : 3.10.0-1062.9.1.el7.x86_64
+# Version               : #1 SMP Fri Dec 6 15:49:49 UTC 2019
+# MPI Version           : 3.1
+# MPI Thread Environment: 
+
+
+# Calling sequence was: 
+
+# src_c/IMB-MPI1 -mem 2 -npmin 2 -input IMB_SELECT_MPI1
+#                -msglen ./msglens
+
+# Message lengths were user defined
+#
+# MPI_Datatype                   :   MPI_BYTE 
+# MPI_Datatype for reductions    :   MPI_FLOAT
+# MPI_Op                         :   MPI_SUM  
+#
+#
+
+# List of Benchmarks to run:
+
+# Alltoall
+
+#----------------------------------------------------------------
+# Benchmarking Alltoall 
+# #processes = 2 
+#----------------------------------------------------------------
+       #bytes #repetitions  t_min[usec]  t_max[usec]  t_avg[usec]
+            0         1000         0.04         0.04         0.04
+        65536          640        17.67        18.24        17.95
+       524288           80       123.81       124.63       124.22
+      1048576           40       263.80       265.70       264.75
+
+
+# All processes entering MPI_Finalize
+
+Running Alltoall on 64 cores, 64 nodes with tasks-per-node 1
+#------------------------------------------------------------
+#    Intel(R) MPI Benchmarks 2018, MPI-1 part    
+#------------------------------------------------------------
+# Date                  : Wed Oct  7 22:19:38 2020
+# Machine               : x86_64
+# System                : Linux
+# Release               : 3.10.0-1062.9.1.el7.x86_64
+# Version               : #1 SMP Fri Dec 6 15:49:49 UTC 2019
+# MPI Version           : 3.1
+# MPI Thread Environment: 
+
+
+# Calling sequence was: 
+
+# src_c/IMB-MPI1 -mem 2 -npmin 64 -input IMB_SELECT_MPI1
+#                -msglen ./msglens
+
+# Message lengths were user defined
+#
+# MPI_Datatype                   :   MPI_BYTE 
+# MPI_Datatype for reductions    :   MPI_FLOAT
+# MPI_Op                         :   MPI_SUM  
+#
+#
+
+# List of Benchmarks to run:
+
+# Alltoall
+
+#----------------------------------------------------------------
+# Benchmarking Alltoall 
+# #processes = 64 
+#----------------------------------------------------------------
+       #bytes #repetitions  t_min[usec]  t_max[usec]  t_avg[usec]
+            0         1000         0.04         0.05         0.04
+        65536          640       834.26      1182.39      1047.47
+       524288           80      6378.58      9264.78      8168.48
+      1048576           40     12400.25     18440.13     16235.95
+
+
+# All processes entering MPI_Finalize
+
+Running Alltoall on 128 cores, 128 nodes with tasks-per-node 1
+#------------------------------------------------------------
+#    Intel(R) MPI Benchmarks 2018, MPI-1 part    
+#------------------------------------------------------------
+# Date                  : Wed Oct  7 22:19:43 2020
+# Machine               : x86_64
+# System                : Linux
+# Release               : 3.10.0-1062.9.1.el7.x86_64
+# Version               : #1 SMP Fri Dec 6 15:49:49 UTC 2019
+# MPI Version           : 3.1
+# MPI Thread Environment: 
+
+
+# Calling sequence was: 
+
+# src_c/IMB-MPI1 -mem 2 -npmin 128 -input IMB_SELECT_MPI1
+#                -msglen ./msglens
+
+# Message lengths were user defined
+#
+# MPI_Datatype                   :   MPI_BYTE 
+# MPI_Datatype for reductions    :   MPI_FLOAT
+# MPI_Op                         :   MPI_SUM  
+#
+#
+
+# List of Benchmarks to run:
+
+# Alltoall
+
+#----------------------------------------------------------------
+# Benchmarking Alltoall 
+# #processes = 128 
+#----------------------------------------------------------------
+       #bytes #repetitions  t_min[usec]  t_max[usec]  t_avg[usec]
+            0         1000         0.04         0.05         0.04
+        65536          640      1807.90      2235.63      2041.62
+       524288           80     14770.20     18026.10     16567.56
+      1048576           40     28682.20     35262.61     32422.55
+
+
+# All processes entering MPI_Finalize
+
+Running Alltoall on 256 cores, 256 nodes with tasks-per-node 1
+#------------------------------------------------------------
+#    Intel(R) MPI Benchmarks 2018, MPI-1 part    
+#------------------------------------------------------------
+# Date                  : Wed Oct  7 22:19:51 2020
+# Machine               : x86_64
+# System                : Linux
+# Release               : 3.10.0-1062.9.1.el7.x86_64
+# Version               : #1 SMP Fri Dec 6 15:49:49 UTC 2019
+# MPI Version           : 3.1
+# MPI Thread Environment: 
+
+
+# Calling sequence was: 
+
+# src_c/IMB-MPI1 -mem 2 -npmin 256 -input IMB_SELECT_MPI1
+#                -msglen ./msglens
+
+# Message lengths were user defined
+#
+# MPI_Datatype                   :   MPI_BYTE 
+# MPI_Datatype for reductions    :   MPI_FLOAT
+# MPI_Op                         :   MPI_SUM  
+#
+#
+
+# List of Benchmarks to run:
+
+# Alltoall
+
+#----------------------------------------------------------------
+# Benchmarking Alltoall 
+# #processes = 256 
+#----------------------------------------------------------------
+       #bytes #repetitions  t_min[usec]  t_max[usec]  t_avg[usec]
+            0         1000         0.04         0.06         0.04
+        65536          640      9952.35     11451.84     10674.30
+       524288           80     80454.99     94576.81     87727.22
+      1048576           40    158772.01    189829.04    175293.15
+
+
+# All processes entering MPI_Finalize
+
+Running Alltoall on 512 cores, 512 nodes with tasks-per-node 1
+#------------------------------------------------------------
+#    Intel(R) MPI Benchmarks 2018, MPI-1 part    
+#------------------------------------------------------------
+# Date                  : Wed Oct  7 22:20:21 2020
+# Machine               : x86_64
+# System                : Linux
+# Release               : 3.10.0-1062.9.1.el7.x86_64
+# Version               : #1 SMP Fri Dec 6 15:49:49 UTC 2019
+# MPI Version           : 3.1
+# MPI Thread Environment: 
+
+
+# Calling sequence was: 
+
+# src_c/IMB-MPI1 -mem 2 -npmin 512 -input IMB_SELECT_MPI1
+#                -msglen ./msglens
+
+# Message lengths were user defined
+#
+# MPI_Datatype                   :   MPI_BYTE 
+# MPI_Datatype for reductions    :   MPI_FLOAT
+# MPI_Op                         :   MPI_SUM  
+#
+#
+
+# List of Benchmarks to run:
+
+# Alltoall
+
+#----------------------------------------------------------------
+# Benchmarking Alltoall 
+# #processes = 512 
+#----------------------------------------------------------------
+       #bytes #repetitions  t_min[usec]  t_max[usec]  t_avg[usec]
+            0         1000         0.04         0.05         0.04
+        65536          454     17861.02     22051.83     20169.46
+       524288           58    137106.57    170696.90    155724.85
+      1048576           29    265814.95    338961.36    306919.43
+
+
+# All processes entering MPI_Finalize
+
+Running Alltoall on 72 cores, 2 nodes with tasks-per-node 36
+#------------------------------------------------------------
+#    Intel(R) MPI Benchmarks 2018, MPI-1 part    
+#------------------------------------------------------------
+# Date                  : Wed Oct  7 22:21:05 2020
+# Machine               : x86_64
+# System                : Linux
+# Release               : 3.10.0-1062.9.1.el7.x86_64
+# Version               : #1 SMP Fri Dec 6 15:49:49 UTC 2019
+# MPI Version           : 3.1
+# MPI Thread Environment: 
+
+
+# Calling sequence was: 
+
+# src_c/IMB-MPI1 -mem 2 -npmin 72 -input IMB_SELECT_MPI1
+#                -msglen ./msglens
+
+# Message lengths were user defined
+#
+# MPI_Datatype                   :   MPI_BYTE 
+# MPI_Datatype for reductions    :   MPI_FLOAT
+# MPI_Op                         :   MPI_SUM  
+#
+#
+
+# List of Benchmarks to run:
+
+# Alltoall
+
+#----------------------------------------------------------------
+# Benchmarking Alltoall 
+# #processes = 72 
+#----------------------------------------------------------------
+       #bytes #repetitions  t_min[usec]  t_max[usec]  t_avg[usec]
+            0         1000         0.04         0.17         0.10
+        65536          640      7070.50      7334.15      7253.48
+       524288           80     60375.07     60934.26     60762.05
+      1048576           40    120953.41    122129.96    121805.65
+
+
+# All processes entering MPI_Finalize
+
+Running Alltoall on 2304 cores, 64 nodes with tasks-per-node 36
+#------------------------------------------------------------
+#    Intel(R) MPI Benchmarks 2018, MPI-1 part    
+#------------------------------------------------------------
+# Date                  : Wed Oct  7 22:21:26 2020
+# Machine               : x86_64
+# System                : Linux
+# Release               : 3.10.0-1062.9.1.el7.x86_64
+# Version               : #1 SMP Fri Dec 6 15:49:49 UTC 2019
+# MPI Version           : 3.1
+# MPI Thread Environment: 
+
+
+# Calling sequence was: 
+
+# src_c/IMB-MPI1 -mem 2 -npmin 2304 -input IMB_SELECT_MPI1
+#                -msglen ./msglens
+
+# Message lengths were user defined
+#
+# MPI_Datatype                   :   MPI_BYTE 
+# MPI_Datatype for reductions    :   MPI_FLOAT
+# MPI_Op                         :   MPI_SUM  
+#
+#
+
+# List of Benchmarks to run:
+
+# Alltoall
+
+#----------------------------------------------------------------
+# Benchmarking Alltoall 
+# #processes = 2304 
+#----------------------------------------------------------------
+       #bytes #repetitions  t_min[usec]  t_max[usec]  t_avg[usec]
+            0         1000         0.04         0.17         0.10
+        65536            1   1301176.55   1608879.96   1503621.94
+       524288 out-of-mem.; needed X=   2.251 GB; use flag "-mem X" or MAX_MEM_USAGE>=X (IMB_mem_info.h)
+      1048576 out-of-mem.; needed X=   4.501 GB; use flag "-mem X" or MAX_MEM_USAGE>=X (IMB_mem_info.h)
+
+
+# All processes entering MPI_Finalize
+
+Running Alltoall on 4608 cores, 128 nodes with tasks-per-node 36
+#------------------------------------------------------------
+#    Intel(R) MPI Benchmarks 2018, MPI-1 part    
+#------------------------------------------------------------
+# Date                  : Wed Oct  7 22:21:54 2020
+# Machine               : x86_64
+# System                : Linux
+# Release               : 3.10.0-1062.9.1.el7.x86_64
+# Version               : #1 SMP Fri Dec 6 15:49:49 UTC 2019
+# MPI Version           : 3.1
+# MPI Thread Environment: 
+
+
+# Calling sequence was: 
+
+# src_c/IMB-MPI1 -mem 2 -npmin 4608 -input IMB_SELECT_MPI1
+#                -msglen ./msglens
+
+# Message lengths were user defined
+#
+# MPI_Datatype                   :   MPI_BYTE 
+# MPI_Datatype for reductions    :   MPI_FLOAT
+# MPI_Op                         :   MPI_SUM  
+#
+#
+
+# List of Benchmarks to run:
+
+# Alltoall
+
+#----------------------------------------------------------------
+# Benchmarking Alltoall 
+# #processes = 4608 
+#----------------------------------------------------------------
+       #bytes #repetitions  t_min[usec]  t_max[usec]  t_avg[usec]
+            0         1000         0.04         0.18         0.10
+        65536            1   2682264.54   3233649.40   3036061.92
+       524288 out-of-mem.; needed X=   4.501 GB; use flag "-mem X" or MAX_MEM_USAGE>=X (IMB_mem_info.h)
+      1048576 out-of-mem.; needed X=   9.001 GB; use flag "-mem X" or MAX_MEM_USAGE>=X (IMB_mem_info.h)
+
+
+# All processes entering MPI_Finalize
+
+Running Alltoall on 9216 cores, 256 nodes with tasks-per-node 36
+#------------------------------------------------------------
+#    Intel(R) MPI Benchmarks 2018, MPI-1 part    
+#------------------------------------------------------------
+# Date                  : Wed Oct  7 22:22:49 2020
+# Machine               : x86_64
+# System                : Linux
+# Release               : 3.10.0-1062.9.1.el7.x86_64
+# Version               : #1 SMP Fri Dec 6 15:49:49 UTC 2019
+# MPI Version           : 3.1
+# MPI Thread Environment: 
+
+
+# Calling sequence was: 
+
+# src_c/IMB-MPI1 -mem 2 -npmin 9216 -input IMB_SELECT_MPI1
+#                -msglen ./msglens
+
+# Message lengths were user defined
+#
+# MPI_Datatype                   :   MPI_BYTE 
+# MPI_Datatype for reductions    :   MPI_FLOAT
+# MPI_Op                         :   MPI_SUM  
+#
+#
+
+# List of Benchmarks to run:
+
+# Alltoall
+
+#----------------------------------------------------------------
+# Benchmarking Alltoall 
+# #processes = 9216 
+#----------------------------------------------------------------
+       #bytes #repetitions  t_min[usec]  t_max[usec]  t_avg[usec]
+            0         1000         0.04         0.32         0.10
+        65536 time-out.; Time limit (secs_per_sample * msg_sizes_list_len) is over; use "-time X" or SECS_PER_SAMPLE=X (IMB_settings.h) to increase time limit.
+
+
+# All processes entering MPI_Finalize
+
+Running Alltoall on 18432 cores, 512 nodes with tasks-per-node 36
+#------------------------------------------------------------
+#    Intel(R) MPI Benchmarks 2018, MPI-1 part    
+#------------------------------------------------------------
+# Date                  : Wed Oct  7 22:32:29 2020
+# Machine               : x86_64
+# System                : Linux
+# Release               : 3.10.0-1062.9.1.el7.x86_64
+# Version               : #1 SMP Fri Dec 6 15:49:49 UTC 2019
+# MPI Version           : 3.1
+# MPI Thread Environment: 
+
+
+# Calling sequence was: 
+
+# src_c/IMB-MPI1 -mem 2 -npmin 18432 -input IMB_SELECT_MPI1
+#                -msglen ./msglens
+
+# Message lengths were user defined
+#
+# MPI_Datatype                   :   MPI_BYTE 
+# MPI_Datatype for reductions    :   MPI_FLOAT
+# MPI_Op                         :   MPI_SUM  
+#
+#
+
+# List of Benchmarks to run:
+
+# Alltoall
+
+#----------------------------------------------------------------
+# Benchmarking Alltoall 
+# #processes = 18432 
+#----------------------------------------------------------------
+       #bytes #repetitions  t_min[usec]  t_max[usec]  t_avg[usec]
+            0         1000         0.04        37.31         0.10
+        65536 out-of-mem.; needed X=   2.251 GB; use flag "-mem X" or MAX_MEM_USAGE>=X (IMB_mem_info.h)
+       524288 out-of-mem.; needed X=  18.001 GB; use flag "-mem X" or MAX_MEM_USAGE>=X (IMB_mem_info.h)
+      1048576 out-of-mem.; needed X=  36.001 GB; use flag "-mem X" or MAX_MEM_USAGE>=X (IMB_mem_info.h)
+
+
+# All processes entering MPI_Finalize
+
+Running Allgather on 2 cores, 2 nodes with tasks-per-node 1
+#------------------------------------------------------------
+#    Intel(R) MPI Benchmarks 2018, MPI-1 part    
+#------------------------------------------------------------
+# Date                  : Wed Oct  7 22:33:18 2020
+# Machine               : x86_64
+# System                : Linux
+# Release               : 3.10.0-1062.9.1.el7.x86_64
+# Version               : #1 SMP Fri Dec 6 15:49:49 UTC 2019
+# MPI Version           : 3.1
+# MPI Thread Environment: 
+
+
+# Calling sequence was: 
+
+# src_c/IMB-MPI1 -mem 2 -npmin 2 -input IMB_SELECT_MPI1
+#                -msglen ./msglens
+
+# Message lengths were user defined
+#
+# MPI_Datatype                   :   MPI_BYTE 
+# MPI_Datatype for reductions    :   MPI_FLOAT
+# MPI_Op                         :   MPI_SUM  
+#
+#
+
+# List of Benchmarks to run:
+
+# Allgather
+
+#----------------------------------------------------------------
+# Benchmarking Allgather 
+# #processes = 2 
+#----------------------------------------------------------------
+       #bytes #repetitions  t_min[usec]  t_max[usec]  t_avg[usec]
+            0         1000         0.04         0.04         0.04
+        65536          640        17.58        17.67        17.62
+       524288           80       114.32       114.48       114.40
+      1048576           40       250.55       250.85       250.70
+
+
+# All processes entering MPI_Finalize
+
+Running Allgather on 64 cores, 64 nodes with tasks-per-node 1
+#------------------------------------------------------------
+#    Intel(R) MPI Benchmarks 2018, MPI-1 part    
+#------------------------------------------------------------
+# Date                  : Wed Oct  7 22:33:19 2020
+# Machine               : x86_64
+# System                : Linux
+# Release               : 3.10.0-1062.9.1.el7.x86_64
+# Version               : #1 SMP Fri Dec 6 15:49:49 UTC 2019
+# MPI Version           : 3.1
+# MPI Thread Environment: 
+
+
+# Calling sequence was: 
+
+# src_c/IMB-MPI1 -mem 2 -npmin 64 -input IMB_SELECT_MPI1
+#                -msglen ./msglens
+
+# Message lengths were user defined
+#
+# MPI_Datatype                   :   MPI_BYTE 
+# MPI_Datatype for reductions    :   MPI_FLOAT
+# MPI_Op                         :   MPI_SUM  
+#
+#
+
+# List of Benchmarks to run:
+
+# Allgather
+
+#----------------------------------------------------------------
+# Benchmarking Allgather 
+# #processes = 64 
+#----------------------------------------------------------------
+       #bytes #repetitions  t_min[usec]  t_max[usec]  t_avg[usec]
+            0         1000         0.04         0.04         0.04
+        65536          640      1138.00      1265.80      1209.76
+       524288           80      4690.47      5159.36      4988.44
+      1048576           40      8314.67      8979.13      8742.96
+
+
+# All processes entering MPI_Finalize
+
+Running Allgather on 128 cores, 128 nodes with tasks-per-node 1
+#------------------------------------------------------------
+#    Intel(R) MPI Benchmarks 2018, MPI-1 part    
+#------------------------------------------------------------
+# Date                  : Wed Oct  7 22:33:23 2020
+# Machine               : x86_64
+# System                : Linux
+# Release               : 3.10.0-1062.9.1.el7.x86_64
+# Version               : #1 SMP Fri Dec 6 15:49:49 UTC 2019
+# MPI Version           : 3.1
+# MPI Thread Environment: 
+
+
+# Calling sequence was: 
+
+# src_c/IMB-MPI1 -mem 2 -npmin 128 -input IMB_SELECT_MPI1
+#                -msglen ./msglens
+
+# Message lengths were user defined
+#
+# MPI_Datatype                   :   MPI_BYTE 
+# MPI_Datatype for reductions    :   MPI_FLOAT
+# MPI_Op                         :   MPI_SUM  
+#
+#
+
+# List of Benchmarks to run:
+
+# Allgather
+
+#----------------------------------------------------------------
+# Benchmarking Allgather 
+# #processes = 128 
+#----------------------------------------------------------------
+       #bytes #repetitions  t_min[usec]  t_max[usec]  t_avg[usec]
+            0         1000         0.04         0.05         0.04
+        65536          640      2220.24      2591.97      2431.69
+       524288           80      9434.38     10242.45      9903.05
+      1048576           40     16780.40     17917.73     17405.41
+
+
+# All processes entering MPI_Finalize
+
+Running Allgather on 256 cores, 256 nodes with tasks-per-node 1
+#------------------------------------------------------------
+#    Intel(R) MPI Benchmarks 2018, MPI-1 part    
+#------------------------------------------------------------
+# Date                  : Wed Oct  7 22:33:29 2020
+# Machine               : x86_64
+# System                : Linux
+# Release               : 3.10.0-1062.9.1.el7.x86_64
+# Version               : #1 SMP Fri Dec 6 15:49:49 UTC 2019
+# MPI Version           : 3.1
+# MPI Thread Environment: 
+
+
+# Calling sequence was: 
+
+# src_c/IMB-MPI1 -mem 2 -npmin 256 -input IMB_SELECT_MPI1
+#                -msglen ./msglens
+
+# Message lengths were user defined
+#
+# MPI_Datatype                   :   MPI_BYTE 
+# MPI_Datatype for reductions    :   MPI_FLOAT
+# MPI_Op                         :   MPI_SUM  
+#
+#
+
+# List of Benchmarks to run:
+
+# Allgather
+
+#----------------------------------------------------------------
+# Benchmarking Allgather 
+# #processes = 256 
+#----------------------------------------------------------------
+       #bytes #repetitions  t_min[usec]  t_max[usec]  t_avg[usec]
+            0         1000         0.04         0.05         0.04
+        65536          640      4711.24      5311.40      5036.77
+       524288           80     20786.93     25351.44     23527.52
+      1048576           40     36088.65     47366.72     42873.19
+
+
+# All processes entering MPI_Finalize
+
+Running Allgather on 512 cores, 512 nodes with tasks-per-node 1
+#------------------------------------------------------------
+#    Intel(R) MPI Benchmarks 2018, MPI-1 part    
+#------------------------------------------------------------
+# Date                  : Wed Oct  7 22:33:41 2020
+# Machine               : x86_64
+# System                : Linux
+# Release               : 3.10.0-1062.9.1.el7.x86_64
+# Version               : #1 SMP Fri Dec 6 15:49:49 UTC 2019
+# MPI Version           : 3.1
+# MPI Thread Environment: 
+
+
+# Calling sequence was: 
+
+# src_c/IMB-MPI1 -mem 2 -npmin 512 -input IMB_SELECT_MPI1
+#                -msglen ./msglens
+
+# Message lengths were user defined
+#
+# MPI_Datatype                   :   MPI_BYTE 
+# MPI_Datatype for reductions    :   MPI_FLOAT
+# MPI_Op                         :   MPI_SUM  
+#
+#
+
+# List of Benchmarks to run:
+
+# Allgather
+
+#----------------------------------------------------------------
+# Benchmarking Allgather 
+# #processes = 512 
+#----------------------------------------------------------------
+       #bytes #repetitions  t_min[usec]  t_max[usec]  t_avg[usec]
+            0         1000         0.04         0.05         0.04
+        65536          640      9691.82     10799.87     10333.39
+       524288           80     47637.00     51580.24     49626.49
+      1048576           40     86944.62     96523.14     93004.02
+
+
+# All processes entering MPI_Finalize
+
+Running Allgather on 72 cores, 2 nodes with tasks-per-node 36
+#------------------------------------------------------------
+#    Intel(R) MPI Benchmarks 2018, MPI-1 part    
+#------------------------------------------------------------
+# Date                  : Wed Oct  7 22:34:07 2020
+# Machine               : x86_64
+# System                : Linux
+# Release               : 3.10.0-1062.9.1.el7.x86_64
+# Version               : #1 SMP Fri Dec 6 15:49:49 UTC 2019
+# MPI Version           : 3.1
+# MPI Thread Environment: 
+
+
+# Calling sequence was: 
+
+# src_c/IMB-MPI1 -mem 2 -npmin 72 -input IMB_SELECT_MPI1
+#                -msglen ./msglens
+
+# Message lengths were user defined
+#
+# MPI_Datatype                   :   MPI_BYTE 
+# MPI_Datatype for reductions    :   MPI_FLOAT
+# MPI_Op                         :   MPI_SUM  
+#
+#
+
+# List of Benchmarks to run:
+
+# Allgather
+
+#----------------------------------------------------------------
+# Benchmarking Allgather 
+# #processes = 72 
+#----------------------------------------------------------------
+       #bytes #repetitions  t_min[usec]  t_max[usec]  t_avg[usec]
+            0         1000         0.04         0.18         0.10
+        65536          640      5789.65      6759.97      6505.61
+       524288           80     57321.87     61967.79     59517.25
+      1048576           40    125563.15    133497.37    129009.83
+
+
+# All processes entering MPI_Finalize
+
+Running Allgather on 2304 cores, 64 nodes with tasks-per-node 36
+#------------------------------------------------------------
+#    Intel(R) MPI Benchmarks 2018, MPI-1 part    
+#------------------------------------------------------------
+# Date                  : Wed Oct  7 22:34:28 2020
+# Machine               : x86_64
+# System                : Linux
+# Release               : 3.10.0-1062.9.1.el7.x86_64
+# Version               : #1 SMP Fri Dec 6 15:49:49 UTC 2019
+# MPI Version           : 3.1
+# MPI Thread Environment: 
+
+
+# Calling sequence was: 
+
+# src_c/IMB-MPI1 -mem 2 -npmin 2304 -input IMB_SELECT_MPI1
+#                -msglen ./msglens
+
+# Message lengths were user defined
+#
+# MPI_Datatype                   :   MPI_BYTE 
+# MPI_Datatype for reductions    :   MPI_FLOAT
+# MPI_Op                         :   MPI_SUM  
+#
+#
+
+# List of Benchmarks to run:
+
+# Allgather
+
+#----------------------------------------------------------------
+# Benchmarking Allgather 
+# #processes = 2304 
+#----------------------------------------------------------------
+       #bytes #repetitions  t_min[usec]  t_max[usec]  t_avg[usec]
+            0         1000         0.04         0.25         0.10
+        65536           56    162291.11    165804.82    164035.55
+       524288            5   1904870.29   1977387.09   1922200.04
+      1048576 out-of-mem.; needed X=   2.252 GB; use flag "-mem X" or MAX_MEM_USAGE>=X (IMB_mem_info.h)
+
+
+# All processes entering MPI_Finalize
+
+Running Allgather on 4608 cores, 128 nodes with tasks-per-node 36
+#------------------------------------------------------------
+#    Intel(R) MPI Benchmarks 2018, MPI-1 part    
+#------------------------------------------------------------
+# Date                  : Wed Oct  7 22:34:56 2020
+# Machine               : x86_64
+# System                : Linux
+# Release               : 3.10.0-1062.9.1.el7.x86_64
+# Version               : #1 SMP Fri Dec 6 15:49:49 UTC 2019
+# MPI Version           : 3.1
+# MPI Thread Environment: 
+
+
+# Calling sequence was: 
+
+# src_c/IMB-MPI1 -mem 2 -npmin 4608 -input IMB_SELECT_MPI1
+#                -msglen ./msglens
+
+# Message lengths were user defined
+#
+# MPI_Datatype                   :   MPI_BYTE 
+# MPI_Datatype for reductions    :   MPI_FLOAT
+# MPI_Op                         :   MPI_SUM  
+#
+#
+
+# List of Benchmarks to run:
+
+# Allgather
+
+#----------------------------------------------------------------
+# Benchmarking Allgather 
+# #processes = 4608 
+#----------------------------------------------------------------
+       #bytes #repetitions  t_min[usec]  t_max[usec]  t_avg[usec]
+            0         1000         0.04         0.34         0.10
+        65536           27    323257.15    330004.40    327176.98
+       524288 out-of-mem.; needed X=   2.251 GB; use flag "-mem X" or MAX_MEM_USAGE>=X (IMB_mem_info.h)
+      1048576 out-of-mem.; needed X=   4.502 GB; use flag "-mem X" or MAX_MEM_USAGE>=X (IMB_mem_info.h)
+
+
+# All processes entering MPI_Finalize
+
+Running Allgather on 9216 cores, 256 nodes with tasks-per-node 36
+#------------------------------------------------------------
+#    Intel(R) MPI Benchmarks 2018, MPI-1 part    
+#------------------------------------------------------------
+# Date                  : Wed Oct  7 22:35:10 2020
+# Machine               : x86_64
+# System                : Linux
+# Release               : 3.10.0-1062.9.1.el7.x86_64
+# Version               : #1 SMP Fri Dec 6 15:49:49 UTC 2019
+# MPI Version           : 3.1
+# MPI Thread Environment: 
+
+
+# Calling sequence was: 
+
+# src_c/IMB-MPI1 -mem 2 -npmin 9216 -input IMB_SELECT_MPI1
+#                -msglen ./msglens
+
+# Message lengths were user defined
+#
+# MPI_Datatype                   :   MPI_BYTE 
+# MPI_Datatype for reductions    :   MPI_FLOAT
+# MPI_Op                         :   MPI_SUM  
+#
+#
+
+# List of Benchmarks to run:
+
+# Allgather
+
+#----------------------------------------------------------------
+# Benchmarking Allgather 
+# #processes = 9216 
+#----------------------------------------------------------------
+       #bytes #repetitions  t_min[usec]  t_max[usec]  t_avg[usec]
+            0         1000         0.04         0.18         0.10
+        65536            1   7947962.14  15491941.84  11672970.39
+       524288 out-of-mem.; needed X=   4.501 GB; use flag "-mem X" or MAX_MEM_USAGE>=X (IMB_mem_info.h)
+      1048576 out-of-mem.; needed X=   9.002 GB; use flag "-mem X" or MAX_MEM_USAGE>=X (IMB_mem_info.h)
+
+
+# All processes entering MPI_Finalize
+
+Running Allgather on 18432 cores, 512 nodes with tasks-per-node 36
+#------------------------------------------------------------
+#    Intel(R) MPI Benchmarks 2018, MPI-1 part    
+#------------------------------------------------------------
+# Date                  : Wed Oct  7 22:36:24 2020
+# Machine               : x86_64
+# System                : Linux
+# Release               : 3.10.0-1062.9.1.el7.x86_64
+# Version               : #1 SMP Fri Dec 6 15:49:49 UTC 2019
+# MPI Version           : 3.1
+# MPI Thread Environment: 
+
+
+# Calling sequence was: 
+
+# src_c/IMB-MPI1 -mem 2 -npmin 18432 -input IMB_SELECT_MPI1
+#                -msglen ./msglens
+
+# Message lengths were user defined
+#
+# MPI_Datatype                   :   MPI_BYTE 
+# MPI_Datatype for reductions    :   MPI_FLOAT
+# MPI_Op                         :   MPI_SUM  
+#
+#
+
+# List of Benchmarks to run:
+
+# Allgather
+
+#----------------------------------------------------------------
+# Benchmarking Allgather 
+# #processes = 18432 
+#----------------------------------------------------------------
+       #bytes #repetitions  t_min[usec]  t_max[usec]  t_avg[usec]
+            0         1000         0.04         1.53         0.10
+        65536            1  22264750.42  37872340.19  29737912.19
+       524288 out-of-mem.; needed X=   9.001 GB; use flag "-mem X" or MAX_MEM_USAGE>=X (IMB_mem_info.h)
+      1048576 out-of-mem.; needed X=  18.002 GB; use flag "-mem X" or MAX_MEM_USAGE>=X (IMB_mem_info.h)
+
+
+# All processes entering MPI_Finalize
+
+Running Allreduce on 2 cores, 2 nodes with tasks-per-node 1
+#------------------------------------------------------------
+#    Intel(R) MPI Benchmarks 2018, MPI-1 part    
+#------------------------------------------------------------
+# Date                  : Wed Oct  7 22:39:57 2020
+# Machine               : x86_64
+# System                : Linux
+# Release               : 3.10.0-1062.9.1.el7.x86_64
+# Version               : #1 SMP Fri Dec 6 15:49:49 UTC 2019
+# MPI Version           : 3.1
+# MPI Thread Environment: 
+
+
+# Calling sequence was: 
+
+# src_c/IMB-MPI1 -mem 2 -npmin 2 -input IMB_SELECT_MPI1
+#                -msglen ./msglens
+
+# Message lengths were user defined
+#
+# MPI_Datatype                   :   MPI_BYTE 
+# MPI_Datatype for reductions    :   MPI_FLOAT
+# MPI_Op                         :   MPI_SUM  
+#
+#
+
+# List of Benchmarks to run:
+
+# Allreduce
+
+#----------------------------------------------------------------
+# Benchmarking Allreduce 
+# #processes = 2 
+#----------------------------------------------------------------
+       #bytes #repetitions  t_min[usec]  t_max[usec]  t_avg[usec]
+            0         1000         0.04         0.05         0.04
+        65536          640        19.73        36.78        28.25
+       524288           80       140.32       226.97       183.64
+      1048576           40       289.72       442.85       366.29
+
+
+# All processes entering MPI_Finalize
+
+Running Allreduce on 64 cores, 64 nodes with tasks-per-node 1
+#------------------------------------------------------------
+#    Intel(R) MPI Benchmarks 2018, MPI-1 part    
+#------------------------------------------------------------
+# Date                  : Wed Oct  7 22:39:58 2020
+# Machine               : x86_64
+# System                : Linux
+# Release               : 3.10.0-1062.9.1.el7.x86_64
+# Version               : #1 SMP Fri Dec 6 15:49:49 UTC 2019
+# MPI Version           : 3.1
+# MPI Thread Environment: 
+
+
+# Calling sequence was: 
+
+# src_c/IMB-MPI1 -mem 2 -npmin 64 -input IMB_SELECT_MPI1
+#                -msglen ./msglens
+
+# Message lengths were user defined
+#
+# MPI_Datatype                   :   MPI_BYTE 
+# MPI_Datatype for reductions    :   MPI_FLOAT
+# MPI_Op                         :   MPI_SUM  
+#
+#
+
+# List of Benchmarks to run:
+
+# Allreduce
+
+#----------------------------------------------------------------
+# Benchmarking Allreduce 
+# #processes = 64 
+#----------------------------------------------------------------
+       #bytes #repetitions  t_min[usec]  t_max[usec]  t_avg[usec]
+            0         1000         0.04         0.05         0.04
+        65536          640        98.16       106.29       102.68
+       524288           80       549.67       556.90       553.67
+      1048576           40       949.73       973.54       964.32
+
+
+# All processes entering MPI_Finalize
+
+Running Allreduce on 128 cores, 128 nodes with tasks-per-node 1
+#------------------------------------------------------------
+#    Intel(R) MPI Benchmarks 2018, MPI-1 part    
+#------------------------------------------------------------
+# Date                  : Wed Oct  7 22:39:59 2020
+# Machine               : x86_64
+# System                : Linux
+# Release               : 3.10.0-1062.9.1.el7.x86_64
+# Version               : #1 SMP Fri Dec 6 15:49:49 UTC 2019
+# MPI Version           : 3.1
+# MPI Thread Environment: 
+
+
+# Calling sequence was: 
+
+# src_c/IMB-MPI1 -mem 2 -npmin 128 -input IMB_SELECT_MPI1
+#                -msglen ./msglens
+
+# Message lengths were user defined
+#
+# MPI_Datatype                   :   MPI_BYTE 
+# MPI_Datatype for reductions    :   MPI_FLOAT
+# MPI_Op                         :   MPI_SUM  
+#
+#
+
+# List of Benchmarks to run:
+
+# Allreduce
+
+#----------------------------------------------------------------
+# Benchmarking Allreduce 
+# #processes = 128 
+#----------------------------------------------------------------
+       #bytes #repetitions  t_min[usec]  t_max[usec]  t_avg[usec]
+            0         1000         0.04         0.07         0.05
+        65536          640       356.32       523.57       452.90
+       524288           80       492.34       560.42       518.31
+      1048576           40      1117.49      1145.36      1133.95
+
+
+# All processes entering MPI_Finalize
+
+Running Allreduce on 256 cores, 256 nodes with tasks-per-node 1
+#------------------------------------------------------------
+#    Intel(R) MPI Benchmarks 2018, MPI-1 part    
+#------------------------------------------------------------
+# Date                  : Wed Oct  7 22:40:00 2020
+# Machine               : x86_64
+# System                : Linux
+# Release               : 3.10.0-1062.9.1.el7.x86_64
+# Version               : #1 SMP Fri Dec 6 15:49:49 UTC 2019
+# MPI Version           : 3.1
+# MPI Thread Environment: 
+
+
+# Calling sequence was: 
+
+# src_c/IMB-MPI1 -mem 2 -npmin 256 -input IMB_SELECT_MPI1
+#                -msglen ./msglens
+
+# Message lengths were user defined
+#
+# MPI_Datatype                   :   MPI_BYTE 
+# MPI_Datatype for reductions    :   MPI_FLOAT
+# MPI_Op                         :   MPI_SUM  
+#
+#
+
+# List of Benchmarks to run:
+
+# Allreduce
+
+#----------------------------------------------------------------
+# Benchmarking Allreduce 
+# #processes = 256 
+#----------------------------------------------------------------
+       #bytes #repetitions  t_min[usec]  t_max[usec]  t_avg[usec]
+            0         1000         0.04         0.05         0.05
+        65536          640       408.40       603.42       521.38
+       524288           80       615.54       875.38       707.18
+      1048576           40      1086.99      1593.19      1252.42
+
+
+# All processes entering MPI_Finalize
+
+Running Allreduce on 512 cores, 512 nodes with tasks-per-node 1
+#------------------------------------------------------------
+#    Intel(R) MPI Benchmarks 2018, MPI-1 part    
+#------------------------------------------------------------
+# Date                  : Wed Oct  7 22:40:04 2020
+# Machine               : x86_64
+# System                : Linux
+# Release               : 3.10.0-1062.9.1.el7.x86_64
+# Version               : #1 SMP Fri Dec 6 15:49:49 UTC 2019
+# MPI Version           : 3.1
+# MPI Thread Environment: 
+
+
+# Calling sequence was: 
+
+# src_c/IMB-MPI1 -mem 2 -npmin 512 -input IMB_SELECT_MPI1
+#                -msglen ./msglens
+
+# Message lengths were user defined
+#
+# MPI_Datatype                   :   MPI_BYTE 
+# MPI_Datatype for reductions    :   MPI_FLOAT
+# MPI_Op                         :   MPI_SUM  
+#
+#
+
+# List of Benchmarks to run:
+
+# Allreduce
+
+#----------------------------------------------------------------
+# Benchmarking Allreduce 
+# #processes = 512 
+#----------------------------------------------------------------
+       #bytes #repetitions  t_min[usec]  t_max[usec]  t_avg[usec]
+            0         1000         0.04         0.07         0.05
+        65536          640       499.98       705.16       626.91
+       524288           80       872.27      1036.08       928.43
+      1048576           40      1268.27      1599.92      1394.74
+
+
+# All processes entering MPI_Finalize
+
+Running Allreduce on 72 cores, 2 nodes with tasks-per-node 36
+#------------------------------------------------------------
+#    Intel(R) MPI Benchmarks 2018, MPI-1 part    
+#------------------------------------------------------------
+# Date                  : Wed Oct  7 22:40:11 2020
+# Machine               : x86_64
+# System                : Linux
+# Release               : 3.10.0-1062.9.1.el7.x86_64
+# Version               : #1 SMP Fri Dec 6 15:49:49 UTC 2019
+# MPI Version           : 3.1
+# MPI Thread Environment: 
+
+
+# Calling sequence was: 
+
+# src_c/IMB-MPI1 -mem 2 -npmin 72 -input IMB_SELECT_MPI1
+#                -msglen ./msglens
+
+# Message lengths were user defined
+#
+# MPI_Datatype                   :   MPI_BYTE 
+# MPI_Datatype for reductions    :   MPI_FLOAT
+# MPI_Op                         :   MPI_SUM  
+#
+#
+
+# List of Benchmarks to run:
+
+# Allreduce
+
+#----------------------------------------------------------------
+# Benchmarking Allreduce 
+# #processes = 72 
+#----------------------------------------------------------------
+       #bytes #repetitions  t_min[usec]  t_max[usec]  t_avg[usec]
+            0         1000         0.04         0.18         0.10
+        65536          640       209.28       287.07       264.76
+       524288           80       979.18      1387.13      1305.10
+      1048576           40      1990.59      2402.99      2343.05
+
+
+# All processes entering MPI_Finalize
+
+Running Allreduce on 2304 cores, 64 nodes with tasks-per-node 36
+#------------------------------------------------------------
+#    Intel(R) MPI Benchmarks 2018, MPI-1 part    
+#------------------------------------------------------------
+# Date                  : Wed Oct  7 22:40:14 2020
+# Machine               : x86_64
+# System                : Linux
+# Release               : 3.10.0-1062.9.1.el7.x86_64
+# Version               : #1 SMP Fri Dec 6 15:49:49 UTC 2019
+# MPI Version           : 3.1
+# MPI Thread Environment: 
+
+
+# Calling sequence was: 
+
+# src_c/IMB-MPI1 -mem 2 -npmin 2304 -input IMB_SELECT_MPI1
+#                -msglen ./msglens
+
+# Message lengths were user defined
+#
+# MPI_Datatype                   :   MPI_BYTE 
+# MPI_Datatype for reductions    :   MPI_FLOAT
+# MPI_Op                         :   MPI_SUM  
+#
+#
+
+# List of Benchmarks to run:
+
+# Allreduce
+
+#----------------------------------------------------------------
+# Benchmarking Allreduce 
+# #processes = 2304 
+#----------------------------------------------------------------
+       #bytes #repetitions  t_min[usec]  t_max[usec]  t_avg[usec]
+            0         1000         0.04         0.19         0.10
+        65536          640       316.71       381.08       365.85
+       524288           80      1404.25      1728.03      1671.72
+      1048576           40      2776.78      2879.25      2837.31
+
+
+# All processes entering MPI_Finalize
+
+Running Allreduce on 4608 cores, 128 nodes with tasks-per-node 36
+#------------------------------------------------------------
+#    Intel(R) MPI Benchmarks 2018, MPI-1 part    
+#------------------------------------------------------------
+# Date                  : Wed Oct  7 22:40:18 2020
+# Machine               : x86_64
+# System                : Linux
+# Release               : 3.10.0-1062.9.1.el7.x86_64
+# Version               : #1 SMP Fri Dec 6 15:49:49 UTC 2019
+# MPI Version           : 3.1
+# MPI Thread Environment: 
+
+
+# Calling sequence was: 
+
+# src_c/IMB-MPI1 -mem 2 -npmin 4608 -input IMB_SELECT_MPI1
+#                -msglen ./msglens
+
+# Message lengths were user defined
+#
+# MPI_Datatype                   :   MPI_BYTE 
+# MPI_Datatype for reductions    :   MPI_FLOAT
+# MPI_Op                         :   MPI_SUM  
+#
+#
+
+# List of Benchmarks to run:
+
+# Allreduce
+
+#----------------------------------------------------------------
+# Benchmarking Allreduce 
+# #processes = 4608 
+#----------------------------------------------------------------
+       #bytes #repetitions  t_min[usec]  t_max[usec]  t_avg[usec]
+            0         1000         0.04         0.19         0.10
+        65536          640       475.12       706.79       628.98
+       524288           80      1495.55      1919.49      1834.70
+      1048576           40      3048.58      3093.33      3073.80
+
+
+# All processes entering MPI_Finalize
+
+Running Allreduce on 9216 cores, 256 nodes with tasks-per-node 36
+#------------------------------------------------------------
+#    Intel(R) MPI Benchmarks 2018, MPI-1 part    
+#------------------------------------------------------------
+# Date                  : Wed Oct  7 22:40:23 2020
+# Machine               : x86_64
+# System                : Linux
+# Release               : 3.10.0-1062.9.1.el7.x86_64
+# Version               : #1 SMP Fri Dec 6 15:49:49 UTC 2019
+# MPI Version           : 3.1
+# MPI Thread Environment: 
+
+
+# Calling sequence was: 
+
+# src_c/IMB-MPI1 -mem 2 -npmin 9216 -input IMB_SELECT_MPI1
+#                -msglen ./msglens
+
+# Message lengths were user defined
+#
+# MPI_Datatype                   :   MPI_BYTE 
+# MPI_Datatype for reductions    :   MPI_FLOAT
+# MPI_Op                         :   MPI_SUM  
+#
+#
+
+# List of Benchmarks to run:
+
+# Allreduce
+
+#----------------------------------------------------------------
+# Benchmarking Allreduce 
+# #processes = 9216 
+#----------------------------------------------------------------
+       #bytes #repetitions  t_min[usec]  t_max[usec]  t_avg[usec]
+            0         1000         0.04         0.18         0.10
+        65536          640       503.03       764.05       673.48
+       524288           80      1486.30      1972.35      1844.29
+      1048576           40      3066.91      3882.74      3641.23
+
+
+# All processes entering MPI_Finalize
+
+Running Allreduce on 18432 cores, 512 nodes with tasks-per-node 36
+#------------------------------------------------------------
+#    Intel(R) MPI Benchmarks 2018, MPI-1 part    
+#------------------------------------------------------------
+# Date                  : Wed Oct  7 22:40:31 2020
+# Machine               : x86_64
+# System                : Linux
+# Release               : 3.10.0-1062.9.1.el7.x86_64
+# Version               : #1 SMP Fri Dec 6 15:49:49 UTC 2019
+# MPI Version           : 3.1
+# MPI Thread Environment: 
+
+
+# Calling sequence was: 
+
+# src_c/IMB-MPI1 -mem 2 -npmin 18432 -input IMB_SELECT_MPI1
+#                -msglen ./msglens
+
+# Message lengths were user defined
+#
+# MPI_Datatype                   :   MPI_BYTE 
+# MPI_Datatype for reductions    :   MPI_FLOAT
+# MPI_Op                         :   MPI_SUM  
+#
+#
+
+# List of Benchmarks to run:
+
+# Allreduce
+
+#----------------------------------------------------------------
+# Benchmarking Allreduce 
+# #processes = 18432 
+#----------------------------------------------------------------
+       #bytes #repetitions  t_min[usec]  t_max[usec]  t_avg[usec]
+            0         1000         0.04         0.27         0.11
+        65536          220      8866.88     48911.12     30499.34
+       524288           80     15043.64     70414.63     38905.10
+      1048576           40     59663.63    114617.93     67910.67
+
+
+# All processes entering MPI_Finalize
+
+Running Sendrecv on 2 cores, 2 nodes with tasks-per-node 1
+#------------------------------------------------------------
+#    Intel(R) MPI Benchmarks 2018, MPI-1 part    
+#------------------------------------------------------------
+# Date                  : Wed Oct  7 22:41:52 2020
+# Machine               : x86_64
+# System                : Linux
+# Release               : 3.10.0-1062.9.1.el7.x86_64
+# Version               : #1 SMP Fri Dec 6 15:49:49 UTC 2019
+# MPI Version           : 3.1
+# MPI Thread Environment: 
+
+
+# Calling sequence was: 
+
+# src_c/IMB-MPI1 -mem 2 -npmin 2 -input IMB_SELECT_MPI1
+#                -msglen ./msglens
+
+# Message lengths were user defined
+#
+# MPI_Datatype                   :   MPI_BYTE 
+# MPI_Datatype for reductions    :   MPI_FLOAT
+# MPI_Op                         :   MPI_SUM  
+#
+#
+
+# List of Benchmarks to run:
+
+# Sendrecv
+
+#-----------------------------------------------------------------------------
+# Benchmarking Sendrecv 
+# #processes = 2 
+#-----------------------------------------------------------------------------
+       #bytes #repetitions  t_min[usec]  t_max[usec]  t_avg[usec]   Mbytes/sec
+            0         1000         1.16         1.16         1.16         0.00
+        65536          640        13.84        13.84        13.84      9469.11
+       524288           80        61.67        61.69        61.68     16997.49
+      1048576           40       110.82       110.87       110.84     18915.91
+
+
+# All processes entering MPI_Finalize
+
+Running Sendrecv on 64 cores, 64 nodes with tasks-per-node 1
+#------------------------------------------------------------
+#    Intel(R) MPI Benchmarks 2018, MPI-1 part    
+#------------------------------------------------------------
+# Date                  : Wed Oct  7 22:41:52 2020
+# Machine               : x86_64
+# System                : Linux
+# Release               : 3.10.0-1062.9.1.el7.x86_64
+# Version               : #1 SMP Fri Dec 6 15:49:49 UTC 2019
+# MPI Version           : 3.1
+# MPI Thread Environment: 
+
+
+# Calling sequence was: 
+
+# src_c/IMB-MPI1 -mem 2 -npmin 64 -input IMB_SELECT_MPI1
+#                -msglen ./msglens
+
+# Message lengths were user defined
+#
+# MPI_Datatype                   :   MPI_BYTE 
+# MPI_Datatype for reductions    :   MPI_FLOAT
+# MPI_Op                         :   MPI_SUM  
+#
+#
+
+# List of Benchmarks to run:
+
+# Sendrecv
+
+#-----------------------------------------------------------------------------
+# Benchmarking Sendrecv 
+# #processes = 64 
+#-----------------------------------------------------------------------------
+       #bytes #repetitions  t_min[usec]  t_max[usec]  t_avg[usec]   Mbytes/sec
+            0         1000         1.33         1.34         1.34         0.00
+        65536          640        19.47        19.60        19.52      6688.66
+       524288           80        74.44        76.11        75.12     13776.63
+      1048576           40       130.43       147.35       140.37     14232.92
+
+
+# All processes entering MPI_Finalize
+
+Running Sendrecv on 128 cores, 128 nodes with tasks-per-node 1
+#------------------------------------------------------------
+#    Intel(R) MPI Benchmarks 2018, MPI-1 part    
+#------------------------------------------------------------
+# Date                  : Wed Oct  7 22:41:53 2020
+# Machine               : x86_64
+# System                : Linux
+# Release               : 3.10.0-1062.9.1.el7.x86_64
+# Version               : #1 SMP Fri Dec 6 15:49:49 UTC 2019
+# MPI Version           : 3.1
+# MPI Thread Environment: 
+
+
+# Calling sequence was: 
+
+# src_c/IMB-MPI1 -mem 2 -npmin 128 -input IMB_SELECT_MPI1
+#                -msglen ./msglens
+
+# Message lengths were user defined
+#
+# MPI_Datatype                   :   MPI_BYTE 
+# MPI_Datatype for reductions    :   MPI_FLOAT
+# MPI_Op                         :   MPI_SUM  
+#
+#
+
+# List of Benchmarks to run:
+
+# Sendrecv
+
+#-----------------------------------------------------------------------------
+# Benchmarking Sendrecv 
+# #processes = 128 
+#-----------------------------------------------------------------------------
+       #bytes #repetitions  t_min[usec]  t_max[usec]  t_avg[usec]   Mbytes/sec
+            0         1000         1.30         1.32         1.32         0.00
+        65536          640        17.95        19.73        19.20      6643.10
+       524288           80        69.60        73.97        72.05     14176.29
+      1048576           40       116.77       129.98       125.45     16135.04
+
+
+# All processes entering MPI_Finalize
+
+Running Sendrecv on 256 cores, 256 nodes with tasks-per-node 1
+#------------------------------------------------------------
+#    Intel(R) MPI Benchmarks 2018, MPI-1 part    
+#------------------------------------------------------------
+# Date                  : Wed Oct  7 22:41:54 2020
+# Machine               : x86_64
+# System                : Linux
+# Release               : 3.10.0-1062.9.1.el7.x86_64
+# Version               : #1 SMP Fri Dec 6 15:49:49 UTC 2019
+# MPI Version           : 3.1
+# MPI Thread Environment: 
+
+
+# Calling sequence was: 
+
+# src_c/IMB-MPI1 -mem 2 -npmin 256 -input IMB_SELECT_MPI1
+#                -msglen ./msglens
+
+# Message lengths were user defined
+#
+# MPI_Datatype                   :   MPI_BYTE 
+# MPI_Datatype for reductions    :   MPI_FLOAT
+# MPI_Op                         :   MPI_SUM  
+#
+#
+
+# List of Benchmarks to run:
+
+# Sendrecv
+
+#-----------------------------------------------------------------------------
+# Benchmarking Sendrecv 
+# #processes = 256 
+#-----------------------------------------------------------------------------
+       #bytes #repetitions  t_min[usec]  t_max[usec]  t_avg[usec]   Mbytes/sec
+            0         1000         1.28         1.31         1.30         0.00
+        65536          640        23.24        25.30        24.33      5180.12
+       524288           80        66.89        95.92        83.61     10932.18
+      1048576           40       117.45       188.41       152.66     11130.84
+
+
+# All processes entering MPI_Finalize
+
+Running Sendrecv on 512 cores, 512 nodes with tasks-per-node 1
+#------------------------------------------------------------
+#    Intel(R) MPI Benchmarks 2018, MPI-1 part    
+#------------------------------------------------------------
+# Date                  : Wed Oct  7 22:41:55 2020
+# Machine               : x86_64
+# System                : Linux
+# Release               : 3.10.0-1062.9.1.el7.x86_64
+# Version               : #1 SMP Fri Dec 6 15:49:49 UTC 2019
+# MPI Version           : 3.1
+# MPI Thread Environment: 
+
+
+# Calling sequence was: 
+
+# src_c/IMB-MPI1 -mem 2 -npmin 512 -input IMB_SELECT_MPI1
+#                -msglen ./msglens
+
+# Message lengths were user defined
+#
+# MPI_Datatype                   :   MPI_BYTE 
+# MPI_Datatype for reductions    :   MPI_FLOAT
+# MPI_Op                         :   MPI_SUM  
+#
+#
+
+# List of Benchmarks to run:
+
+# Sendrecv
+
+#-----------------------------------------------------------------------------
+# Benchmarking Sendrecv 
+# #processes = 512 
+#-----------------------------------------------------------------------------
+       #bytes #repetitions  t_min[usec]  t_max[usec]  t_avg[usec]   Mbytes/sec
+            0         1000         1.28         1.34         1.29         0.00
+        65536          640        18.72        19.57        19.24      6698.34
+       524288           80        84.45       116.36        96.04      9011.61
+      1048576           40       117.06       186.65       161.41     11235.74
+
+
+# All processes entering MPI_Finalize
+
+Running Sendrecv on 72 cores, 2 nodes with tasks-per-node 36
+#------------------------------------------------------------
+#    Intel(R) MPI Benchmarks 2018, MPI-1 part    
+#------------------------------------------------------------
+# Date                  : Wed Oct  7 22:42:01 2020
+# Machine               : x86_64
+# System                : Linux
+# Release               : 3.10.0-1062.9.1.el7.x86_64
+# Version               : #1 SMP Fri Dec 6 15:49:49 UTC 2019
+# MPI Version           : 3.1
+# MPI Thread Environment: 
+
+
+# Calling sequence was: 
+
+# src_c/IMB-MPI1 -mem 2 -npmin 72 -input IMB_SELECT_MPI1
+#                -msglen ./msglens
+
+# Message lengths were user defined
+#
+# MPI_Datatype                   :   MPI_BYTE 
+# MPI_Datatype for reductions    :   MPI_FLOAT
+# MPI_Op                         :   MPI_SUM  
+#
+#
+
+# List of Benchmarks to run:
+
+# Sendrecv
+
+#-----------------------------------------------------------------------------
+# Benchmarking Sendrecv 
+# #processes = 72 
+#-----------------------------------------------------------------------------
+       #bytes #repetitions  t_min[usec]  t_max[usec]  t_avg[usec]   Mbytes/sec
+            0         1000         0.81         0.82         0.82         0.00
+        65536          640        73.69        74.55        74.17      1758.10
+       524288           80       618.18       665.20       649.56      1576.32
+      1048576           40      1447.83      1494.51      1472.56      1403.24
+
+
+# All processes entering MPI_Finalize
+
+Running Sendrecv on 2304 cores, 64 nodes with tasks-per-node 36
+#------------------------------------------------------------
+#    Intel(R) MPI Benchmarks 2018, MPI-1 part    
+#------------------------------------------------------------
+# Date                  : Wed Oct  7 22:42:03 2020
+# Machine               : x86_64
+# System                : Linux
+# Release               : 3.10.0-1062.9.1.el7.x86_64
+# Version               : #1 SMP Fri Dec 6 15:49:49 UTC 2019
+# MPI Version           : 3.1
+# MPI Thread Environment: 
+
+
+# Calling sequence was: 
+
+# src_c/IMB-MPI1 -mem 2 -npmin 2304 -input IMB_SELECT_MPI1
+#                -msglen ./msglens
+
+# Message lengths were user defined
+#
+# MPI_Datatype                   :   MPI_BYTE 
+# MPI_Datatype for reductions    :   MPI_FLOAT
+# MPI_Op                         :   MPI_SUM  
+#
+#
+
+# List of Benchmarks to run:
+
+# Sendrecv
+
+#-----------------------------------------------------------------------------
+# Benchmarking Sendrecv 
+# #processes = 2304 
+#-----------------------------------------------------------------------------
+       #bytes #repetitions  t_min[usec]  t_max[usec]  t_avg[usec]   Mbytes/sec
+            0         1000         0.78         0.91         0.85         0.00
+        65536          640        71.94        76.37        73.89      1716.19
+       524288           80       622.83       670.06       652.17      1564.91
+      1048576           40      1436.32      1517.88      1483.97      1381.63
+
+
+# All processes entering MPI_Finalize
+
+Running Sendrecv on 4608 cores, 128 nodes with tasks-per-node 36
+#------------------------------------------------------------
+#    Intel(R) MPI Benchmarks 2018, MPI-1 part    
+#------------------------------------------------------------
+# Date                  : Wed Oct  7 22:42:07 2020
+# Machine               : x86_64
+# System                : Linux
+# Release               : 3.10.0-1062.9.1.el7.x86_64
+# Version               : #1 SMP Fri Dec 6 15:49:49 UTC 2019
+# MPI Version           : 3.1
+# MPI Thread Environment: 
+
+
+# Calling sequence was: 
+
+# src_c/IMB-MPI1 -mem 2 -npmin 4608 -input IMB_SELECT_MPI1
+#                -msglen ./msglens
+
+# Message lengths were user defined
+#
+# MPI_Datatype                   :   MPI_BYTE 
+# MPI_Datatype for reductions    :   MPI_FLOAT
+# MPI_Op                         :   MPI_SUM  
+#
+#
+
+# List of Benchmarks to run:
+
+# Sendrecv
+
+#-----------------------------------------------------------------------------
+# Benchmarking Sendrecv 
+# #processes = 4608 
+#-----------------------------------------------------------------------------
+       #bytes #repetitions  t_min[usec]  t_max[usec]  t_avg[usec]   Mbytes/sec
+            0         1000         0.72         0.91         0.82         0.00
+        65536          640        71.73        76.36        73.98      1716.43
+       524288           80       615.91       675.64       653.39      1551.97
+      1048576           40      1436.29      1524.66      1482.55      1375.49
+
+
+# All processes entering MPI_Finalize
+
+Running Sendrecv on 9216 cores, 256 nodes with tasks-per-node 36
+#------------------------------------------------------------
+#    Intel(R) MPI Benchmarks 2018, MPI-1 part    
+#------------------------------------------------------------
+# Date                  : Wed Oct  7 22:42:11 2020
+# Machine               : x86_64
+# System                : Linux
+# Release               : 3.10.0-1062.9.1.el7.x86_64
+# Version               : #1 SMP Fri Dec 6 15:49:49 UTC 2019
+# MPI Version           : 3.1
+# MPI Thread Environment: 
+
+
+# Calling sequence was: 
+
+# src_c/IMB-MPI1 -mem 2 -npmin 9216 -input IMB_SELECT_MPI1
+#                -msglen ./msglens
+
+# Message lengths were user defined
+#
+# MPI_Datatype                   :   MPI_BYTE 
+# MPI_Datatype for reductions    :   MPI_FLOAT
+# MPI_Op                         :   MPI_SUM  
+#
+#
+
+# List of Benchmarks to run:
+
+# Sendrecv
+
+#-----------------------------------------------------------------------------
+# Benchmarking Sendrecv 
+# #processes = 9216 
+#-----------------------------------------------------------------------------
+       #bytes #repetitions  t_min[usec]  t_max[usec]  t_avg[usec]   Mbytes/sec
+            0         1000         0.76        24.83         1.70         0.00
+        65536          640        71.10      1234.85       118.07       106.14
+       524288           80       570.50      7054.07       691.87       148.65
+      1048576           40      1430.49     17882.18      1552.29       117.28
+
+
+# All processes entering MPI_Finalize
+
+Running Sendrecv on 18432 cores, 512 nodes with tasks-per-node 36
+#------------------------------------------------------------
+#    Intel(R) MPI Benchmarks 2018, MPI-1 part    
+#------------------------------------------------------------
+# Date                  : Wed Oct  7 22:42:21 2020
+# Machine               : x86_64
+# System                : Linux
+# Release               : 3.10.0-1062.9.1.el7.x86_64
+# Version               : #1 SMP Fri Dec 6 15:49:49 UTC 2019
+# MPI Version           : 3.1
+# MPI Thread Environment: 
+
+
+# Calling sequence was: 
+
+# src_c/IMB-MPI1 -mem 2 -npmin 18432 -input IMB_SELECT_MPI1
+#                -msglen ./msglens
+
+# Message lengths were user defined
+#
+# MPI_Datatype                   :   MPI_BYTE 
+# MPI_Datatype for reductions    :   MPI_FLOAT
+# MPI_Op                         :   MPI_SUM  
+#
+#
+
+# List of Benchmarks to run:
+
+# Sendrecv
+
+#-----------------------------------------------------------------------------
+# Benchmarking Sendrecv 
+# #processes = 18432 
+#-----------------------------------------------------------------------------
+       #bytes #repetitions  t_min[usec]  t_max[usec]  t_avg[usec]   Mbytes/sec
+            0         1000         0.12        52.13         6.54         0.00
+        65536          640        54.64      1448.30       201.34        90.50
+       524288           80       478.64      9644.52       792.75       108.72
+      1048576           40      1053.52     22550.45      1743.81        93.00
+
+
+# All processes entering MPI_Finalize
+
+Running Exchange on 2 cores, 2 nodes with tasks-per-node 1
+#------------------------------------------------------------
+#    Intel(R) MPI Benchmarks 2018, MPI-1 part    
+#------------------------------------------------------------
+# Date                  : Wed Oct  7 22:42:35 2020
+# Machine               : x86_64
+# System                : Linux
+# Release               : 3.10.0-1062.9.1.el7.x86_64
+# Version               : #1 SMP Fri Dec 6 15:49:49 UTC 2019
+# MPI Version           : 3.1
+# MPI Thread Environment: 
+
+
+# Calling sequence was: 
+
+# src_c/IMB-MPI1 -mem 2 -npmin 2 -input IMB_SELECT_MPI1
+#                -msglen ./msglens
+
+# Message lengths were user defined
+#
+# MPI_Datatype                   :   MPI_BYTE 
+# MPI_Datatype for reductions    :   MPI_FLOAT
+# MPI_Op                         :   MPI_SUM  
+#
+#
+
+# List of Benchmarks to run:
+
+# Exchange
+
+#-----------------------------------------------------------------------------
+# Benchmarking Exchange 
+# #processes = 2 
+#-----------------------------------------------------------------------------
+       #bytes #repetitions  t_min[usec]  t_max[usec]  t_avg[usec]   Mbytes/sec
+            0         1000         1.41         1.41         1.41         0.00
+        65536          640        25.42        25.42        25.42     10313.11
+       524288           80       121.13       121.13       121.13     17313.08
+      1048576           40       220.28       220.28       220.28     19040.88
+
+
+# All processes entering MPI_Finalize
+
+Running Exchange on 64 cores, 64 nodes with tasks-per-node 1
+#------------------------------------------------------------
+#    Intel(R) MPI Benchmarks 2018, MPI-1 part    
+#------------------------------------------------------------
+# Date                  : Wed Oct  7 22:42:35 2020
+# Machine               : x86_64
+# System                : Linux
+# Release               : 3.10.0-1062.9.1.el7.x86_64
+# Version               : #1 SMP Fri Dec 6 15:49:49 UTC 2019
+# MPI Version           : 3.1
+# MPI Thread Environment: 
+
+
+# Calling sequence was: 
+
+# src_c/IMB-MPI1 -mem 2 -npmin 64 -input IMB_SELECT_MPI1
+#                -msglen ./msglens
+
+# Message lengths were user defined
+#
+# MPI_Datatype                   :   MPI_BYTE 
+# MPI_Datatype for reductions    :   MPI_FLOAT
+# MPI_Op                         :   MPI_SUM  
+#
+#
+
+# List of Benchmarks to run:
+
+# Exchange
+
+#-----------------------------------------------------------------------------
+# Benchmarking Exchange 
+# #processes = 64 
+#-----------------------------------------------------------------------------
+       #bytes #repetitions  t_min[usec]  t_max[usec]  t_avg[usec]   Mbytes/sec
+            0         1000         2.15         2.17         2.16         0.00
+        65536          640        32.66        33.00        32.81      7943.42
+       524288           80       154.51       162.59       158.36     12898.73
+      1048576           40       278.02       312.68       297.23     13414.18
+
+
+# All processes entering MPI_Finalize
+
+Running Exchange on 128 cores, 128 nodes with tasks-per-node 1
+#------------------------------------------------------------
+#    Intel(R) MPI Benchmarks 2018, MPI-1 part    
+#------------------------------------------------------------
+# Date                  : Wed Oct  7 22:42:36 2020
+# Machine               : x86_64
+# System                : Linux
+# Release               : 3.10.0-1062.9.1.el7.x86_64
+# Version               : #1 SMP Fri Dec 6 15:49:49 UTC 2019
+# MPI Version           : 3.1
+# MPI Thread Environment: 
+
+
+# Calling sequence was: 
+
+# src_c/IMB-MPI1 -mem 2 -npmin 128 -input IMB_SELECT_MPI1
+#                -msglen ./msglens
+
+# Message lengths were user defined
+#
+# MPI_Datatype                   :   MPI_BYTE 
+# MPI_Datatype for reductions    :   MPI_FLOAT
+# MPI_Op                         :   MPI_SUM  
+#
+#
+
+# List of Benchmarks to run:
+
+# Exchange
+
+#-----------------------------------------------------------------------------
+# Benchmarking Exchange 
+# #processes = 128 
+#-----------------------------------------------------------------------------
+       #bytes #repetitions  t_min[usec]  t_max[usec]  t_avg[usec]   Mbytes/sec
+            0         1000         2.64         2.70         2.68         0.00
+        65536          640        37.97        38.34        38.21      6837.68
+       524288           80       166.94       214.10       195.01      9795.39
+      1048576           40       272.52       371.41       327.61     11292.91
+
+
+# All processes entering MPI_Finalize
+
+Running Exchange on 256 cores, 256 nodes with tasks-per-node 1
+#------------------------------------------------------------
+#    Intel(R) MPI Benchmarks 2018, MPI-1 part    
+#------------------------------------------------------------
+# Date                  : Wed Oct  7 22:42:37 2020
+# Machine               : x86_64
+# System                : Linux
+# Release               : 3.10.0-1062.9.1.el7.x86_64
+# Version               : #1 SMP Fri Dec 6 15:49:49 UTC 2019
+# MPI Version           : 3.1
+# MPI Thread Environment: 
+
+
+# Calling sequence was: 
+
+# src_c/IMB-MPI1 -mem 2 -npmin 256 -input IMB_SELECT_MPI1
+#                -msglen ./msglens
+
+# Message lengths were user defined
+#
+# MPI_Datatype                   :   MPI_BYTE 
+# MPI_Datatype for reductions    :   MPI_FLOAT
+# MPI_Op                         :   MPI_SUM  
+#
+#
+
+# List of Benchmarks to run:
+
+# Exchange
+
+#-----------------------------------------------------------------------------
+# Benchmarking Exchange 
+# #processes = 256 
+#-----------------------------------------------------------------------------
+       #bytes #repetitions  t_min[usec]  t_max[usec]  t_avg[usec]   Mbytes/sec
+            0         1000         2.06         2.20         2.12         0.00
+        65536          640        34.34        36.36        35.13      7208.84
+       524288           80       156.22       184.50       171.22     11366.39
+      1048576           40       261.02       383.89       305.53     10925.83
+
+
+# All processes entering MPI_Finalize
+
+Running Exchange on 512 cores, 512 nodes with tasks-per-node 1
+#------------------------------------------------------------
+#    Intel(R) MPI Benchmarks 2018, MPI-1 part    
+#------------------------------------------------------------
+# Date                  : Wed Oct  7 22:42:38 2020
+# Machine               : x86_64
+# System                : Linux
+# Release               : 3.10.0-1062.9.1.el7.x86_64
+# Version               : #1 SMP Fri Dec 6 15:49:49 UTC 2019
+# MPI Version           : 3.1
+# MPI Thread Environment: 
+
+
+# Calling sequence was: 
+
+# src_c/IMB-MPI1 -mem 2 -npmin 512 -input IMB_SELECT_MPI1
+#                -msglen ./msglens
+
+# Message lengths were user defined
+#
+# MPI_Datatype                   :   MPI_BYTE 
+# MPI_Datatype for reductions    :   MPI_FLOAT
+# MPI_Op                         :   MPI_SUM  
+#
+#
+
+# List of Benchmarks to run:
+
+# Exchange
+
+#-----------------------------------------------------------------------------
+# Benchmarking Exchange 
+# #processes = 512 
+#-----------------------------------------------------------------------------
+       #bytes #repetitions  t_min[usec]  t_max[usec]  t_avg[usec]   Mbytes/sec
+            0         1000         2.07         2.21         2.13         0.00
+        65536          640        38.36        40.31        39.42      6503.04
+       524288           80       162.26       200.16       180.67     10477.18
+      1048576           40       267.68       375.88       324.98     11158.64
+
+
+# All processes entering MPI_Finalize
+
+Running Exchange on 72 cores, 2 nodes with tasks-per-node 36
+#------------------------------------------------------------
+#    Intel(R) MPI Benchmarks 2018, MPI-1 part    
+#------------------------------------------------------------
+# Date                  : Wed Oct  7 22:42:44 2020
+# Machine               : x86_64
+# System                : Linux
+# Release               : 3.10.0-1062.9.1.el7.x86_64
+# Version               : #1 SMP Fri Dec 6 15:49:49 UTC 2019
+# MPI Version           : 3.1
+# MPI Thread Environment: 
+
+
+# Calling sequence was: 
+
+# src_c/IMB-MPI1 -mem 2 -npmin 72 -input IMB_SELECT_MPI1
+#                -msglen ./msglens
+
+# Message lengths were user defined
+#
+# MPI_Datatype                   :   MPI_BYTE 
+# MPI_Datatype for reductions    :   MPI_FLOAT
+# MPI_Op                         :   MPI_SUM  
+#
+#
+
+# List of Benchmarks to run:
+
+# Exchange
+
+#-----------------------------------------------------------------------------
+# Benchmarking Exchange 
+# #processes = 72 
+#-----------------------------------------------------------------------------
+       #bytes #repetitions  t_min[usec]  t_max[usec]  t_avg[usec]   Mbytes/sec
+            0         1000         1.52         1.54         1.53         0.00
+        65536          640       141.12       141.73       141.51      1849.57
+       524288           80      1409.64      1468.87      1444.23      1427.74
+      1048576           40      3253.80      3347.39      3296.22      1253.01
+
+
+# All processes entering MPI_Finalize
+
+Running Exchange on 2304 cores, 64 nodes with tasks-per-node 36
+#------------------------------------------------------------
+#    Intel(R) MPI Benchmarks 2018, MPI-1 part    
+#------------------------------------------------------------
+# Date                  : Wed Oct  7 22:42:46 2020
+# Machine               : x86_64
+# System                : Linux
+# Release               : 3.10.0-1062.9.1.el7.x86_64
+# Version               : #1 SMP Fri Dec 6 15:49:49 UTC 2019
+# MPI Version           : 3.1
+# MPI Thread Environment: 
+
+
+# Calling sequence was: 
+
+# src_c/IMB-MPI1 -mem 2 -npmin 2304 -input IMB_SELECT_MPI1
+#                -msglen ./msglens
+
+# Message lengths were user defined
+#
+# MPI_Datatype                   :   MPI_BYTE 
+# MPI_Datatype for reductions    :   MPI_FLOAT
+# MPI_Op                         :   MPI_SUM  
+#
+#
+
+# List of Benchmarks to run:
+
+# Exchange
+
+#-----------------------------------------------------------------------------
+# Benchmarking Exchange 
+# #processes = 2304 
+#-----------------------------------------------------------------------------
+       #bytes #repetitions  t_min[usec]  t_max[usec]  t_avg[usec]   Mbytes/sec
+            0         1000         1.61         2.11         1.85         0.00
+        65536          640       139.95       145.72       142.10      1798.99
+       524288           80      1407.55      1492.25      1444.38      1405.37
+      1048576           40      3204.04      3410.43      3316.68      1229.84
+
+
+# All processes entering MPI_Finalize
+
+Running Exchange on 4608 cores, 128 nodes with tasks-per-node 36
+#------------------------------------------------------------
+#    Intel(R) MPI Benchmarks 2018, MPI-1 part    
+#------------------------------------------------------------
+# Date                  : Wed Oct  7 22:42:51 2020
+# Machine               : x86_64
+# System                : Linux
+# Release               : 3.10.0-1062.9.1.el7.x86_64
+# Version               : #1 SMP Fri Dec 6 15:49:49 UTC 2019
+# MPI Version           : 3.1
+# MPI Thread Environment: 
+
+
+# Calling sequence was: 
+
+# src_c/IMB-MPI1 -mem 2 -npmin 4608 -input IMB_SELECT_MPI1
+#                -msglen ./msglens
+
+# Message lengths were user defined
+#
+# MPI_Datatype                   :   MPI_BYTE 
+# MPI_Datatype for reductions    :   MPI_FLOAT
+# MPI_Op                         :   MPI_SUM  
+#
+#
+
+# List of Benchmarks to run:
+
+# Exchange
+
+#-----------------------------------------------------------------------------
+# Benchmarking Exchange 
+# #processes = 4608 
+#-----------------------------------------------------------------------------
+       #bytes #repetitions  t_min[usec]  t_max[usec]  t_avg[usec]   Mbytes/sec
+            0         1000         1.61         2.14         1.83         0.00
+        65536          640       139.52       146.75       142.12      1786.37
+       524288           80      1408.47      1493.65      1450.50      1404.04
+      1048576           40      3196.88      3423.86      3321.56      1225.02
+
+
+# All processes entering MPI_Finalize
+
+Running Exchange on 9216 cores, 256 nodes with tasks-per-node 36
+#------------------------------------------------------------
+#    Intel(R) MPI Benchmarks 2018, MPI-1 part    
+#------------------------------------------------------------
+# Date                  : Wed Oct  7 22:42:56 2020
+# Machine               : x86_64
+# System                : Linux
+# Release               : 3.10.0-1062.9.1.el7.x86_64
+# Version               : #1 SMP Fri Dec 6 15:49:49 UTC 2019
+# MPI Version           : 3.1
+# MPI Thread Environment: 
+
+
+# Calling sequence was: 
+
+# src_c/IMB-MPI1 -mem 2 -npmin 9216 -input IMB_SELECT_MPI1
+#                -msglen ./msglens
+
+# Message lengths were user defined
+#
+# MPI_Datatype                   :   MPI_BYTE 
+# MPI_Datatype for reductions    :   MPI_FLOAT
+# MPI_Op                         :   MPI_SUM  
+#
+#
+
+# List of Benchmarks to run:
+
+# Exchange
+
+#-----------------------------------------------------------------------------
+# Benchmarking Exchange 
+# #processes = 9216 
+#-----------------------------------------------------------------------------
+       #bytes #repetitions  t_min[usec]  t_max[usec]  t_avg[usec]   Mbytes/sec
+            0         1000         1.60        30.61         5.45         0.00
+        65536          640       139.82      2938.44       333.15        89.21
+       524288           80      1316.21     21665.75      1624.91        96.80
+      1048576           40      2846.18     46185.71      3598.60        90.81
+
+
+# All processes entering MPI_Finalize
+
+Running Exchange on 18432 cores, 512 nodes with tasks-per-node 36
+#------------------------------------------------------------
+#    Intel(R) MPI Benchmarks 2018, MPI-1 part    
+#------------------------------------------------------------
+# Date                  : Wed Oct  7 22:43:12 2020
+# Machine               : x86_64
+# System                : Linux
+# Release               : 3.10.0-1062.9.1.el7.x86_64
+# Version               : #1 SMP Fri Dec 6 15:49:49 UTC 2019
+# MPI Version           : 3.1
+# MPI Thread Environment: 
+
+
+# Calling sequence was: 
+
+# src_c/IMB-MPI1 -mem 2 -npmin 18432 -input IMB_SELECT_MPI1
+#                -msglen ./msglens
+
+# Message lengths were user defined
+#
+# MPI_Datatype                   :   MPI_BYTE 
+# MPI_Datatype for reductions    :   MPI_FLOAT
+# MPI_Op                         :   MPI_SUM  
+#
+#
+
+# List of Benchmarks to run:
+
+# Exchange
+
+#-----------------------------------------------------------------------------
+# Benchmarking Exchange 
+# #processes = 18432 
+#-----------------------------------------------------------------------------
+       #bytes #repetitions  t_min[usec]  t_max[usec]  t_avg[usec]   Mbytes/sec
+            0         1000         1.60        92.32        26.54         0.00
+        65536          640       117.78      2928.48       756.92        89.52
+       524288           80      1070.95     21664.15      2164.28        96.80
+      1048576           40      2197.78     46999.82      4502.29        89.24
+
+
+# All processes entering MPI_Finalize
+
+Running Uniband on 2 cores, 2 nodes with tasks-per-node 1
+#------------------------------------------------------------
+#    Intel(R) MPI Benchmarks 2018, MPI-1 part    
+#------------------------------------------------------------
+# Date                  : Wed Oct  7 22:43:38 2020
+# Machine               : x86_64
+# System                : Linux
+# Release               : 3.10.0-1062.9.1.el7.x86_64
+# Version               : #1 SMP Fri Dec 6 15:49:49 UTC 2019
+# MPI Version           : 3.1
+# MPI Thread Environment: 
+
+
+# Calling sequence was: 
+
+# src_c/IMB-MPI1 -mem 2 -npmin 2 -input IMB_SELECT_MPI1
+#                -msglen ./msglens
+
+# Message lengths were user defined
+#
+# MPI_Datatype                   :   MPI_BYTE 
+# MPI_Datatype for reductions    :   MPI_FLOAT
+# MPI_Op                         :   MPI_SUM  
+#
+#
+
+# List of Benchmarks to run:
+
+# Uniband
+
+#---------------------------------------------------
+# Benchmarking Uniband 
+# #processes = 2 
+#---------------------------------------------------
+       #bytes #repetitions   Mbytes/sec      Msg/sec
+            0         1000         0.00      3498639
+        65536          640     10857.08       165666
+       524288           80     11276.50        21508
+      1048576           40     11309.85        10786
+
+
+# All processes entering MPI_Finalize
+
+Running Uniband on 64 cores, 64 nodes with tasks-per-node 1
+#------------------------------------------------------------
+#    Intel(R) MPI Benchmarks 2018, MPI-1 part    
+#------------------------------------------------------------
+# Date                  : Wed Oct  7 22:43:40 2020
+# Machine               : x86_64
+# System                : Linux
+# Release               : 3.10.0-1062.9.1.el7.x86_64
+# Version               : #1 SMP Fri Dec 6 15:49:49 UTC 2019
+# MPI Version           : 3.1
+# MPI Thread Environment: 
+
+
+# Calling sequence was: 
+
+# src_c/IMB-MPI1 -mem 2 -npmin 64 -input IMB_SELECT_MPI1
+#                -msglen ./msglens
+
+# Message lengths were user defined
+#
+# MPI_Datatype                   :   MPI_BYTE 
+# MPI_Datatype for reductions    :   MPI_FLOAT
+# MPI_Op                         :   MPI_SUM  
+#
+#
+
+# List of Benchmarks to run:
+
+# Uniband
+
+#---------------------------------------------------
+# Benchmarking Uniband 
+# #processes = 64 
+#---------------------------------------------------
+       #bytes #repetitions   Mbytes/sec      Msg/sec
+            0         1000         0.00    104784878
+        65536          640     76934.28      1173924
+       524288           80     77746.13       148289
+      1048576           40     77596.68        74002
+
+
+# All processes entering MPI_Finalize
+
+Running Uniband on 128 cores, 128 nodes with tasks-per-node 1
+#------------------------------------------------------------
+#    Intel(R) MPI Benchmarks 2018, MPI-1 part    
+#------------------------------------------------------------
+# Date                  : Wed Oct  7 22:43:50 2020
+# Machine               : x86_64
+# System                : Linux
+# Release               : 3.10.0-1062.9.1.el7.x86_64
+# Version               : #1 SMP Fri Dec 6 15:49:49 UTC 2019
+# MPI Version           : 3.1
+# MPI Thread Environment: 
+
+
+# Calling sequence was: 
+
+# src_c/IMB-MPI1 -mem 2 -npmin 128 -input IMB_SELECT_MPI1
+#                -msglen ./msglens
+
+# Message lengths were user defined
+#
+# MPI_Datatype                   :   MPI_BYTE 
+# MPI_Datatype for reductions    :   MPI_FLOAT
+# MPI_Op                         :   MPI_SUM  
+#
+#
+
+# List of Benchmarks to run:
+
+# Uniband
+
+#---------------------------------------------------
+# Benchmarking Uniband 
+# #processes = 128 
+#---------------------------------------------------
+       #bytes #repetitions   Mbytes/sec      Msg/sec
+            0         1000         0.00    197621326
+        65536          640    142630.01      2176361
+       524288           80    141028.65       268991
+      1048576           40    141077.69       134542
+
+
+# All processes entering MPI_Finalize
+
+Running Uniband on 256 cores, 256 nodes with tasks-per-node 1
+#------------------------------------------------------------
+#    Intel(R) MPI Benchmarks 2018, MPI-1 part    
+#------------------------------------------------------------
+# Date                  : Wed Oct  7 22:43:59 2020
+# Machine               : x86_64
+# System                : Linux
+# Release               : 3.10.0-1062.9.1.el7.x86_64
+# Version               : #1 SMP Fri Dec 6 15:49:49 UTC 2019
+# MPI Version           : 3.1
+# MPI Thread Environment: 
+
+
+# Calling sequence was: 
+
+# src_c/IMB-MPI1 -mem 2 -npmin 256 -input IMB_SELECT_MPI1
+#                -msglen ./msglens
+
+# Message lengths were user defined
+#
+# MPI_Datatype                   :   MPI_BYTE 
+# MPI_Datatype for reductions    :   MPI_FLOAT
+# MPI_Op                         :   MPI_SUM  
+#
+#
+
+# List of Benchmarks to run:
+
+# Uniband
+
+#---------------------------------------------------
+# Benchmarking Uniband 
+# #processes = 256 
+#---------------------------------------------------
+       #bytes #repetitions   Mbytes/sec      Msg/sec
+            0         1000         0.00    428298036
+        65536          640    249840.20      3812259
+       524288           80    246376.62       469926
+      1048576           40    246096.63       234696
+
+
+# All processes entering MPI_Finalize
+
+Running Uniband on 512 cores, 512 nodes with tasks-per-node 1
+#------------------------------------------------------------
+#    Intel(R) MPI Benchmarks 2018, MPI-1 part    
+#------------------------------------------------------------
+# Date                  : Wed Oct  7 22:43:59 2020
+# Machine               : x86_64
+# System                : Linux
+# Release               : 3.10.0-1062.9.1.el7.x86_64
+# Version               : #1 SMP Fri Dec 6 15:49:49 UTC 2019
+# MPI Version           : 3.1
+# MPI Thread Environment: 
+
+
+# Calling sequence was: 
+
+# src_c/IMB-MPI1 -mem 2 -npmin 512 -input IMB_SELECT_MPI1
+#                -msglen ./msglens
+
+# Message lengths were user defined
+#
+# MPI_Datatype                   :   MPI_BYTE 
+# MPI_Datatype for reductions    :   MPI_FLOAT
+# MPI_Op                         :   MPI_SUM  
+#
+#
+
+# List of Benchmarks to run:
+
+# Uniband
+
+#---------------------------------------------------
+# Benchmarking Uniband 
+# #processes = 512 
+#---------------------------------------------------
+       #bytes #repetitions   Mbytes/sec      Msg/sec
+            0         1000         0.00    793809911
+        65536          640    341287.78      5207638
+       524288           80    345652.10       659279
+      1048576           40    347080.80       331002
+
+
+# All processes entering MPI_Finalize
+
+Running Uniband on 72 cores, 2 nodes with tasks-per-node 36
+#------------------------------------------------------------
+#    Intel(R) MPI Benchmarks 2018, MPI-1 part    
+#------------------------------------------------------------
+# Date                  : Wed Oct  7 22:44:15 2020
+# Machine               : x86_64
+# System                : Linux
+# Release               : 3.10.0-1062.9.1.el7.x86_64
+# Version               : #1 SMP Fri Dec 6 15:49:49 UTC 2019
+# MPI Version           : 3.1
+# MPI Thread Environment: 
+
+
+# Calling sequence was: 
+
+# src_c/IMB-MPI1 -mem 2 -npmin 72 -input IMB_SELECT_MPI1
+#                -msglen ./msglens
+
+# Message lengths were user defined
+#
+# MPI_Datatype                   :   MPI_BYTE 
+# MPI_Datatype for reductions    :   MPI_FLOAT
+# MPI_Op                         :   MPI_SUM  
+#
+#
+
+# List of Benchmarks to run:
+
+# Uniband
+
+#---------------------------------------------------
+# Benchmarking Uniband 
+# #processes = 72 
+#---------------------------------------------------
+       #bytes #repetitions   Mbytes/sec      Msg/sec
+            0         1000         0.00    115851736
+        65536          640     12023.60       183466
+       524288           80     12065.01        23012
+      1048576           40     12067.12        11508
+
+
+# All processes entering MPI_Finalize
+
+Running Uniband on 2304 cores, 64 nodes with tasks-per-node 36
+#------------------------------------------------------------
+#    Intel(R) MPI Benchmarks 2018, MPI-1 part    
+#------------------------------------------------------------
+# Date                  : Wed Oct  7 22:44:47 2020
+# Machine               : x86_64
+# System                : Linux
+# Release               : 3.10.0-1062.9.1.el7.x86_64
+# Version               : #1 SMP Fri Dec 6 15:49:49 UTC 2019
+# MPI Version           : 3.1
+# MPI Thread Environment: 
+
+
+# Calling sequence was: 
+
+# src_c/IMB-MPI1 -mem 2 -npmin 2304 -input IMB_SELECT_MPI1
+#                -msglen ./msglens
+
+# Message lengths were user defined
+#
+# MPI_Datatype                   :   MPI_BYTE 
+# MPI_Datatype for reductions    :   MPI_FLOAT
+# MPI_Op                         :   MPI_SUM  
+#
+#
+
+# List of Benchmarks to run:
+
+# Uniband
+
+#---------------------------------------------------
+# Benchmarking Uniband 
+# #processes = 2304 
+#---------------------------------------------------
+       #bytes #repetitions   Mbytes/sec      Msg/sec
+            0         1000         0.00   1120701861
+        65536          162     77921.09      1188981
+       524288           21     78084.88       148935
+      1048576           11     78307.87        74680
+
+
+# All processes entering MPI_Finalize
+
+Running Uniband on 4608 cores, 128 nodes with tasks-per-node 36
+#------------------------------------------------------------
+#    Intel(R) MPI Benchmarks 2018, MPI-1 part    
+#------------------------------------------------------------
+# Date                  : Wed Oct  7 22:45:28 2020
+# Machine               : x86_64
+# System                : Linux
+# Release               : 3.10.0-1062.9.1.el7.x86_64
+# Version               : #1 SMP Fri Dec 6 15:49:49 UTC 2019
+# MPI Version           : 3.1
+# MPI Thread Environment: 
+
+
+# Calling sequence was: 
+
+# src_c/IMB-MPI1 -mem 2 -npmin 4608 -input IMB_SELECT_MPI1
+#                -msglen ./msglens
+
+# Message lengths were user defined
+#
+# MPI_Datatype                   :   MPI_BYTE 
+# MPI_Datatype for reductions    :   MPI_FLOAT
+# MPI_Op                         :   MPI_SUM  
+#
+#
+
+# List of Benchmarks to run:
+
+# Uniband
+
+#---------------------------------------------------
+# Benchmarking Uniband 
+# #processes = 4608 
+#---------------------------------------------------
+       #bytes #repetitions   Mbytes/sec      Msg/sec
+            0         1000         0.00   2289619757
+        65536          148    141814.15      2163912
+       524288           19    141716.88       270303
+      1048576           10    142080.22       135498
+
+
+# All processes entering MPI_Finalize
+
+Running Uniband on 9216 cores, 256 nodes with tasks-per-node 36
+#------------------------------------------------------------
+#    Intel(R) MPI Benchmarks 2018, MPI-1 part    
+#------------------------------------------------------------
+# Date                  : Wed Oct  7 22:46:11 2020
+# Machine               : x86_64
+# System                : Linux
+# Release               : 3.10.0-1062.9.1.el7.x86_64
+# Version               : #1 SMP Fri Dec 6 15:49:49 UTC 2019
+# MPI Version           : 3.1
+# MPI Thread Environment: 
+
+
+# Calling sequence was: 
+
+# src_c/IMB-MPI1 -mem 2 -npmin 9216 -input IMB_SELECT_MPI1
+#                -msglen ./msglens
+
+# Message lengths were user defined
+#
+# MPI_Datatype                   :   MPI_BYTE 
+# MPI_Datatype for reductions    :   MPI_FLOAT
+# MPI_Op                         :   MPI_SUM  
+#
+#
+
+# List of Benchmarks to run:
+
+# Uniband
+
+#---------------------------------------------------
+# Benchmarking Uniband 
+# #processes = 9216 
+#---------------------------------------------------
+       #bytes #repetitions   Mbytes/sec      Msg/sec
+            0         1000         0.00    413742371
+        65536           89    170274.03      2598175
+       524288           12    170670.72       325529
+      1048576            6    170701.29       162793
+
+
+# All processes entering MPI_Finalize
+
+Running Uniband on 18432 cores, 512 nodes with tasks-per-node 36
+#------------------------------------------------------------
+#    Intel(R) MPI Benchmarks 2018, MPI-1 part    
+#------------------------------------------------------------
+# Date                  : Wed Oct  7 22:46:58 2020
+# Machine               : x86_64
+# System                : Linux
+# Release               : 3.10.0-1062.9.1.el7.x86_64
+# Version               : #1 SMP Fri Dec 6 15:49:49 UTC 2019
+# MPI Version           : 3.1
+# MPI Thread Environment: 
+
+
+# Calling sequence was: 
+
+# src_c/IMB-MPI1 -mem 2 -npmin 18432 -input IMB_SELECT_MPI1
+#                -msglen ./msglens
+
+# Message lengths were user defined
+#
+# MPI_Datatype                   :   MPI_BYTE 
+# MPI_Datatype for reductions    :   MPI_FLOAT
+# MPI_Op                         :   MPI_SUM  
+#
+#
+
+# List of Benchmarks to run:
+
+# Uniband
+
+#---------------------------------------------------
+# Benchmarking Uniband 
+# #processes = 18432 
+#---------------------------------------------------
+       #bytes #repetitions   Mbytes/sec      Msg/sec
+            0         1000         0.00    770938179
+        65536           84    327482.98      4996994
+       524288           11    343385.17       654955
+      1048576            6    341746.25       325915
+
+
+# All processes entering MPI_Finalize
+
+Running Biband on 2 cores, 2 nodes with tasks-per-node 1
+#------------------------------------------------------------
+#    Intel(R) MPI Benchmarks 2018, MPI-1 part    
+#------------------------------------------------------------
+# Date                  : Wed Oct  7 22:47:47 2020
+# Machine               : x86_64
+# System                : Linux
+# Release               : 3.10.0-1062.9.1.el7.x86_64
+# Version               : #1 SMP Fri Dec 6 15:49:49 UTC 2019
+# MPI Version           : 3.1
+# MPI Thread Environment: 
+
+
+# Calling sequence was: 
+
+# src_c/IMB-MPI1 -mem 2 -npmin 2 -input IMB_SELECT_MPI1
+#                -msglen ./msglens
+
+# Message lengths were user defined
+#
+# MPI_Datatype                   :   MPI_BYTE 
+# MPI_Datatype for reductions    :   MPI_FLOAT
+# MPI_Op                         :   MPI_SUM  
+#
+#
+
+# List of Benchmarks to run:
+
+# Biband
+
+#---------------------------------------------------
+# Benchmarking Biband 
+# #processes = 2 
+#---------------------------------------------------
+       #bytes #repetitions   Mbytes/sec      Msg/sec
+            0         1000         0.00      5001200
+        65536          640     19443.35       296682
+       524288           80     20969.83        39997
+      1048576           40     21471.90        20477
+
+
+# All processes entering MPI_Finalize
+
+Running Biband on 64 cores, 64 nodes with tasks-per-node 1
+#------------------------------------------------------------
+#    Intel(R) MPI Benchmarks 2018, MPI-1 part    
+#------------------------------------------------------------
+# Date                  : Wed Oct  7 22:47:49 2020
+# Machine               : x86_64
+# System                : Linux
+# Release               : 3.10.0-1062.9.1.el7.x86_64
+# Version               : #1 SMP Fri Dec 6 15:49:49 UTC 2019
+# MPI Version           : 3.1
+# MPI Thread Environment: 
+
+
+# Calling sequence was: 
+
+# src_c/IMB-MPI1 -mem 2 -npmin 64 -input IMB_SELECT_MPI1
+#                -msglen ./msglens
+
+# Message lengths were user defined
+#
+# MPI_Datatype                   :   MPI_BYTE 
+# MPI_Datatype for reductions    :   MPI_FLOAT
+# MPI_Op                         :   MPI_SUM  
+#
+#
+
+# List of Benchmarks to run:
+
+# Biband
+
+#---------------------------------------------------
+# Benchmarking Biband 
+# #processes = 64 
+#---------------------------------------------------
+       #bytes #repetitions   Mbytes/sec      Msg/sec
+            0         1000         0.00    157745897
+        65536          640    150958.20      2303439
+       524288           80    153471.91       292724
+      1048576           40    152536.20       145470
+
+
+# All processes entering MPI_Finalize
+
+Running Biband on 128 cores, 128 nodes with tasks-per-node 1
+#------------------------------------------------------------
+#    Intel(R) MPI Benchmarks 2018, MPI-1 part    
+#------------------------------------------------------------
+# Date                  : Wed Oct  7 22:47:56 2020
+# Machine               : x86_64
+# System                : Linux
+# Release               : 3.10.0-1062.9.1.el7.x86_64
+# Version               : #1 SMP Fri Dec 6 15:49:49 UTC 2019
+# MPI Version           : 3.1
+# MPI Thread Environment: 
+
+
+# Calling sequence was: 
+
+# src_c/IMB-MPI1 -mem 2 -npmin 128 -input IMB_SELECT_MPI1
+#                -msglen ./msglens
+
+# Message lengths were user defined
+#
+# MPI_Datatype                   :   MPI_BYTE 
+# MPI_Datatype for reductions    :   MPI_FLOAT
+# MPI_Op                         :   MPI_SUM  
+#
+#
+
+# List of Benchmarks to run:
+
+# Biband
+
+#---------------------------------------------------
+# Benchmarking Biband 
+# #processes = 128 
+#---------------------------------------------------
+       #bytes #repetitions   Mbytes/sec      Msg/sec
+            0         1000         0.00    310047769
+        65536          640    307982.14      4699435
+       524288           80    309753.02       590807
+      1048576           40    313508.61       298985
+
+
+# All processes entering MPI_Finalize
+
+Running Biband on 256 cores, 256 nodes with tasks-per-node 1
+#------------------------------------------------------------
+#    Intel(R) MPI Benchmarks 2018, MPI-1 part    
+#------------------------------------------------------------
+# Date                  : Wed Oct  7 22:48:04 2020
+# Machine               : x86_64
+# System                : Linux
+# Release               : 3.10.0-1062.9.1.el7.x86_64
+# Version               : #1 SMP Fri Dec 6 15:49:49 UTC 2019
+# MPI Version           : 3.1
+# MPI Thread Environment: 
+
+
+# Calling sequence was: 
+
+# src_c/IMB-MPI1 -mem 2 -npmin 256 -input IMB_SELECT_MPI1
+#                -msglen ./msglens
+
+# Message lengths were user defined
+#
+# MPI_Datatype                   :   MPI_BYTE 
+# MPI_Datatype for reductions    :   MPI_FLOAT
+# MPI_Op                         :   MPI_SUM  
+#
+#
+
+# List of Benchmarks to run:
+
+# Biband
+
+#---------------------------------------------------
+# Benchmarking Biband 
+# #processes = 256 
+#---------------------------------------------------
+       #bytes #repetitions   Mbytes/sec      Msg/sec
+            0         1000         0.00    592910107
+        65536          640    314925.58      4805383
+       524288           80    319825.84       610019
+      1048576           40    320252.16       305416
+
+
+# All processes entering MPI_Finalize
+
+Running Biband on 512 cores, 512 nodes with tasks-per-node 1
+#------------------------------------------------------------
+#    Intel(R) MPI Benchmarks 2018, MPI-1 part    
+#------------------------------------------------------------
+# Date                  : Wed Oct  7 22:48:15 2020
+# Machine               : x86_64
+# System                : Linux
+# Release               : 3.10.0-1062.9.1.el7.x86_64
+# Version               : #1 SMP Fri Dec 6 15:49:49 UTC 2019
+# MPI Version           : 3.1
+# MPI Thread Environment: 
+
+
+# Calling sequence was: 
+
+# src_c/IMB-MPI1 -mem 2 -npmin 512 -input IMB_SELECT_MPI1
+#                -msglen ./msglens
+
+# Message lengths were user defined
+#
+# MPI_Datatype                   :   MPI_BYTE 
+# MPI_Datatype for reductions    :   MPI_FLOAT
+# MPI_Op                         :   MPI_SUM  
+#
+#
+
+# List of Benchmarks to run:
+
+# Biband
+
+#---------------------------------------------------
+# Benchmarking Biband 
+# #processes = 512 
+#---------------------------------------------------
+       #bytes #repetitions   Mbytes/sec      Msg/sec
+            0         1000         0.00   1161677560
+        65536          640    607428.03      9268616
+       524288           80    596515.49      1137763
+      1048576           40    593433.85       565943
+
+
+# All processes entering MPI_Finalize
+
+Running Biband on 72 cores, 2 nodes with tasks-per-node 36
+#------------------------------------------------------------
+#    Intel(R) MPI Benchmarks 2018, MPI-1 part    
+#------------------------------------------------------------
+# Date                  : Wed Oct  7 22:48:32 2020
+# Machine               : x86_64
+# System                : Linux
+# Release               : 3.10.0-1062.9.1.el7.x86_64
+# Version               : #1 SMP Fri Dec 6 15:49:49 UTC 2019
+# MPI Version           : 3.1
+# MPI Thread Environment: 
+
+
+# Calling sequence was: 
+
+# src_c/IMB-MPI1 -mem 2 -npmin 72 -input IMB_SELECT_MPI1
+#                -msglen ./msglens
+
+# Message lengths were user defined
+#
+# MPI_Datatype                   :   MPI_BYTE 
+# MPI_Datatype for reductions    :   MPI_FLOAT
+# MPI_Op                         :   MPI_SUM  
+#
+#
+
+# List of Benchmarks to run:
+
+# Biband
+
+#---------------------------------------------------
+# Benchmarking Biband 
+# #processes = 72 
+#---------------------------------------------------
+       #bytes #repetitions   Mbytes/sec      Msg/sec
+            0         1000         0.00    167631030
+        65536          640     23853.75       363979
+       524288           80     24003.30        45783
+      1048576           40     24004.41        22892
+
+
+# All processes entering MPI_Finalize
+
+Running Biband on 2304 cores, 64 nodes with tasks-per-node 36
+#------------------------------------------------------------
+#    Intel(R) MPI Benchmarks 2018, MPI-1 part    
+#------------------------------------------------------------
+# Date                  : Wed Oct  7 22:49:04 2020
+# Machine               : x86_64
+# System                : Linux
+# Release               : 3.10.0-1062.9.1.el7.x86_64
+# Version               : #1 SMP Fri Dec 6 15:49:49 UTC 2019
+# MPI Version           : 3.1
+# MPI Thread Environment: 
+
+
+# Calling sequence was: 
+
+# src_c/IMB-MPI1 -mem 2 -npmin 2304 -input IMB_SELECT_MPI1
+#                -msglen ./msglens
+
+# Message lengths were user defined
+#
+# MPI_Datatype                   :   MPI_BYTE 
+# MPI_Datatype for reductions    :   MPI_FLOAT
+# MPI_Op                         :   MPI_SUM  
+#
+#
+
+# List of Benchmarks to run:
+
+# Biband
+
+#---------------------------------------------------
+# Benchmarking Biband 
+# #processes = 2304 
+#---------------------------------------------------
+       #bytes #repetitions   Mbytes/sec      Msg/sec
+            0         1000         0.00   1648044282
+        65536          161    156211.79      2383603
+       524288           21    156659.08       298803
+      1048576           11    155915.75       148693
+
+
+# All processes entering MPI_Finalize
+
+Running Biband on 4608 cores, 128 nodes with tasks-per-node 36
+#------------------------------------------------------------
+#    Intel(R) MPI Benchmarks 2018, MPI-1 part    
+#------------------------------------------------------------
+# Date                  : Wed Oct  7 22:49:45 2020
+# Machine               : x86_64
+# System                : Linux
+# Release               : 3.10.0-1062.9.1.el7.x86_64
+# Version               : #1 SMP Fri Dec 6 15:49:49 UTC 2019
+# MPI Version           : 3.1
+# MPI Thread Environment: 
+
+
+# Calling sequence was: 
+
+# src_c/IMB-MPI1 -mem 2 -npmin 4608 -input IMB_SELECT_MPI1
+#                -msglen ./msglens
+
+# Message lengths were user defined
+#
+# MPI_Datatype                   :   MPI_BYTE 
+# MPI_Datatype for reductions    :   MPI_FLOAT
+# MPI_Op                         :   MPI_SUM  
+#
+#
+
+# List of Benchmarks to run:
+
+# Biband
+
+#---------------------------------------------------
+# Benchmarking Biband 
+# #processes = 4608 
+#---------------------------------------------------
+       #bytes #repetitions   Mbytes/sec      Msg/sec
+            0         1000         0.00   3072287835
+        65536          165    316952.10      4836305
+       524288           21    319824.17       610016
+      1048576           11    320663.90       305809
+
+
+# All processes entering MPI_Finalize
+
+Running Biband on 9216 cores, 256 nodes with tasks-per-node 36
+#------------------------------------------------------------
+#    Intel(R) MPI Benchmarks 2018, MPI-1 part    
+#------------------------------------------------------------
+# Date                  : Wed Oct  7 22:50:27 2020
+# Machine               : x86_64
+# System                : Linux
+# Release               : 3.10.0-1062.9.1.el7.x86_64
+# Version               : #1 SMP Fri Dec 6 15:49:49 UTC 2019
+# MPI Version           : 3.1
+# MPI Thread Environment: 
+
+
+# Calling sequence was: 
+
+# src_c/IMB-MPI1 -mem 2 -npmin 9216 -input IMB_SELECT_MPI1
+#                -msglen ./msglens
+
+# Message lengths were user defined
+#
+# MPI_Datatype                   :   MPI_BYTE 
+# MPI_Datatype for reductions    :   MPI_FLOAT
+# MPI_Op                         :   MPI_SUM  
+#
+#
+
+# List of Benchmarks to run:
+
+# Biband
+
+#---------------------------------------------------
+# Benchmarking Biband 
+# #processes = 9216 
+#---------------------------------------------------
+       #bytes #repetitions   Mbytes/sec      Msg/sec
+            0         1000         0.00    604278943
+        65536           83    320566.64      4891459
+       524288           10    322466.45       615056
+      1048576            6    322629.77       307684
+
+
+# All processes entering MPI_Finalize
+
+Running Biband on 18432 cores, 512 nodes with tasks-per-node 36
+#------------------------------------------------------------
+#    Intel(R) MPI Benchmarks 2018, MPI-1 part    
+#------------------------------------------------------------
+# Date                  : Wed Oct  7 22:51:16 2020
+# Machine               : x86_64
+# System                : Linux
+# Release               : 3.10.0-1062.9.1.el7.x86_64
+# Version               : #1 SMP Fri Dec 6 15:49:49 UTC 2019
+# MPI Version           : 3.1
+# MPI Thread Environment: 
+
+
+# Calling sequence was: 
+
+# src_c/IMB-MPI1 -mem 2 -npmin 18432 -input IMB_SELECT_MPI1
+#                -msglen ./msglens
+
+# Message lengths were user defined
+#
+# MPI_Datatype                   :   MPI_BYTE 
+# MPI_Datatype for reductions    :   MPI_FLOAT
+# MPI_Op                         :   MPI_SUM  
+#
+#
+
+# List of Benchmarks to run:
+
+# Biband
+
+#---------------------------------------------------
+# Benchmarking Biband 
+# #processes = 18432 
+#---------------------------------------------------
+       #bytes #repetitions   Mbytes/sec      Msg/sec
+            0         1000         0.00   1159502211
+        65536           77    590384.30      9008549
+       524288           10    596143.83      1137054
+      1048576            5    595928.79       568322
+
+
+# All processes entering MPI_Finalize
+
