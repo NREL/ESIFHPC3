@@ -1,0 +1,589 @@
+#!/bin/bash 
+#SBATCH --account=hpcapps
+#SBATCH --time=12:00:00
+#SBATCH --job-name=rllib
+#SBATCH --nodes=1
+#SBATCH --gres=gpu:2
+#SBATCH --tasks-per-node=1
+#SBATCH --cpus-per-task=36
+#SBATCH --partition=gpu
+
+# Env setup
+module purge
+source /home/tkaiser2/bin/doconda
+module load conda
+#conda activate /projects/rlldrd/conda-envs/rllib
+export CONDA_PKGS_DIRS=/scratch/$USER/conda/.conda-pkgs
+export CONDA_ENVS_PATH=/scratch/$USER/conda/.conda-envs
+#conda activate newtfgpu
+conda activate slimgpu
+#conda activate rllib
+unset LD_PRELOAD  # or redis will fail!
+
+cd $SLURM_SUBMIT_DIR
+
+cat $0
+
+
+# Set this variable to change the  example you want to run
+export TUNED_EXAMPLE="tuned_examples/dqn/breakout-dqn.yaml"
+export TUNED_EXAMPLE="tuned_examples/dqn/breakout2-dqn.yaml"
+#export TUNED_EXAMPLE="tuned_examples/dqn/cartpole-dqn.yaml"
+export TUNED_EXAMPLE="tuned_examples/dqn/atari-dist-dqn.yaml"
+export TUNED_EXAMPLE="tuned_examples/dqn/atari-dist2-dqn.yaml"
+#export TUNED_EXAMPLE="tuned_examples/dqn/cartpole44-dqn.yaml"
+export TUNED_EXAMPLE="tuned_examples/dqn/breakout-dqn44.yaml"
+export TUNED_EXAMPLE="tuned_examples/dqn/breakout2-dqn.yaml"
+#export TUNED_EXAMPLE="tuned_examples/dqn/breakout4-dqn.yaml"
+
+for TUNED_EXAMPLE in zero.yml ; do
+tymer times.$SLURM_JOBID $TUNED_EXAMPLE start
+cat $TUNED_EXAMPLE
+rllib train -f $TUNED_EXAMPLE 
+tymer times.$SLURM_JOBID $TUNED_EXAMPLE end
+done
+
+exit
+
+# Print out the configuration and run the example
+#tymer times.$SLURM_JOBID warm
+rllib train -f $TUNED_EXAMPLE 
+#tymer times.$SLURM_JOBID warm
+#exit
+#srun --ntasks=1 --gres=gpu:1 rllib train -f $TUNED_EXAMPLE 
+for i in `seq 5` ; do
+tymer times.$SLURM_JOBID start
+rllib train -f $TUNED_EXAMPLE 
+tymer times.$SLURM_JOBID ended
+done
+
+exit
+
+export TUNED_EXAMPLE="tuned_examples/dqn/cartpole44-dqn.yaml"
+
+for i in `seq 5` ; do
+tymer times.$SLURM_JOBID start
+rllib train -f $TUNED_EXAMPLE 
+tymer times.$SLURM_JOBID ended
+done
+
+1604632904.194383 Thu Nov  5 20:21:44 2020      0.000      0.000 zero.yml start
+# Runs on a single g3.4xl node
+# See https://github.com/ray-project/rl-experiments for results
+breakout-dqn:
+    local_dir: /scratch/tkaiser2/zero
+    env: BreakoutNoFrameskip-v4
+    run: DQN
+    stop: 
+        time_total_s: 7200
+    config:
+        # Works for both torch and tf.
+        framework: tf
+        double_q: false
+        dueling: false
+        num_atoms: 1
+        noisy: false
+        prioritized_replay: false
+        n_step: 1
+        target_network_update_freq: 8000
+        lr: .0000625
+        adam_epsilon: .00015
+        hiddens: [512]
+        learning_starts: 20000
+        buffer_size: 1000000
+        rollout_fragment_length: 4
+        train_batch_size: 32
+        exploration_config:
+          epsilon_timesteps: 200000
+          final_epsilon: 0.01
+        prioritized_replay_alpha: 0.5
+        final_prioritized_replay_beta: 1.0
+        prioritized_replay_beta_annealing_timesteps: 2000000
+        num_gpus: 0 
+        timesteps_per_iteration: 10000
+WARNING:tensorflow:From /scratch/tkaiser2/conda/.conda-envs/slimgpu/lib/python3.7/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+2020-11-05 20:23:43,485	INFO services.py:1166 -- View the Ray dashboard at [1m[32mhttp://127.0.0.1:8265[39m[22m
+[2m[36m(pid=17851)[0m WARNING:tensorflow:From /scratch/tkaiser2/conda/.conda-envs/slimgpu/lib/python3.7/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+[2m[36m(pid=17851)[0m Instructions for updating:
+[2m[36m(pid=17851)[0m non-resource variables are not supported in the long term
+[2m[36m(pid=17851)[0m 2020-11-05 20:23:47,867	INFO trainer.py:591 -- Tip: set framework=tfe or the --eager flag to enable TensorFlow eager execution
+[2m[36m(pid=17851)[0m 2020-11-05 20:23:47,867	INFO trainer.py:618 -- Current log_level is WARN. For more information, set 'log_level': 'INFO' / 'DEBUG' or use the -v and -vv flags.
+[2m[36m(pid=17851)[0m WARNING:tensorflow:From /scratch/tkaiser2/conda/.conda-envs/slimgpu/lib/python3.7/site-packages/tensorflow/python/ops/resource_variable_ops.py:1666: calling BaseResourceVariable.__init__ (from tensorflow.python.ops.resource_variable_ops) with constraint is deprecated and will be removed in a future version.
+[2m[36m(pid=17851)[0m Instructions for updating:
+[2m[36m(pid=17851)[0m If using Keras pass *_constraint arguments to layers.
+[2m[36m(pid=17851)[0m 2020-11-05 20:24:28,020	INFO trainable.py:255 -- Trainable.setup took 40.153 seconds. If your trainable is slow to initialize, consider setting reuse_actors=True to reduce actor creation overheads.
+[2m[36m(pid=17851)[0m 2020-11-05 20:24:28,020	WARNING util.py:39 -- Install gputil for GPU system monitoring.
+[2m[36m(pid=17851)[0m WARNING:tensorflow:From /scratch/tkaiser2/conda/.conda-envs/slimgpu/lib/python3.7/site-packages/ray/rllib/policy/tf_policy.py:833: Variable.load (from tensorflow.python.ops.variables) is deprecated and will be removed in a future version.
+[2m[36m(pid=17851)[0m Instructions for updating:
+[2m[36m(pid=17851)[0m Prefer Variable.assign which has equivalent behavior in 2.X.
+== Status ==
+Memory usage on this node: 15.6/755.3 GiB
+Using FIFO scheduling algorithm.
+Resources requested: 1/36 CPUs, 0/2 GPUs, 0.0/553.08 GiB heap, 0.0/128.52 GiB objects (0/1.0 accelerator_type:V100)
+Result logdir: /scratch/tkaiser2/zero/breakout-dqn
+Number of trials: 1 (1 RUNNING)
++----------------------------------------+----------+-------+
+| Trial name                             | status   | loc   |
+|----------------------------------------+----------+-------|
+| DQN_BreakoutNoFrameskip-v4_79dd1_00000 | RUNNING  |       |
++----------------------------------------+----------+-------+
+
+
+== Status ==
+Memory usage on this node: 17.1/755.3 GiB
+Using FIFO scheduling algorithm.
+Resources requested: 1/36 CPUs, 0/2 GPUs, 0.0/553.08 GiB heap, 0.0/128.52 GiB objects (0/1.0 accelerator_type:V100)
+Result logdir: /scratch/tkaiser2/zero/breakout-dqn
+Number of trials: 1 (1 RUNNING)
++----------------------------------------+----------+-------------------+--------+------------------+-------+----------+----------------------+----------------------+--------------------+
+| Trial name                             | status   | loc               |   iter |   total time (s) |    ts |   reward |   episode_reward_max |   episode_reward_min |   episode_len_mean |
+|----------------------------------------+----------+-------------------+--------+------------------+-------+----------+----------------------+----------------------+--------------------|
+| DQN_BreakoutNoFrameskip-v4_79dd1_00000 | RUNNING  | 10.148.8.79:17851 |      1 |          49.2834 | 20000 |  1.36667 |                    8 |                    0 |             732.95 |
++----------------------------------------+----------+-------------------+--------+------------------+-------+----------+----------------------+----------------------+--------------------+
+
+
+== Status ==
+Memory usage on this node: 17.8/755.3 GiB
+Using FIFO scheduling algorithm.
+Resources requested: 1/36 CPUs, 0/2 GPUs, 0.0/553.08 GiB heap, 0.0/128.52 GiB objects (0/1.0 accelerator_type:V100)
+Result logdir: /scratch/tkaiser2/zero/breakout-dqn
+Number of trials: 1 (1 RUNNING)
++----------------------------------------+----------+-------------------+--------+------------------+-------+----------+----------------------+----------------------+--------------------+
+| Trial name                             | status   | loc               |   iter |   total time (s) |    ts |   reward |   episode_reward_max |   episode_reward_min |   episode_len_mean |
+|----------------------------------------+----------+-------------------+--------+------------------+-------+----------+----------------------+----------------------+--------------------|
+| DQN_BreakoutNoFrameskip-v4_79dd1_00000 | RUNNING  | 10.148.8.79:17851 |      2 |          272.842 | 30000 |     1.43 |                    9 |                    0 |             746.78 |
++----------------------------------------+----------+-------------------+--------+------------------+-------+----------+----------------------+----------------------+--------------------+
+
+
+== Status ==
+Memory usage on this node: 18.5/755.3 GiB
+Using FIFO scheduling algorithm.
+Resources requested: 1/36 CPUs, 0/2 GPUs, 0.0/553.08 GiB heap, 0.0/128.52 GiB objects (0/1.0 accelerator_type:V100)
+Result logdir: /scratch/tkaiser2/zero/breakout-dqn
+Number of trials: 1 (1 RUNNING)
++----------------------------------------+----------+-------------------+--------+------------------+-------+----------+----------------------+----------------------+--------------------+
+| Trial name                             | status   | loc               |   iter |   total time (s) |    ts |   reward |   episode_reward_max |   episode_reward_min |   episode_len_mean |
+|----------------------------------------+----------+-------------------+--------+------------------+-------+----------+----------------------+----------------------+--------------------|
+| DQN_BreakoutNoFrameskip-v4_79dd1_00000 | RUNNING  | 10.148.8.79:17851 |      3 |          497.346 | 40000 |     1.29 |                    9 |                    0 |             733.35 |
++----------------------------------------+----------+-------------------+--------+------------------+-------+----------+----------------------+----------------------+--------------------+
+
+
+== Status ==
+Memory usage on this node: 19.1/755.3 GiB
+Using FIFO scheduling algorithm.
+Resources requested: 1/36 CPUs, 0/2 GPUs, 0.0/553.08 GiB heap, 0.0/128.52 GiB objects (0/1.0 accelerator_type:V100)
+Result logdir: /scratch/tkaiser2/zero/breakout-dqn
+Number of trials: 1 (1 RUNNING)
++----------------------------------------+----------+-------------------+--------+------------------+-------+----------+----------------------+----------------------+--------------------+
+| Trial name                             | status   | loc               |   iter |   total time (s) |    ts |   reward |   episode_reward_max |   episode_reward_min |   episode_len_mean |
+|----------------------------------------+----------+-------------------+--------+------------------+-------+----------+----------------------+----------------------+--------------------|
+| DQN_BreakoutNoFrameskip-v4_79dd1_00000 | RUNNING  | 10.148.8.79:17851 |      4 |          720.483 | 50000 |      0.9 |                    6 |                    0 |             670.99 |
++----------------------------------------+----------+-------------------+--------+------------------+-------+----------+----------------------+----------------------+--------------------+
+
+
+== Status ==
+Memory usage on this node: 19.7/755.3 GiB
+Using FIFO scheduling algorithm.
+Resources requested: 1/36 CPUs, 0/2 GPUs, 0.0/553.08 GiB heap, 0.0/128.52 GiB objects (0/1.0 accelerator_type:V100)
+Result logdir: /scratch/tkaiser2/zero/breakout-dqn
+Number of trials: 1 (1 RUNNING)
++----------------------------------------+----------+-------------------+--------+------------------+-------+----------+----------------------+----------------------+--------------------+
+| Trial name                             | status   | loc               |   iter |   total time (s) |    ts |   reward |   episode_reward_max |   episode_reward_min |   episode_len_mean |
+|----------------------------------------+----------+-------------------+--------+------------------+-------+----------+----------------------+----------------------+--------------------|
+| DQN_BreakoutNoFrameskip-v4_79dd1_00000 | RUNNING  | 10.148.8.79:17851 |      5 |          942.143 | 60000 |     1.17 |                    9 |                    0 |             703.55 |
++----------------------------------------+----------+-------------------+--------+------------------+-------+----------+----------------------+----------------------+--------------------+
+
+
+== Status ==
+Memory usage on this node: 20.3/755.3 GiB
+Using FIFO scheduling algorithm.
+Resources requested: 1/36 CPUs, 0/2 GPUs, 0.0/553.08 GiB heap, 0.0/128.52 GiB objects (0/1.0 accelerator_type:V100)
+Result logdir: /scratch/tkaiser2/zero/breakout-dqn
+Number of trials: 1 (1 RUNNING)
++----------------------------------------+----------+-------------------+--------+------------------+-------+----------+----------------------+----------------------+--------------------+
+| Trial name                             | status   | loc               |   iter |   total time (s) |    ts |   reward |   episode_reward_max |   episode_reward_min |   episode_len_mean |
+|----------------------------------------+----------+-------------------+--------+------------------+-------+----------+----------------------+----------------------+--------------------|
+| DQN_BreakoutNoFrameskip-v4_79dd1_00000 | RUNNING  | 10.148.8.79:17851 |      6 |          1164.83 | 70000 |      1.4 |                    9 |                    0 |             745.73 |
++----------------------------------------+----------+-------------------+--------+------------------+-------+----------+----------------------+----------------------+--------------------+
+
+
+== Status ==
+Memory usage on this node: 20.9/755.3 GiB
+Using FIFO scheduling algorithm.
+Resources requested: 1/36 CPUs, 0/2 GPUs, 0.0/553.08 GiB heap, 0.0/128.52 GiB objects (0/1.0 accelerator_type:V100)
+Result logdir: /scratch/tkaiser2/zero/breakout-dqn
+Number of trials: 1 (1 RUNNING)
++----------------------------------------+----------+-------------------+--------+------------------+-------+----------+----------------------+----------------------+--------------------+
+| Trial name                             | status   | loc               |   iter |   total time (s) |    ts |   reward |   episode_reward_max |   episode_reward_min |   episode_len_mean |
+|----------------------------------------+----------+-------------------+--------+------------------+-------+----------+----------------------+----------------------+--------------------|
+| DQN_BreakoutNoFrameskip-v4_79dd1_00000 | RUNNING  | 10.148.8.79:17851 |      7 |          1386.74 | 80000 |     1.04 |                    6 |                    0 |             693.12 |
++----------------------------------------+----------+-------------------+--------+------------------+-------+----------+----------------------+----------------------+--------------------+
+
+
+== Status ==
+Memory usage on this node: 21.5/755.3 GiB
+Using FIFO scheduling algorithm.
+Resources requested: 1/36 CPUs, 0/2 GPUs, 0.0/553.08 GiB heap, 0.0/128.52 GiB objects (0/1.0 accelerator_type:V100)
+Result logdir: /scratch/tkaiser2/zero/breakout-dqn
+Number of trials: 1 (1 RUNNING)
++----------------------------------------+----------+-------------------+--------+------------------+-------+----------+----------------------+----------------------+--------------------+
+| Trial name                             | status   | loc               |   iter |   total time (s) |    ts |   reward |   episode_reward_max |   episode_reward_min |   episode_len_mean |
+|----------------------------------------+----------+-------------------+--------+------------------+-------+----------+----------------------+----------------------+--------------------|
+| DQN_BreakoutNoFrameskip-v4_79dd1_00000 | RUNNING  | 10.148.8.79:17851 |      8 |          1609.39 | 90000 |     1.13 |                    5 |                    0 |             699.05 |
++----------------------------------------+----------+-------------------+--------+------------------+-------+----------+----------------------+----------------------+--------------------+
+
+
+== Status ==
+Memory usage on this node: 22.1/755.3 GiB
+Using FIFO scheduling algorithm.
+Resources requested: 1/36 CPUs, 0/2 GPUs, 0.0/553.08 GiB heap, 0.0/128.52 GiB objects (0/1.0 accelerator_type:V100)
+Result logdir: /scratch/tkaiser2/zero/breakout-dqn
+Number of trials: 1 (1 RUNNING)
++----------------------------------------+----------+-------------------+--------+------------------+--------+----------+----------------------+----------------------+--------------------+
+| Trial name                             | status   | loc               |   iter |   total time (s) |     ts |   reward |   episode_reward_max |   episode_reward_min |   episode_len_mean |
+|----------------------------------------+----------+-------------------+--------+------------------+--------+----------+----------------------+----------------------+--------------------|
+| DQN_BreakoutNoFrameskip-v4_79dd1_00000 | RUNNING  | 10.148.8.79:17851 |      9 |          1830.65 | 100000 |     1.34 |                    5 |                    0 |             726.01 |
++----------------------------------------+----------+-------------------+--------+------------------+--------+----------+----------------------+----------------------+--------------------+
+
+
+== Status ==
+Memory usage on this node: 22.8/755.3 GiB
+Using FIFO scheduling algorithm.
+Resources requested: 1/36 CPUs, 0/2 GPUs, 0.0/553.08 GiB heap, 0.0/128.52 GiB objects (0/1.0 accelerator_type:V100)
+Result logdir: /scratch/tkaiser2/zero/breakout-dqn
+Number of trials: 1 (1 RUNNING)
++----------------------------------------+----------+-------------------+--------+------------------+--------+----------+----------------------+----------------------+--------------------+
+| Trial name                             | status   | loc               |   iter |   total time (s) |     ts |   reward |   episode_reward_max |   episode_reward_min |   episode_len_mean |
+|----------------------------------------+----------+-------------------+--------+------------------+--------+----------+----------------------+----------------------+--------------------|
+| DQN_BreakoutNoFrameskip-v4_79dd1_00000 | RUNNING  | 10.148.8.79:17851 |     10 |          2053.92 | 110000 |     1.24 |                    5 |                    0 |             711.78 |
++----------------------------------------+----------+-------------------+--------+------------------+--------+----------+----------------------+----------------------+--------------------+
+
+
+== Status ==
+Memory usage on this node: 23.4/755.3 GiB
+Using FIFO scheduling algorithm.
+Resources requested: 1/36 CPUs, 0/2 GPUs, 0.0/553.08 GiB heap, 0.0/128.52 GiB objects (0/1.0 accelerator_type:V100)
+Result logdir: /scratch/tkaiser2/zero/breakout-dqn
+Number of trials: 1 (1 RUNNING)
++----------------------------------------+----------+-------------------+--------+------------------+--------+----------+----------------------+----------------------+--------------------+
+| Trial name                             | status   | loc               |   iter |   total time (s) |     ts |   reward |   episode_reward_max |   episode_reward_min |   episode_len_mean |
+|----------------------------------------+----------+-------------------+--------+------------------+--------+----------+----------------------+----------------------+--------------------|
+| DQN_BreakoutNoFrameskip-v4_79dd1_00000 | RUNNING  | 10.148.8.79:17851 |     11 |          2276.52 | 120000 |     1.08 |                    5 |                    0 |             681.97 |
++----------------------------------------+----------+-------------------+--------+------------------+--------+----------+----------------------+----------------------+--------------------+
+
+
+== Status ==
+Memory usage on this node: 24.0/755.3 GiB
+Using FIFO scheduling algorithm.
+Resources requested: 1/36 CPUs, 0/2 GPUs, 0.0/553.08 GiB heap, 0.0/128.52 GiB objects (0/1.0 accelerator_type:V100)
+Result logdir: /scratch/tkaiser2/zero/breakout-dqn
+Number of trials: 1 (1 RUNNING)
++----------------------------------------+----------+-------------------+--------+------------------+--------+----------+----------------------+----------------------+--------------------+
+| Trial name                             | status   | loc               |   iter |   total time (s) |     ts |   reward |   episode_reward_max |   episode_reward_min |   episode_len_mean |
+|----------------------------------------+----------+-------------------+--------+------------------+--------+----------+----------------------+----------------------+--------------------|
+| DQN_BreakoutNoFrameskip-v4_79dd1_00000 | RUNNING  | 10.148.8.79:17851 |     12 |          2499.28 | 130000 |     1.23 |                    8 |                    0 |             710.41 |
++----------------------------------------+----------+-------------------+--------+------------------+--------+----------+----------------------+----------------------+--------------------+
+
+
+== Status ==
+Memory usage on this node: 24.6/755.3 GiB
+Using FIFO scheduling algorithm.
+Resources requested: 1/36 CPUs, 0/2 GPUs, 0.0/553.08 GiB heap, 0.0/128.52 GiB objects (0/1.0 accelerator_type:V100)
+Result logdir: /scratch/tkaiser2/zero/breakout-dqn
+Number of trials: 1 (1 RUNNING)
++----------------------------------------+----------+-------------------+--------+------------------+--------+----------+----------------------+----------------------+--------------------+
+| Trial name                             | status   | loc               |   iter |   total time (s) |     ts |   reward |   episode_reward_max |   episode_reward_min |   episode_len_mean |
+|----------------------------------------+----------+-------------------+--------+------------------+--------+----------+----------------------+----------------------+--------------------|
+| DQN_BreakoutNoFrameskip-v4_79dd1_00000 | RUNNING  | 10.148.8.79:17851 |     13 |          2722.34 | 140000 |     1.21 |                    5 |                    0 |             698.11 |
++----------------------------------------+----------+-------------------+--------+------------------+--------+----------+----------------------+----------------------+--------------------+
+
+
+== Status ==
+Memory usage on this node: 25.2/755.3 GiB
+Using FIFO scheduling algorithm.
+Resources requested: 1/36 CPUs, 0/2 GPUs, 0.0/553.08 GiB heap, 0.0/128.52 GiB objects (0/1.0 accelerator_type:V100)
+Result logdir: /scratch/tkaiser2/zero/breakout-dqn
+Number of trials: 1 (1 RUNNING)
++----------------------------------------+----------+-------------------+--------+------------------+--------+----------+----------------------+----------------------+--------------------+
+| Trial name                             | status   | loc               |   iter |   total time (s) |     ts |   reward |   episode_reward_max |   episode_reward_min |   episode_len_mean |
+|----------------------------------------+----------+-------------------+--------+------------------+--------+----------+----------------------+----------------------+--------------------|
+| DQN_BreakoutNoFrameskip-v4_79dd1_00000 | RUNNING  | 10.148.8.79:17851 |     14 |          2945.56 | 150000 |     1.42 |                    5 |                    0 |             723.01 |
++----------------------------------------+----------+-------------------+--------+------------------+--------+----------+----------------------+----------------------+--------------------+
+
+
+== Status ==
+Memory usage on this node: 25.8/755.3 GiB
+Using FIFO scheduling algorithm.
+Resources requested: 1/36 CPUs, 0/2 GPUs, 0.0/553.08 GiB heap, 0.0/128.52 GiB objects (0/1.0 accelerator_type:V100)
+Result logdir: /scratch/tkaiser2/zero/breakout-dqn
+Number of trials: 1 (1 RUNNING)
++----------------------------------------+----------+-------------------+--------+------------------+--------+----------+----------------------+----------------------+--------------------+
+| Trial name                             | status   | loc               |   iter |   total time (s) |     ts |   reward |   episode_reward_max |   episode_reward_min |   episode_len_mean |
+|----------------------------------------+----------+-------------------+--------+------------------+--------+----------+----------------------+----------------------+--------------------|
+| DQN_BreakoutNoFrameskip-v4_79dd1_00000 | RUNNING  | 10.148.8.79:17851 |     15 |          3167.17 | 160000 |     1.42 |                    5 |                    0 |             728.67 |
++----------------------------------------+----------+-------------------+--------+------------------+--------+----------+----------------------+----------------------+--------------------+
+
+
+== Status ==
+Memory usage on this node: 26.4/755.3 GiB
+Using FIFO scheduling algorithm.
+Resources requested: 1/36 CPUs, 0/2 GPUs, 0.0/553.08 GiB heap, 0.0/128.52 GiB objects (0/1.0 accelerator_type:V100)
+Result logdir: /scratch/tkaiser2/zero/breakout-dqn
+Number of trials: 1 (1 RUNNING)
++----------------------------------------+----------+-------------------+--------+------------------+--------+----------+----------------------+----------------------+--------------------+
+| Trial name                             | status   | loc               |   iter |   total time (s) |     ts |   reward |   episode_reward_max |   episode_reward_min |   episode_len_mean |
+|----------------------------------------+----------+-------------------+--------+------------------+--------+----------+----------------------+----------------------+--------------------|
+| DQN_BreakoutNoFrameskip-v4_79dd1_00000 | RUNNING  | 10.148.8.79:17851 |     16 |          3390.02 | 170000 |     1.91 |                    8 |                    0 |             806.36 |
++----------------------------------------+----------+-------------------+--------+------------------+--------+----------+----------------------+----------------------+--------------------+
+
+
+== Status ==
+Memory usage on this node: 27.0/755.3 GiB
+Using FIFO scheduling algorithm.
+Resources requested: 1/36 CPUs, 0/2 GPUs, 0.0/553.08 GiB heap, 0.0/128.52 GiB objects (0/1.0 accelerator_type:V100)
+Result logdir: /scratch/tkaiser2/zero/breakout-dqn
+Number of trials: 1 (1 RUNNING)
++----------------------------------------+----------+-------------------+--------+------------------+--------+----------+----------------------+----------------------+--------------------+
+| Trial name                             | status   | loc               |   iter |   total time (s) |     ts |   reward |   episode_reward_max |   episode_reward_min |   episode_len_mean |
+|----------------------------------------+----------+-------------------+--------+------------------+--------+----------+----------------------+----------------------+--------------------|
+| DQN_BreakoutNoFrameskip-v4_79dd1_00000 | RUNNING  | 10.148.8.79:17851 |     17 |          3613.32 | 180000 |     2.51 |                    8 |                    0 |             903.93 |
++----------------------------------------+----------+-------------------+--------+------------------+--------+----------+----------------------+----------------------+--------------------+
+
+
+== Status ==
+Memory usage on this node: 27.6/755.3 GiB
+Using FIFO scheduling algorithm.
+Resources requested: 1/36 CPUs, 0/2 GPUs, 0.0/553.08 GiB heap, 0.0/128.52 GiB objects (0/1.0 accelerator_type:V100)
+Result logdir: /scratch/tkaiser2/zero/breakout-dqn
+Number of trials: 1 (1 RUNNING)
++----------------------------------------+----------+-------------------+--------+------------------+--------+----------+----------------------+----------------------+--------------------+
+| Trial name                             | status   | loc               |   iter |   total time (s) |     ts |   reward |   episode_reward_max |   episode_reward_min |   episode_len_mean |
+|----------------------------------------+----------+-------------------+--------+------------------+--------+----------+----------------------+----------------------+--------------------|
+| DQN_BreakoutNoFrameskip-v4_79dd1_00000 | RUNNING  | 10.148.8.79:17851 |     18 |          3834.65 | 190000 |     3.33 |                   10 |                    0 |            1015.28 |
++----------------------------------------+----------+-------------------+--------+------------------+--------+----------+----------------------+----------------------+--------------------+
+
+
+== Status ==
+Memory usage on this node: 28.2/755.3 GiB
+Using FIFO scheduling algorithm.
+Resources requested: 1/36 CPUs, 0/2 GPUs, 0.0/553.08 GiB heap, 0.0/128.52 GiB objects (0/1.0 accelerator_type:V100)
+Result logdir: /scratch/tkaiser2/zero/breakout-dqn
+Number of trials: 1 (1 RUNNING)
++----------------------------------------+----------+-------------------+--------+------------------+--------+----------+----------------------+----------------------+--------------------+
+| Trial name                             | status   | loc               |   iter |   total time (s) |     ts |   reward |   episode_reward_max |   episode_reward_min |   episode_len_mean |
+|----------------------------------------+----------+-------------------+--------+------------------+--------+----------+----------------------+----------------------+--------------------|
+| DQN_BreakoutNoFrameskip-v4_79dd1_00000 | RUNNING  | 10.148.8.79:17851 |     19 |          4056.85 | 200000 |     4.31 |                   11 |                    0 |            1140.69 |
++----------------------------------------+----------+-------------------+--------+------------------+--------+----------+----------------------+----------------------+--------------------+
+
+
+== Status ==
+Memory usage on this node: 28.8/755.3 GiB
+Using FIFO scheduling algorithm.
+Resources requested: 1/36 CPUs, 0/2 GPUs, 0.0/553.08 GiB heap, 0.0/128.52 GiB objects (0/1.0 accelerator_type:V100)
+Result logdir: /scratch/tkaiser2/zero/breakout-dqn
+Number of trials: 1 (1 RUNNING)
++----------------------------------------+----------+-------------------+--------+------------------+--------+----------+----------------------+----------------------+--------------------+
+| Trial name                             | status   | loc               |   iter |   total time (s) |     ts |   reward |   episode_reward_max |   episode_reward_min |   episode_len_mean |
+|----------------------------------------+----------+-------------------+--------+------------------+--------+----------+----------------------+----------------------+--------------------|
+| DQN_BreakoutNoFrameskip-v4_79dd1_00000 | RUNNING  | 10.148.8.79:17851 |     20 |           4278.9 | 210000 |     5.51 |                   14 |                    1 |            1260.34 |
++----------------------------------------+----------+-------------------+--------+------------------+--------+----------+----------------------+----------------------+--------------------+
+
+
+== Status ==
+Memory usage on this node: 29.5/755.3 GiB
+Using FIFO scheduling algorithm.
+Resources requested: 1/36 CPUs, 0/2 GPUs, 0.0/553.08 GiB heap, 0.0/128.52 GiB objects (0/1.0 accelerator_type:V100)
+Result logdir: /scratch/tkaiser2/zero/breakout-dqn
+Number of trials: 1 (1 RUNNING)
++----------------------------------------+----------+-------------------+--------+------------------+--------+----------+----------------------+----------------------+--------------------+
+| Trial name                             | status   | loc               |   iter |   total time (s) |     ts |   reward |   episode_reward_max |   episode_reward_min |   episode_len_mean |
+|----------------------------------------+----------+-------------------+--------+------------------+--------+----------+----------------------+----------------------+--------------------|
+| DQN_BreakoutNoFrameskip-v4_79dd1_00000 | RUNNING  | 10.148.8.79:17851 |     21 |          4500.19 | 220000 |      6.8 |                   20 |                    1 |            1387.02 |
++----------------------------------------+----------+-------------------+--------+------------------+--------+----------+----------------------+----------------------+--------------------+
+
+
+== Status ==
+Memory usage on this node: 30.1/755.3 GiB
+Using FIFO scheduling algorithm.
+Resources requested: 1/36 CPUs, 0/2 GPUs, 0.0/553.08 GiB heap, 0.0/128.52 GiB objects (0/1.0 accelerator_type:V100)
+Result logdir: /scratch/tkaiser2/zero/breakout-dqn
+Number of trials: 1 (1 RUNNING)
++----------------------------------------+----------+-------------------+--------+------------------+--------+----------+----------------------+----------------------+--------------------+
+| Trial name                             | status   | loc               |   iter |   total time (s) |     ts |   reward |   episode_reward_max |   episode_reward_min |   episode_len_mean |
+|----------------------------------------+----------+-------------------+--------+------------------+--------+----------+----------------------+----------------------+--------------------|
+| DQN_BreakoutNoFrameskip-v4_79dd1_00000 | RUNNING  | 10.148.8.79:17851 |     22 |           4722.2 | 230000 |     7.89 |                   22 |                    1 |               1476 |
++----------------------------------------+----------+-------------------+--------+------------------+--------+----------+----------------------+----------------------+--------------------+
+
+
+== Status ==
+Memory usage on this node: 30.7/755.3 GiB
+Using FIFO scheduling algorithm.
+Resources requested: 1/36 CPUs, 0/2 GPUs, 0.0/553.08 GiB heap, 0.0/128.52 GiB objects (0/1.0 accelerator_type:V100)
+Result logdir: /scratch/tkaiser2/zero/breakout-dqn
+Number of trials: 1 (1 RUNNING)
++----------------------------------------+----------+-------------------+--------+------------------+--------+----------+----------------------+----------------------+--------------------+
+| Trial name                             | status   | loc               |   iter |   total time (s) |     ts |   reward |   episode_reward_max |   episode_reward_min |   episode_len_mean |
+|----------------------------------------+----------+-------------------+--------+------------------+--------+----------+----------------------+----------------------+--------------------|
+| DQN_BreakoutNoFrameskip-v4_79dd1_00000 | RUNNING  | 10.148.8.79:17851 |     23 |          4943.35 | 240000 |    10.14 |                   38 |                    3 |            1606.79 |
++----------------------------------------+----------+-------------------+--------+------------------+--------+----------+----------------------+----------------------+--------------------+
+
+
+== Status ==
+Memory usage on this node: 31.3/755.3 GiB
+Using FIFO scheduling algorithm.
+Resources requested: 1/36 CPUs, 0/2 GPUs, 0.0/553.08 GiB heap, 0.0/128.52 GiB objects (0/1.0 accelerator_type:V100)
+Result logdir: /scratch/tkaiser2/zero/breakout-dqn
+Number of trials: 1 (1 RUNNING)
++----------------------------------------+----------+-------------------+--------+------------------+--------+----------+----------------------+----------------------+--------------------+
+| Trial name                             | status   | loc               |   iter |   total time (s) |     ts |   reward |   episode_reward_max |   episode_reward_min |   episode_len_mean |
+|----------------------------------------+----------+-------------------+--------+------------------+--------+----------+----------------------+----------------------+--------------------|
+| DQN_BreakoutNoFrameskip-v4_79dd1_00000 | RUNNING  | 10.148.8.79:17851 |     24 |          5165.14 | 250000 |    11.64 |                   38 |                    4 |            1704.02 |
++----------------------------------------+----------+-------------------+--------+------------------+--------+----------+----------------------+----------------------+--------------------+
+
+
+== Status ==
+Memory usage on this node: 31.9/755.3 GiB
+Using FIFO scheduling algorithm.
+Resources requested: 1/36 CPUs, 0/2 GPUs, 0.0/553.08 GiB heap, 0.0/128.52 GiB objects (0/1.0 accelerator_type:V100)
+Result logdir: /scratch/tkaiser2/zero/breakout-dqn
+Number of trials: 1 (1 RUNNING)
++----------------------------------------+----------+-------------------+--------+------------------+--------+----------+----------------------+----------------------+--------------------+
+| Trial name                             | status   | loc               |   iter |   total time (s) |     ts |   reward |   episode_reward_max |   episode_reward_min |   episode_len_mean |
+|----------------------------------------+----------+-------------------+--------+------------------+--------+----------+----------------------+----------------------+--------------------|
+| DQN_BreakoutNoFrameskip-v4_79dd1_00000 | RUNNING  | 10.148.8.79:17851 |     25 |          5386.58 | 260000 |    13.42 |                   43 |                    4 |            1772.45 |
++----------------------------------------+----------+-------------------+--------+------------------+--------+----------+----------------------+----------------------+--------------------+
+
+
+== Status ==
+Memory usage on this node: 32.5/755.3 GiB
+Using FIFO scheduling algorithm.
+Resources requested: 1/36 CPUs, 0/2 GPUs, 0.0/553.08 GiB heap, 0.0/128.52 GiB objects (0/1.0 accelerator_type:V100)
+Result logdir: /scratch/tkaiser2/zero/breakout-dqn
+Number of trials: 1 (1 RUNNING)
++----------------------------------------+----------+-------------------+--------+------------------+--------+----------+----------------------+----------------------+--------------------+
+| Trial name                             | status   | loc               |   iter |   total time (s) |     ts |   reward |   episode_reward_max |   episode_reward_min |   episode_len_mean |
+|----------------------------------------+----------+-------------------+--------+------------------+--------+----------+----------------------+----------------------+--------------------|
+| DQN_BreakoutNoFrameskip-v4_79dd1_00000 | RUNNING  | 10.148.8.79:17851 |     26 |          5609.04 | 270000 |    14.22 |                   43 |                    4 |            1819.89 |
++----------------------------------------+----------+-------------------+--------+------------------+--------+----------+----------------------+----------------------+--------------------+
+
+
+== Status ==
+Memory usage on this node: 33.1/755.3 GiB
+Using FIFO scheduling algorithm.
+Resources requested: 1/36 CPUs, 0/2 GPUs, 0.0/553.08 GiB heap, 0.0/128.52 GiB objects (0/1.0 accelerator_type:V100)
+Result logdir: /scratch/tkaiser2/zero/breakout-dqn
+Number of trials: 1 (1 RUNNING)
++----------------------------------------+----------+-------------------+--------+------------------+--------+----------+----------------------+----------------------+--------------------+
+| Trial name                             | status   | loc               |   iter |   total time (s) |     ts |   reward |   episode_reward_max |   episode_reward_min |   episode_len_mean |
+|----------------------------------------+----------+-------------------+--------+------------------+--------+----------+----------------------+----------------------+--------------------|
+| DQN_BreakoutNoFrameskip-v4_79dd1_00000 | RUNNING  | 10.148.8.79:17851 |     27 |          5830.59 | 280000 |    13.57 |                   43 |                    4 |            1856.38 |
++----------------------------------------+----------+-------------------+--------+------------------+--------+----------+----------------------+----------------------+--------------------+
+
+
+== Status ==
+Memory usage on this node: 33.7/755.3 GiB
+Using FIFO scheduling algorithm.
+Resources requested: 1/36 CPUs, 0/2 GPUs, 0.0/553.08 GiB heap, 0.0/128.52 GiB objects (0/1.0 accelerator_type:V100)
+Result logdir: /scratch/tkaiser2/zero/breakout-dqn
+Number of trials: 1 (1 RUNNING)
++----------------------------------------+----------+-------------------+--------+------------------+--------+----------+----------------------+----------------------+--------------------+
+| Trial name                             | status   | loc               |   iter |   total time (s) |     ts |   reward |   episode_reward_max |   episode_reward_min |   episode_len_mean |
+|----------------------------------------+----------+-------------------+--------+------------------+--------+----------+----------------------+----------------------+--------------------|
+| DQN_BreakoutNoFrameskip-v4_79dd1_00000 | RUNNING  | 10.148.8.79:17851 |     28 |          6051.55 | 290000 |    13.86 |                   43 |                    4 |            1904.74 |
++----------------------------------------+----------+-------------------+--------+------------------+--------+----------+----------------------+----------------------+--------------------+
+
+
+== Status ==
+Memory usage on this node: 34.3/755.3 GiB
+Using FIFO scheduling algorithm.
+Resources requested: 1/36 CPUs, 0/2 GPUs, 0.0/553.08 GiB heap, 0.0/128.52 GiB objects (0/1.0 accelerator_type:V100)
+Result logdir: /scratch/tkaiser2/zero/breakout-dqn
+Number of trials: 1 (1 RUNNING)
++----------------------------------------+----------+-------------------+--------+------------------+--------+----------+----------------------+----------------------+--------------------+
+| Trial name                             | status   | loc               |   iter |   total time (s) |     ts |   reward |   episode_reward_max |   episode_reward_min |   episode_len_mean |
+|----------------------------------------+----------+-------------------+--------+------------------+--------+----------+----------------------+----------------------+--------------------|
+| DQN_BreakoutNoFrameskip-v4_79dd1_00000 | RUNNING  | 10.148.8.79:17851 |     29 |          6272.48 | 300000 |     14.7 |                   43 |                    4 |            1972.88 |
++----------------------------------------+----------+-------------------+--------+------------------+--------+----------+----------------------+----------------------+--------------------+
+
+
+== Status ==
+Memory usage on this node: 34.9/755.3 GiB
+Using FIFO scheduling algorithm.
+Resources requested: 1/36 CPUs, 0/2 GPUs, 0.0/553.08 GiB heap, 0.0/128.52 GiB objects (0/1.0 accelerator_type:V100)
+Result logdir: /scratch/tkaiser2/zero/breakout-dqn
+Number of trials: 1 (1 RUNNING)
++----------------------------------------+----------+-------------------+--------+------------------+--------+----------+----------------------+----------------------+--------------------+
+| Trial name                             | status   | loc               |   iter |   total time (s) |     ts |   reward |   episode_reward_max |   episode_reward_min |   episode_len_mean |
+|----------------------------------------+----------+-------------------+--------+------------------+--------+----------+----------------------+----------------------+--------------------|
+| DQN_BreakoutNoFrameskip-v4_79dd1_00000 | RUNNING  | 10.148.8.79:17851 |     30 |          6493.85 | 310000 |    18.74 |                  238 |                    4 |            2040.42 |
++----------------------------------------+----------+-------------------+--------+------------------+--------+----------+----------------------+----------------------+--------------------+
+
+
+== Status ==
+Memory usage on this node: 35.5/755.3 GiB
+Using FIFO scheduling algorithm.
+Resources requested: 1/36 CPUs, 0/2 GPUs, 0.0/553.08 GiB heap, 0.0/128.52 GiB objects (0/1.0 accelerator_type:V100)
+Result logdir: /scratch/tkaiser2/zero/breakout-dqn
+Number of trials: 1 (1 RUNNING)
++----------------------------------------+----------+-------------------+--------+------------------+--------+----------+----------------------+----------------------+--------------------+
+| Trial name                             | status   | loc               |   iter |   total time (s) |     ts |   reward |   episode_reward_max |   episode_reward_min |   episode_len_mean |
+|----------------------------------------+----------+-------------------+--------+------------------+--------+----------+----------------------+----------------------+--------------------|
+| DQN_BreakoutNoFrameskip-v4_79dd1_00000 | RUNNING  | 10.148.8.79:17851 |     31 |          6714.75 | 320000 |    20.14 |                  238 |                    4 |            2108.04 |
++----------------------------------------+----------+-------------------+--------+------------------+--------+----------+----------------------+----------------------+--------------------+
+
+
+== Status ==
+Memory usage on this node: 36.2/755.3 GiB
+Using FIFO scheduling algorithm.
+Resources requested: 1/36 CPUs, 0/2 GPUs, 0.0/553.08 GiB heap, 0.0/128.52 GiB objects (0/1.0 accelerator_type:V100)
+Result logdir: /scratch/tkaiser2/zero/breakout-dqn
+Number of trials: 1 (1 RUNNING)
++----------------------------------------+----------+-------------------+--------+------------------+--------+----------+----------------------+----------------------+--------------------+
+| Trial name                             | status   | loc               |   iter |   total time (s) |     ts |   reward |   episode_reward_max |   episode_reward_min |   episode_len_mean |
+|----------------------------------------+----------+-------------------+--------+------------------+--------+----------+----------------------+----------------------+--------------------|
+| DQN_BreakoutNoFrameskip-v4_79dd1_00000 | RUNNING  | 10.148.8.79:17851 |     32 |          6935.66 | 330000 |    23.76 |                  247 |                    5 |            2185.75 |
++----------------------------------------+----------+-------------------+--------+------------------+--------+----------+----------------------+----------------------+--------------------+
+
+
+== Status ==
+Memory usage on this node: 36.8/755.3 GiB
+Using FIFO scheduling algorithm.
+Resources requested: 1/36 CPUs, 0/2 GPUs, 0.0/553.08 GiB heap, 0.0/128.52 GiB objects (0/1.0 accelerator_type:V100)
+Result logdir: /scratch/tkaiser2/zero/breakout-dqn
+Number of trials: 1 (1 RUNNING)
++----------------------------------------+----------+-------------------+--------+------------------+--------+----------+----------------------+----------------------+--------------------+
+| Trial name                             | status   | loc               |   iter |   total time (s) |     ts |   reward |   episode_reward_max |   episode_reward_min |   episode_len_mean |
+|----------------------------------------+----------+-------------------+--------+------------------+--------+----------+----------------------+----------------------+--------------------|
+| DQN_BreakoutNoFrameskip-v4_79dd1_00000 | RUNNING  | 10.148.8.79:17851 |     33 |          7157.03 | 340000 |    24.64 |                  247 |                    8 |             2273.3 |
++----------------------------------------+----------+-------------------+--------+------------------+--------+----------+----------------------+----------------------+--------------------+
+
+
+== Status ==
+Memory usage on this node: 37.4/755.3 GiB
+Using FIFO scheduling algorithm.
+Resources requested: 0/36 CPUs, 0/2 GPUs, 0.0/553.08 GiB heap, 0.0/128.52 GiB objects (0/1.0 accelerator_type:V100)
+Result logdir: /scratch/tkaiser2/zero/breakout-dqn
+Number of trials: 1 (1 TERMINATED)
++----------------------------------------+------------+-------+--------+------------------+--------+----------+----------------------+----------------------+--------------------+
+| Trial name                             | status     | loc   |   iter |   total time (s) |     ts |   reward |   episode_reward_max |   episode_reward_min |   episode_len_mean |
+|----------------------------------------+------------+-------+--------+------------------+--------+----------+----------------------+----------------------+--------------------|
+| DQN_BreakoutNoFrameskip-v4_79dd1_00000 | TERMINATED |       |     34 |          7380.47 | 350000 |    27.14 |                  247 |                    8 |            2351.02 |
++----------------------------------------+------------+-------+--------+------------------+--------+----------+----------------------+----------------------+--------------------+
+
+
+== Status ==
+Memory usage on this node: 37.4/755.3 GiB
+Using FIFO scheduling algorithm.
+Resources requested: 0/36 CPUs, 0/2 GPUs, 0.0/553.08 GiB heap, 0.0/128.52 GiB objects (0/1.0 accelerator_type:V100)
+Result logdir: /scratch/tkaiser2/zero/breakout-dqn
+Number of trials: 1 (1 TERMINATED)
++----------------------------------------+------------+-------+--------+------------------+--------+----------+----------------------+----------------------+--------------------+
+| Trial name                             | status     | loc   |   iter |   total time (s) |     ts |   reward |   episode_reward_max |   episode_reward_min |   episode_len_mean |
+|----------------------------------------+------------+-------+--------+------------------+--------+----------+----------------------+----------------------+--------------------|
+| DQN_BreakoutNoFrameskip-v4_79dd1_00000 | TERMINATED |       |     34 |          7380.47 | 350000 |    27.14 |                  247 |                    8 |            2351.02 |
++----------------------------------------+------------+-------+--------+------------------+--------+----------+----------------------+----------------------+--------------------+
+
+
+1604640454.724718 Thu Nov  5 22:27:34 2020   7550.530   7550.530 zero.yml end
