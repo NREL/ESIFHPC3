@@ -68,9 +68,9 @@ mvn -Dspark=3.0 -Dhadoop=3.2 -Dscala=2.12 clean package
 Instructions
 ------------
 The following sections provide further details for completing the benchmark. 
-* [Configuration](/docs/config.md)
-* [Running the Benchmarks](/docs/benchmarking.md)
-* [Reporting](/docs/reporting.md)
+* [Configuration](docs/config.md)
+* [Running the Benchmarks](docs/benchmarking.md)
+* [Reporting](docs/reporting.md)
 
 Optimizations
 ------------
