@@ -1,0 +1,12 @@
+
+nalu_abl_mesh:
+  output_db: abl_3km_512.g
+  ioss_8bit_ints: false
+
+  spec_type: bounding_box
+
+  vertices:
+    - [0.0, 0.0, 0.0]
+    - [300.0, 300.0, 300.0]
+
+  mesh_dimensions: [512, 512, 512]
