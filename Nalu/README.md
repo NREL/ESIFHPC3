@@ -85,7 +85,7 @@ The `nalu_all_jobs-<256,512>.sh` and `nalu_single_job.sh` scripts are provided t
 Run from 15 to 20 concurrent instances of the 512 mesh benchmark. The particular
 number of instances may be chosen to reflect optimal capability of the
 Offered system within the given instance count. All offered compute units
-may be subscribed.
+(Standard and Accelerated) may be subscribed.
 
 Validating Output
 -----------------
