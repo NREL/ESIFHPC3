@@ -82,11 +82,10 @@ The `nalu_all_jobs-<256,512>.sh` and `nalu_single_job.sh` scripts are provided t
 
 ### Throughput Test
 
-Run up to 20 instances of a specific size 512 mesh benchmark. The particular
+Run from 15 to 20 concurrent instances of the 512 mesh benchmark. The particular
 number of instances may be chosen to reflect optimal capability of the
-Offered system. The number of jobs completed per time will ultimately
-be combined with an analogous value from the Nalu throughput benchmark
-to derive a final throughput metric.
+Offered system within the given instance count. All offered compute units
+may be subscribed.
 
 Validating Output
 -----------------
