@@ -20,7 +20,17 @@ How to Build
 ------------
 
 ### Pre-requisites
-A makefile has been included for convenience, that may assist in setting up the pre-requisites for and building HiBench.
+A makefile has been included for convenience, that may assist in setting up the pre-requisites for, building, and running HiBench. For testing, the following workflow was sufficient to complete the benchmark runs.
+```
+module load gcc/8.4.0
+make get_requirements
+<add JAVA_HOME to .bashrc>
+make build_hibench
+<acquire multi-node interactive session via job scheduler>
+make setup_cluster
+make run_all
+```
+The GCC version dependency was not tested--8.4 was sufficient, but may not be necessary. Modifying `.bashrc` was found to be necessary for JAVA_HOME to be defined properly in spawned subshells during some of the make steps.
 
   * Java 8/1.8
   ```
