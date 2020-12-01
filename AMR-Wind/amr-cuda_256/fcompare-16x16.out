@@ -1,0 +1,17 @@
+[apurkaya@r104u33 benchmarks]$ ./fcompare amr-cuda_256_4/plt01000.ref-256 amr-cuda_256_8/plt01000
+
+            variable name            absolute error            relative error
+                                        (||A - B||)         (||A - B||/||A||)
+ ----------------------------------------------------------------------------
+ level = 0
+ density                                          0                         0
+ gpx                                3.127092896e-11            4.81261721e-10
+ gpy                                  2.5897954e-11           8.430972649e-10
+ gpz                                1.476654909e-11           5.152260519e-11
+ mu_turb                            3.173156974e-12           7.722319581e-12
+ p                                  9.936051981e-11           1.458532452e-12
+ temperature                        4.848743629e-11           1.570473085e-13
+ velocityx                          7.212985764e-11           1.006277981e-11
+ velocityy                           7.67537145e-11           1.251009031e-11
+ velocityz                          6.130490907e-11           5.585851699e-11
+ velocity_mueff                     3.173156973e-12           7.722131651e-12
