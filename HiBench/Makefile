@@ -1,6 +1,6 @@
 SHELL := /bin/bash
 
-all: get_requirements build_hibench setup_cluster
+all: get_requirements build_hibench setup_cluster run_all
 get_requirements:
 	wget https://mirrors.sonic.net/apache/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.gz
 	wget https://mirrors.gigenet.com/apache/hadoop/common/hadoop-3.2.1/hadoop-3.2.1.tar.gz
@@ -19,6 +19,7 @@ get_requirements:
 
 build_hibench:
 	cp pom.xml HiBench/pom.xml
+	cp ml_pom.xml HiBench/sparkbench/ml/pom.xml
 	source exports; \
 	cd HiBench; \
 	mvn -Dspark=3.0 -Dhadoop=3.2 -Dscala=2.12 clean package
@@ -26,10 +27,15 @@ build_hibench:
 setup_cluster: 
 	export HIBENCH_HOME=$$PWD/HiBench; \
 	export HADOOP_HOME=$$PWD/hadoop-3.2.1; \
+	export SPARK_HOME=$$PWD/spark-3.0.1-bin-hadoop3.2; \
+	export JAVA_HOME=$$PWD/jdk8u272-b10; \
 	source exports; \
 	cd setup_script; \
-	python cluster_setup.py --hibench $$HIBENCH_HOME --hadoop $$HADOOP_HOME
+	python cluster_setup.py --hibench $$HIBENCH_HOME --hadoop $$HADOOP_HOME --spark $$SPARK_HOME
 
+run_all:
+	cp benchmarks.lst HiBench/conf/benchmarks.lst
+	HiBench/bin/run_all.sh 
 
 clean:
 	rm *.tar.gz

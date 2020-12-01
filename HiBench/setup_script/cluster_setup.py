@@ -38,14 +38,24 @@ def move_files(xmls, hadoop,hibench):
     shutil.move("workers",f"{hadoop}/etc/hadoop/workers")
     shutil.move("masters",f"{hadoop}/etc/hadoop/masters")
     shutil.move("hadoop.conf", f"{hibench}/conf/hadoop.conf")
+    shutil.move("spark.conf", f"{hibench}/conf/spark.conf")
 
 
 def update_hibench_hadoop(hosts,hadoop):
+    user = os.environ.get('USER')
     with open(f"hadoop.conf.jinja") as file_:
         template = Template(file_.read())
-    out = template.render(master=hosts[0], hadoop=hadoop)
+    out = template.render(master=hosts[0], hadoop=hadoop, user=user)
     with open(f"hadoop.conf", "w") as f:
         f.write(out)
+
+def update_spark_conf(spark):
+    with open(f"spark.conf.jinja") as file_:
+        template = Template(file_.read())
+    out = template.render(spark=spark)
+    with open(f"spark.conf", "w") as f:
+        f.write(out)
+
 
 def format_hdfs(hadoop):
     subprocess.run([f"{hadoop}/bin/hdfs", 'namenode', '-format'], stdout=subprocess.PIPE, text=True)
@@ -60,9 +70,11 @@ def main():
     parser = argparse.ArgumentParser(description='HiBench setup script')
     parser.add_argument('--hadoop', action='store', dest='hadoop', help='hadoop home folder')
     parser.add_argument('--hibench', action='store', dest='hibench', help='hibench home folder')
+    parser.add_argument('--spark', action='store', dest='spark', help='spark home folder')
     results = parser.parse_args()
     hadoop = results.hadoop
     hibench = results.hibench
+    spark = results.spark
     hosts = get_hosts()
     xmls = ['core-site','mapred-site','yarn-site']
     for xml in xmls:
@@ -70,6 +82,7 @@ def main():
     update_workers(hosts)
     update_master(hosts)
     update_hibench_hadoop(hosts,hadoop)
+    update_spark_conf(spark)
     move_files(xmls, hadoop, hibench)
     format_hdfs(hadoop)
     start_all(hadoop)
