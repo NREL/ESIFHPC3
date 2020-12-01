@@ -62,12 +62,7 @@ directories `abl_3km_256` and `abl_3km_512`, respectively). The
 actual mesh files for both cases are avaiable
 [here](https://www.nrel.gov/hpc/esif-hpc-3.html).
 
-To run, simply specify
-=======
-directories `abl_3km_256` and `abl_3km_512`, respectively), and the
-actual mesh file for the smaller 256 mesh. Instructions are given 
-below for generating the larger 512 mesh. To run, simply specify
-the input file and log file names:
+To run, simply specify the input file and log file names:
 
 ```
   mpirun -np 4 naluX -i abl_3km_256.i -o abl_3km_256.log
