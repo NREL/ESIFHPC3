@@ -120,7 +120,7 @@ where `plt01000.ref-256` is the reference output directory, being
 compared against `plt01000` generated from the Offeror's runs. The comparison will provide the absolute and
 relative errors of the two norms of each output variable obtained from each of
 the runs. The reference output directories for validation of each of the two cases being considered for this
-benchmark are available [here](https://www.nrel.gov/hpc/esif-hpc-3.html)
+benchmark are available [here](https://www.nrel.gov/hpc/esif-hpc-3.html).
 
 
 Reporting Results
