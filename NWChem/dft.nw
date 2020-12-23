@@ -51,5 +51,5 @@ H         -6.24070       -1.05609        0.63083
 driver
  maxiter 1
 end
- task dft optimize
+ task dft optimize ignore
 
