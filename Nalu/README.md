@@ -58,8 +58,8 @@ How to Run
 
 There are two cases differing in mesh size (256 and 512) that are
 provided. We provide input files for these two problem sizes (in
-directories `abl_3km_256` and `abl_3km_512`, respectively). The
-actual mesh files for both cases are avaiable
+directories `abl_3km_256` and `abl_3km_512`, respectively). You will need to
+download the actual mesh files for both cases before running them, available
 [here](https://www.nrel.gov/hpc/esif-hpc-3.html).
 
 To run, simply specify the input file and log file names:
