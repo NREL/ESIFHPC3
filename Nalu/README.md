@@ -62,7 +62,7 @@ directories `abl_3km_256` and `abl_3km_512`, respectively). We note that recent
 commits of Nalu require an updated input file for the 512 mesh case. We have therefore
 add file `abl_3km_512/abl_3km_512_new1.i` for recent commits. This file was tested
 on commit `2dc5b7ede2c7cb00937fda52058d6f09feaf3f82`. The originally included input file
-`abl_3km_512/abl_3km_512.i` was tested with Nalu commit
+`abl_3km_512/abl_3km_512_orig.i` was tested with Nalu commit
 `1d3ee2e62ecdd4745d0339a5bf9c5194a07bc93a`.
 
 You will need to
