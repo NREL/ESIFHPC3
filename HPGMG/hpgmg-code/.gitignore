@@ -4,7 +4,6 @@ vesta-*
 edison-*
 hopper-*
 mira-*
-build*
 *~
 *.pyc
 mpi_profile.*

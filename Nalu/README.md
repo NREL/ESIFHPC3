@@ -24,12 +24,12 @@ Official documentation for building Nalu is located
 guide would indicate, one can automate the build using
 [Spack](https://github.com/LLNL/spack), or mechanically using a number
 of different script mechanisms. It is left to the Offeror to make the
-choice that best suites them.
+choice that best suits them.
 
 
 The Exawind tool suite is updated on a regular basis and is built
-nightly. In general the third party library and Nalu versions must be
- similar or later than the versions shown below, as a module list for a recent
+nightly. In general the third-party library and Nalu versions must be
+similar or later than the versions shown below, as a module list for a recent
 build. This set of libraries were used to generate the NREL baseline results.
 
 ```
@@ -58,7 +58,14 @@ How to Run
 
 There are two cases differing in mesh size (256 and 512) that are
 provided. We provide input files for these two problem sizes (in
-directories `abl_3km_256` and `abl_3km_512`, respectively). You will need to
+directories `abl_3km_256` and `abl_3km_512`, respectively). We note that recent
+commits of Nalu require an updated input file for the 512 mesh case. We have therefore
+add file `abl_3km_512/abl_3km_512_new1.i` for recent commits. This file was tested
+on commit `2dc5b7ede2c7cb00937fda52058d6f09feaf3f82`. The originally included input file
+`abl_3km_512/abl_3km_512.i` was tested with Nalu commit
+`1d3ee2e62ecdd4745d0339a5bf9c5194a07bc93a`.
+
+You will need to
 download the actual mesh files for both cases before running them, available
 [here](https://www.nrel.gov/hpc/esif-hpc-3.html).
 
