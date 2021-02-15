@@ -63,7 +63,7 @@ directories `abl_3km_256` and `abl_3km_512`, respectively).
 * We note that recent commits of Nalu require an updated input file
 for the 512 mesh case. We have therefore added file `abl_3km_512/abl_3km_512_new1.i`
 for running with recent commits. This file was tested
-on commit `2dc5b7ede2c7cb00937fda52058d6f09feaf3f82`. The originally included input file
+on recent commit `2dc5b7ede2c7cb00937fda52058d6f09feaf3f82`. The originally included input file
 `abl_3km_512/abl_3km_512_orig.i` was tested with Nalu commit
 `1d3ee2e62ecdd4745d0339a5bf9c5194a07bc93a`. See the repo Issues for further context.
 
@@ -72,6 +72,15 @@ using the new input file referenced above. We have reproduced the behavior, and 
 that reducing the timestep to 0.25 permits the run to complete. We do permit
 this modification to `abl_3km_512/abl_3km_512_new1.i` in order to achieve complete
 results. See the repo Issues for further context.
+
+* Given how actively Nalu is being developed, the frequency with which subtle regressions may
+make themselves manifest, and the remaining timeline for the RFP, we will accept results from
+distinct code commits in the event that runs fail for the commit which an Offeror uses
+to generate the bulk of their results. We have tested the requested rank counts against commit
+`1d3ee2`, so as a first attempt at working past runtime errors in newer code, this code
+version may be used to fill in results. No more than two (2) code versions should be used to 
+generate Nalu benchmark results, and which version goes with which result should be made clear in
+either the Spreadsheet response or the Text response.
 
 You will need to
 download the actual mesh files for both cases before running them, available
